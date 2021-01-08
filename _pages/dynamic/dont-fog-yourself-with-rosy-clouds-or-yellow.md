@@ -2,7 +2,8 @@
 title: "don't fog yourself with rosy clouds, or yellow"
 subtitle: 'generative audiovisual installation'
 year: '2018'
-videos: [291011339, 291011396, 291011375]
+featuredVideo: '291011339'
+videos: [291011396, 291011375]
 images: [eieow_MG_5328.png, fogedit1b.png, fogedit3.png]
 ---
 

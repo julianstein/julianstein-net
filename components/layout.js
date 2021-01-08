@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
 
       <div className=" flex flex-col md:flex-row">
         <Nav />
-        <main className="md:w-2/6 w-100 mx-10 flex-auto flex flex-col">{children}</main>
+        <main className="md:w-2/6 w-100 sm:mx-8 mx-5 flex-auto flex flex-col">{children}</main>
       </div>
     </div>
   );
