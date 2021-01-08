@@ -1,5 +1,18 @@
 @tailwind base;
 
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  padding-bottom: 0.5rem;
+  letter-spacing: -0.025em;
+}
 /* Write your own custom base styles here */
 
 /* Start purging... */
@@ -19,5 +32,3 @@ body {
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
-
-/* Your own custom utilities */

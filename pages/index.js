@@ -1,14 +1,27 @@
-import Nav from '../components/nav'
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import Layout, { siteTitle } from '../components/layout';
 
 export default function IndexPage() {
   return (
-    <div>
-      <Nav />
-      <div className="py-20">
-        <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-          Next.js + Tailwind CSS 2.0
-        </h1>
+    <Layout>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
+      <div className=" flex ">
+        <div className=" text-3xl w-5/6 relative text-left my-20 ml-5 mr-10">
+          <Image
+            src="/IBG_0006.png"
+            alt="Picture of the author"
+            layout="intrinsic"
+            width={1.5 * 500}
+            height={1 * 500}
+            objectFit="contain"
+          />
+        </div>
       </div>
-    </div>
-  )
+    </Layout>
+  );
 }
