@@ -10,6 +10,7 @@ const EmbedPlayer = (src) => {
         url={`https://player.vimeo.com/video/` + src}
         width="100%"
         height="100%"
+        light
       />
     </div>
   );
