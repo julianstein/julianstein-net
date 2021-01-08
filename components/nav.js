@@ -46,7 +46,7 @@ const Nav = () => {
               </li>
             ))}
           </ul>
-          <ul className="pb-4 ">
+          <ul className="pb-4 md:pt-3">
             {linksTwo.map(({ href, label }) => (
               <li className="hover:text-gray-400 leading-normal" key={`${href}${label}`}>
                 <a href={href}>{label}</a>
