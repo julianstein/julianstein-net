@@ -31,11 +31,14 @@ class EmbedVimeo extends React.Component {
     //this.props.active === this.props.index ? this._play : this._pause
 
     return (
-      <iframe
-        src={`https://player.vimeo.com/video/` + this.props.src}
-        ref="iframe"
-        allowFullScreen
-      />
+      <div id="responsiveVideoWrapper" className="relative w-full h-0 pb-fluid-video">
+        <iframe
+          className="absolute top-0 left-0 w-full h-full"
+          src={`https://player.vimeo.com/video/` + this.props.src}
+          ref="iframe"
+          allowFullScreen
+        />
+      </div>
     );
   }
 }

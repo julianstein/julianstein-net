@@ -5,7 +5,7 @@ import Projects from '../components/projects';
 //const name = 'Julian Stein';
 export const siteTitle = 'julian stein';
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
     <div>
       <Head>
@@ -19,4 +19,6 @@ export default function Layout({ children }) {
       </div>
     </div>
   );
-}
+};
+
+export default Layout;

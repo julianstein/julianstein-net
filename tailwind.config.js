@@ -4,12 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'accent-1': '#333',
+        'accent-1': '#333'
       },
-    },
+      padding: { 'fluid-video': '56.25%' }
+    }
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
-}
+  plugins: []
+};

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import slugify from 'slugify';
 import Projects from './projects';
+import * as Icon from 'react-feather';
 
 const links = [
   'a room that i take care of',
@@ -27,13 +28,13 @@ const linksTwo = [
   { href: 'https://github.com/vercel/next.js', label: 'music' }
 ];
 
-export default function Nav() {
+const Nav = () => {
   return (
-    <nav className="flex flex-col text-3xl text-left w-100 mr-12 md:w-72 ml-12 my-10 xl:ml-20 xl:mr-12 md:my-20 md:ml-12 md:mr-0">
+    <nav className="flex flex-col text-3xl text-left w-100 mr-12 md:w-72 sm:ml-12 sm:my-8 ml-8 mt-4 mb-12 xl:ml-20 xl:mr-12 md:my-16 md:ml-12 md:mr-0">
       <div className="">
         <ul className="pb-4">
           <Link href="/">
-            <a className="text-sm">julian stein</a>
+            <a className="text-base">julian stein</a>
           </Link>
         </ul>
         <div className="text-left text-sm text-black">
@@ -42,19 +43,25 @@ export default function Nav() {
             {links.map((value, index) => (
               <li className="pb-1 hover:text-gray-400" key={index}>
                 <Link href={`/${slugify(value, { lower: true, strict: true })}`}>{value}</Link>
-                {console.log(slugify(value, { lower: true, strict: true }))}
               </li>
             ))}
           </ul>
-          <ul className="py-4 ">
+          <ul className="pb-4 ">
             {linksTwo.map(({ href, label }) => (
-              <li className="hover:text-gray-400" key={`${href}${label}`}>
+              <li className="hover:text-gray-400 leading-normal" key={`${href}${label}`}>
                 <a href={href}>{label}</a>
               </li>
             ))}
           </ul>
         </div>
+        <div className="flex">
+          <Icon.Instagram className=" w-4 mr-3" />
+          <Icon.Mail className="w-4 mr-3" />
+          <Icon.GitHub className="w-4 mr-3" />
+        </div>
       </div>
     </nav>
   );
-}
+};
+
+export default Nav;

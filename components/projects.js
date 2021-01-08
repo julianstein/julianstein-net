@@ -27,19 +27,26 @@ const linksTwo = [
   { href: 'https://github.com/vercel/next.js', label: 'music' }
 ];
 
-export default function Projects() {
+const Projects = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <nav className=" flex md:hidden flex-col text-3xl text-left w-100 ">
       <div className="text-left text-sm text-black">
-        <button className="pb-0 font-bold" onClick={() => setOpen(!open)}>
-          projects
-        </button>
         {open && (
-          <ul className=" leading-tight tracking-tight">
+          <button className="pb-1 text-gray-400 leading-normal" onClick={() => setOpen(!open)}>
+            projects
+          </button>
+        )}
+        {!open && (
+          <button className="pb-0 leading-normal" onClick={() => setOpen(!open)}>
+            projects
+          </button>
+        )}
+        {open && (
+          <ul className=" leading-tight tracking-tight pb-3">
             {links.map((value, index) => (
-              <li className="pb-1 hover:text-gray-400" key={index}>
+              <li className="pb-1 hover:text-gray-400" key={index} onClick={() => setOpen(false)}>
                 <Link href={slugify(value, { lower: true, strict: true })}>{value}</Link>
               </li>
             ))}
@@ -48,4 +55,6 @@ export default function Projects() {
       </div>
     </nav>
   );
-}
+};
+
+export default Projects;

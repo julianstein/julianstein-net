@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import Layout, { siteTitle } from '../components/layout';
 
-export default function IndexPage() {
+const IndexPage = () => {
   return (
     <Layout>
       <Head>
@@ -24,4 +23,6 @@ export default function IndexPage() {
       </div>
     </Layout>
   );
-}
+};
+
+export default IndexPage;
