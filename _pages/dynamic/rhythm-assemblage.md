@@ -3,9 +3,9 @@ title: 'rhythm assemblage'
 subtitle: 'kinetic installation'
 year: '2018'
 featuredVideo: '344034029'
+featuredImage: 'DSCF2413.jpg'
 images:
   [
-    DSCF2413.jpg,
     rhythmassemblage_doc-1.png,
     rhythmassemblage_doc-3.png,
     rhythmassemblage_doc-4.png,

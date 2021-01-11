@@ -3,9 +3,9 @@ title: 'music for lamps'
 subtitle: 'audiovisual performance'
 year: '2012'
 featuredVideo: '86942447'
+featuredImage: '_MG_9387.jpg'
 images:
   [
-    _MG_9387.jpg,
     _MG_9398.jpg,
     _MG_9433.jpg,
     16664960_10155498682639879_1895354620637805921_o.jpg,

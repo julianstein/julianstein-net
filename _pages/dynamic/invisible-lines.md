@@ -3,9 +3,9 @@ title: 'invisible lines'
 subtitle: 'generative sound installation'
 year: '2013'
 featuredVideo: '78427816'
+featuredImage: '10InvisibleLines.jpg'
 images:
   [
-    10InvisibleLines.jpg,
     11InvisibleLines.jpg,
     1508575_608358322573719_1576603077_n.jpg,
     1656433_608358379240380_1513747182_n.jpg,

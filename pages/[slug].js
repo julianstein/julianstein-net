@@ -26,8 +26,8 @@ const DynamicPage = ({ page }) => {
       <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">
         <div className=" text-3xl w-auto relative flex-initial text-left mb-20 xl:mt-20 mx-3 xl:ml-5 xl:mr-5 md:mt-8 md:ml-8 md:mr-10  ">
           <div className="mb-8 hidden xl:flex">
-            {featuredVideo && <EmbedPlayer src={featuredVideo} />}
-            {featuredImage && (
+            {featuredVideo && <EmbedPlayer src={featuredVideo} img={featuredImage} slug={slug} />}
+            {!featuredVideo && (
               <Image
                 src={'/images/' + slug + '/' + featuredImage}
                 alt="Picture of the author"
@@ -41,7 +41,7 @@ const DynamicPage = ({ page }) => {
           {videos &&
             videos.map((video, index) => (
               <div className="mb-8" key={index}>
-                <EmbedPlayer src={video} />
+                <EmbedPlayer src={video} img={featuredImage} slug={slug} />
               </div>
             ))}
 
@@ -60,8 +60,8 @@ const DynamicPage = ({ page }) => {
         </div>
         <div className="text-3xl w-auto flex-shrink mx-3 xl:w-1/4 xl:flex-shrink-0 text-left mt-0 mb-8 md:mb-0 md:mt-20 md:ml-8 xl:mr-20 md:mr-10 ">
           <div className="mb-8 flex xl:hidden">
-            {featuredVideo && <EmbedPlayer src={featuredVideo} />}
-            {featuredImage && (
+            {featuredVideo && <EmbedPlayer src={featuredVideo} img={featuredImage} slug={slug} />}
+            {!featuredVideo && (
               <Image
                 src={'/images/' + slug + '/' + featuredImage}
                 alt="Picture of the author"
