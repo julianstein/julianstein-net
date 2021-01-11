@@ -6,7 +6,10 @@ module.exports = {
       colors: {
         'accent-1': '#333'
       },
-      padding: { 'fluid-video': '56.25%' }
+      padding: { 'fluid-video': '56.25%' },
+      width: {
+        'fit-content': 'fit-content'
+      }
     }
   },
   variants: {
