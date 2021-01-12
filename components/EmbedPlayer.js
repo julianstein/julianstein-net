@@ -18,7 +18,7 @@ const EmbedPlayer = (src, img, slug) => {
 
   const onLoad = () => {
     player.current.showPreview();
-    console.log('loaded');
+    //console.log('loaded');
   };
 
   useEffect(() => {
