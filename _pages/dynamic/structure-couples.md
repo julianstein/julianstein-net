@@ -8,7 +8,7 @@ images:
   [
     Screenshot6.jpg,
     Screenshot9.jpg,
-    Screenshot12.jpg,
+    Screenshot2.jpg,
     Screenshot15.jpg,
     Screenshot18.jpg,
     Screenshot20.jpg,
