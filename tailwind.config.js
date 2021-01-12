@@ -15,5 +15,9 @@ module.exports = {
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [],
+  corePlugins: {
+    // ...
+    ringWidth: false
+  }
 };

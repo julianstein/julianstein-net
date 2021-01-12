@@ -1,11 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 import EmbedPlayer from '../components/EmbedPlayer';
-import Layout from '../components/layout';
 import PrintMarkdown from '../components/PrintMarkdown';
 import { getAllDynamicPages, getDynamicPageContentBySlug } from '../lib/markdown';
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 const DynamicPage = ({ page }) => {
   const {
