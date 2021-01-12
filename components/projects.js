@@ -27,8 +27,9 @@ const linksTwo = [
   { href: 'https://github.com/vercel/next.js', label: 'music' }
 ];
 
-const Projects = () => {
+const Projects = (active) => {
   const [open, setOpen] = useState(false);
+  active = active.active;
 
   return (
     <nav className=" flex md:hidden flex-col text-3xl text-left w-100 ">
@@ -46,8 +47,10 @@ const Projects = () => {
         {open && (
           <ul className=" leading-tight tracking-tight pb-3">
             {links.map((value, index) => (
-              <li className="pb-1 hover:text-gray-400" key={index} onClick={() => setOpen(false)}>
-                <Link href={slugify(value, { lower: true, strict: true })}>{value}</Link>
+              <li className="pb-1" key={index} onClick={() => setOpen(false)}>
+                <Link href={slugify(value, { lower: true, strict: true })}>
+                  <a className={active === index ? 'font-bold ' : 'font-normal'}>{value}</a>
+                </Link>
               </li>
             ))}
           </ul>
