@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import slugify from 'slugify';
 import { AnimatePresence, motion, AnimateSharedLayout } from 'framer-motion';
 
@@ -28,9 +28,14 @@ const linksTwo = [
   { href: 'https://github.com/vercel/next.js', label: 'music' }
 ];
 
-const Projects = (active) => {
-  const [open, setOpen] = useState(false);
+const Projects = (active, path) => {
+  const [open, setOpen] = useState(null);
+  path = active.path;
   active = active.active;
+
+  useEffect(() => {
+    path === '/' ? setOpen(true) : setOpen(false);
+  }, [path]);
 
   return (
     <nav className=" flex md:hidden flex-col text-3xl text-left w-100 ">

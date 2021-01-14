@@ -28,16 +28,14 @@ const DynamicPage = ({ page }) => {
             </LazyLoadComponent>
           )}
           {!featuredVideo && (
-            <LazyLoadComponent>
-              <Image
-                src={'/images/' + slug + '/' + featuredImage}
-                alt="Picture of the author"
-                layout="intrinsic"
-                objectFit="cover"
-                width={1.5 * 500}
-                height={1 * 500}
-              />
-            </LazyLoadComponent>
+            <Image
+              src={'/images/' + slug + '/' + featuredImage}
+              alt="Picture of the author"
+              layout="intrinsic"
+              objectFit="cover"
+              width={1.5 * 500}
+              height={1 * 500}
+            />
           )}
         </div>
         {videos &&

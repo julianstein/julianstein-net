@@ -1,12 +1,14 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 import Layout, { siteTitle } from '../components/layout';
 
 const IndexPage = () => {
   return (
     <div className=" flex ">
-      <div className=" text-3xl w-5/6 relative text-left my-20 ml-5 mr-10">
+      <div className="hidden md:visible text-3xl w-5/6 relative text-left my-20 ml-5 mr-10">
         <Image
           src="/IBG_0006.png"
           alt="Picture of the author"

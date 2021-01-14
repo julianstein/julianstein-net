@@ -3,6 +3,7 @@ import slugify from 'slugify';
 import Projects from './projects';
 import * as Icon from 'react-feather';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const links = [
   'a room that i take care of',
@@ -20,20 +21,19 @@ const links = [
   'montreal sound map'
 ];
 
-const Nav = (router) => {
+const Nav = () => {
+  const router = useRouter();
+
   const [active, setActive] = useState(null);
 
-  router = router.router;
   let path = router.asPath;
-  console.log(path);
 
   let slugs = [];
   slugs = links.map((value) => `/${slugify(value, { lower: true, strict: true })}`);
 
   useEffect(() => {
     setActive(slugs.indexOf(path));
-  });
-  console.log(active);
+  }, [path]);
 
   //let activeSlug = slugs.filter((slug) => slug === path);
   // console.log(activeSlug);
@@ -56,7 +56,7 @@ const Nav = (router) => {
           </Link>
         </ul>
         <div className="text-left text-sm text-black">
-          <Projects active={active} />
+          <Projects active={active} path={path} />
 
           <ul className="hidden md:block leading-tight tracking-tight">
             {links.map((value, index) => (
