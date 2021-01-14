@@ -6,7 +6,7 @@ import EmbedPlayer from '../components/EmbedPlayer';
 import PrintMarkdown from '../components/PrintMarkdown';
 import { getAllDynamicPages, getDynamicPageContentBySlug } from '../lib/markdown';
 
-const DynamicPage = ({ page }) => {
+const DynamicPage = ({ page, posts }) => {
   const {
     title,
     subtitle,
@@ -18,6 +18,9 @@ const DynamicPage = ({ page }) => {
     featuredVideo,
     videos
   } = page;
+
+  console.log(posts);
+
   return (
     <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">
       <div className=" text-3xl w-auto relative flex-initial text-left mb-20 xl:mt-20 mx-3 xl:ml-5 xl:mr-5 md:mt-8 md:ml-8 md:mr-10  ">
@@ -106,10 +109,25 @@ export async function getStaticProps({ params }) {
     'featuredVideo'
   ]);
 
+  const posts = getAllDynamicPages([
+    'title',
+    'subtitle',
+    'slug',
+    'year',
+    'content',
+    'images',
+    'featuredImage',
+    'videos',
+    'featuredVideo'
+  ]);
+
   return {
     props: {
       page: {
         ...page
+      },
+      posts: {
+        ...posts
       }
     }
   };
@@ -117,6 +135,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const posts = getAllDynamicPages(['slug']);
+
   const paths = posts.map(({ slug }) => ({
     params: {
       slug

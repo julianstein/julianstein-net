@@ -23,8 +23,7 @@ const App = ({ Component, pageProps, router }) => {
               opacity: 1
             },
             pageExit: {
-              opacity: 0,
-              backgroundColor: 'white'
+              opacity: 0
             }
           }}>
           <Component {...pageProps} />
