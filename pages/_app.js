@@ -2,8 +2,6 @@ import '../styles/index.scss';
 import 'nprogress/nprogress.css'; //styles of nprogress
 
 import { AnimatePresence, motion } from 'framer-motion';
-import Router from 'next/router';
-import NProgress from 'nprogress'; //nprogress module
 
 import Layout from '../components/layout';
 
