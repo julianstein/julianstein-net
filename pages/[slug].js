@@ -32,6 +32,7 @@ const DynamicPage = ({ page, posts }) => {
           )}
           {!featuredVideo && (
             <Image
+              priority="true"
               src={'/images/' + slug + '/' + featuredImage}
               alt="Picture of the author"
               layout="intrinsic"
@@ -53,6 +54,7 @@ const DynamicPage = ({ page, posts }) => {
         {images.map((image, index) => (
           <div className="mb-8" key={index}>
             <Image
+              priority="true"
               src={'/images/' + slug + '/' + image}
               alt="Picture of the author"
               layout="intrinsic"
@@ -72,6 +74,7 @@ const DynamicPage = ({ page, posts }) => {
           )}
           {!featuredVideo && (
             <Image
+              priority="true"
               src={'/images/' + slug + '/' + featuredImage}
               alt="Picture of the author"
               layout="intrinsic"
