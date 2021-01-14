@@ -71,18 +71,4 @@ export async function getStaticProps() {
   };
 }
 
-export async function getStaticPaths() {
-  const posts = getAllDynamicPages(['slug']);
-
-  const paths = posts.map(({ slug }) => ({
-    params: {
-      slug
-    }
-  }));
-  return {
-    paths,
-    fallback: false
-  };
-}
-
 export default DynamicPage;
