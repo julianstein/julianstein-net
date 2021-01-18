@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 import EmbedPlayer from '../components/EmbedPlayer';
+import FadeInSection from '../components/FadeInSection';
 import PrintMarkdown from '../components/PrintMarkdown';
 import { getAllDynamicPages, getDynamicPageContentBySlug } from '../lib/markdown';
 
@@ -18,8 +20,6 @@ const DynamicPage = ({ page, posts }) => {
     featuredVideo,
     videos
   } = page;
-
-  console.log(posts);
 
   return (
     <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">
@@ -50,18 +50,19 @@ const DynamicPage = ({ page, posts }) => {
               </LazyLoadComponent>
             </div>
           ))}
-
         {images.map((image, index) => (
           <div className="mb-8" key={index}>
-            <Image
-              priority="true"
-              src={'/images/' + slug + '/' + image}
-              alt="Picture of the author"
-              layout="intrinsic"
-              objectFit="cover"
-              width={1.5 * 500}
-              height={1 * 500}
-            />
+            <FadeInSection>
+              <Image
+                priority="true"
+                src={'/images/' + slug + '/' + image}
+                alt="Picture of the author"
+                layout="intrinsic"
+                objectFit="cover"
+                width={1.5 * 500}
+                height={1 * 500}
+              />
+            </FadeInSection>
           </div>
         ))}
       </div>

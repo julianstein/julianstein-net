@@ -17,6 +17,20 @@ h3 {
   padding-bottom: 0.5rem;
   letter-spacing: -0.025em;
 }
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(10vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
 /* Write your own custom base styles here */
 
 /* Start purging... */
