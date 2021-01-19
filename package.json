@@ -7,7 +7,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@vimeo/player": "^2.14.1",
     "date-fns": "^2.16.1",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -22,10 +21,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.9",
-    "react-flip-toolkit": "^7.0.13",
     "react-lazy-load-image-component": "^1.5.1",
     "react-player": "^2.7.2",
-    "react-spring": "^8.0.27",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "remark-parse": "^9.0.0",
@@ -33,9 +30,6 @@
     "sass": "^1.32.0",
     "sharp": "^0.26.2",
     "slugify": "^1.4.6",
-    "styled-components": "^5.2.1",
-    "unified": "^9.2.0",
-    "vimeo": "^2.1.1"
   },
   "devDependencies": {
     "autoprefixer": "10.0.2",
