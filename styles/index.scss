@@ -25,6 +25,21 @@ h3 {
   transition: opacity 0.8s ease-in-out, transform 1s ease-in-out;
   will-change: opacity, visibility;
 }
+
+.back-to-top {
+  opacity: 0;
+  transform: translateY(0vh);
+  visibility: hidden;
+  transition: opacity 2s ease-in-out, transform 2s ease-out;
+  will-change: opacity, visibility;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
