@@ -8,7 +8,7 @@ export const siteTitle = 'julian stein';
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div id="top">
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>

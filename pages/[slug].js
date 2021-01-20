@@ -23,7 +23,7 @@ const DynamicPage = ({ page, posts }) => {
   } = page;
 
   return (
-    <div id="top">
+    <div>
       <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">
         <div className=" text-3xl w-auto relative flex-initial text-left mb-20 xl:mt-20 mx-3 xl:ml-5 xl:mr-5 md:mt-8 md:ml-8 md:mr-10  ">
           <div className="mb-8 hidden xl:flex">
