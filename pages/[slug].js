@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import * as Icon from 'react-feather';
+import Link from 'next/link';
 
 import EmbedPlayer from '../components/EmbedPlayer';
 import FadeInSection from '../components/FadeInSection';
@@ -69,9 +70,11 @@ const DynamicPage = ({ page, posts }) => {
           ))}{' '}
           <FadeInSection name="back-to-top">
             <p className="text-right ">
-              <a href="#top">
-                <Icon.ChevronUp className=" w-12 h-12 inline" />
-              </a>
+              <Link href={'/' + slug + '#top'} as={'/' + slug}>
+                <a href="#top">
+                  <Icon.ChevronUp className=" w-12 h-12 inline" />
+                </a>
+              </Link>
             </p>
           </FadeInSection>
         </div>
