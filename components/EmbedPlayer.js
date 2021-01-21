@@ -12,7 +12,7 @@ const EmbedPlayer = (src, img, slug) => {
   // console.log('/images/' + slug + '/' + img);
 
   const handleEnded = () => {
-    console.log('onEnded');
+    //  console.log('onEnded');
     player.current.showPreview();
   };
 
