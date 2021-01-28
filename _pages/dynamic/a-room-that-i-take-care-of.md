@@ -3,20 +3,20 @@ title: 'a room that i take care of'
 subtitle: 'responsive installation'
 year: '2019'
 featuredVideo: '344031360'
-featuredImage: 'IBG_0006.png'
+featuredImage: [IBG_0006.png, 1.5]
 images:
   [
-    IBG_0015.png,
-    IBG_0032.png,
-    steinj_02.png,
-    steinj_03.png,
-    steinj_04.png,
-    steinj_05.png,
-    IBG_9864.jpg,
-    IBG_9874.jpg,
-    IBG_9879.jpg,
-    IBG_9880.jpg,
-    IBG_9882.jpg
+    [IBG_0015.png, 1.5],
+    [IBG_0032.png, 1.5],
+    [steinj_02.png, 1.5],
+    [steinj_03.png, 1.5],
+    [steinj_04.png, 1.5],
+    [steinj_05.png, 1.5],
+    [IBG_9864.jpg, 1.5],
+    [IBG_9874.jpg, 1.5],
+    [IBG_9879.jpg, 1.5],
+    [IBG_9880.jpg, 1.5],
+    [IBG_9882.jpg, 1.5]
   ]
 ---
 

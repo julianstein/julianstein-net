@@ -1,12 +1,10 @@
 import ReactPlayer from 'react-player/lazy';
 import { useRef, useEffect } from 'react';
 
-const EmbedPlayer = (src, img, slug) => {
+const EmbedPlayer = (props) => {
   const player = useRef(null);
 
-  img = src.img;
-  slug = src.slug;
-  src = src.src;
+  const { img, slug, src } = props;
 
   //  console.log(src);
   // console.log('/images/' + slug + '/' + img);

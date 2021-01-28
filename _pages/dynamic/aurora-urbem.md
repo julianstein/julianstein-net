@@ -2,20 +2,17 @@
 title: 'aurora urbem'
 subtitle: 'kinetic sculpture & video installation'
 year: '2011'
-featuredImage: '43242.png'
+featuredImage: [aurora_01.jpg, 1.5]
 images:
   [
-    3423423.png,
-    Aurora_Select_0006.jpg,
-    Aurora_Select_0007.jpg,
-    Aurora_Select_0008.jpg,
-    Aurora_Select_0011.jpg,
-    Picture+1.png,
-    Picture+3.png,
-    Picture12.png,
-    pop_jpg_-01.jpg,
-    pop_jpg_-07.jpg,
-    pop_jpg_-08.jpg
+    [aurora_02.jpg, 0.666666667],
+    [aurora_03.jpg, 1.5],
+    [aurora_04.jpg, 1.5],
+    [aurora_05.jpg, 1.5],
+    [aurora_06.jpg, 1.5],
+    [aurora_07.jpg, 1.5],
+    [aurora_08.jpg, 1.5],
+    [aurora_09.jpg, 1.5]
   ]
 ---
 

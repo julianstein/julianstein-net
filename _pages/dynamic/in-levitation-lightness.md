@@ -2,8 +2,13 @@
 title: 'in levitation, lightness'
 subtitle: 'mixed-music'
 year: '2015'
-featuredImage: 'IM5_3366_HiRes.jpg'
-images: [IM5_3374_HiRes.jpg, IM5_3375_HiRes.jpg, IM5_3377_HiRes.jpg]
+featuredImage: [IM5_3366_HiRes.jpg, 1.5]
+images:
+  [
+    [IM5_3374_HiRes.jpg, 0.666666667],
+    [IM5_3375_HiRes.jpg, 0.666666667],
+    [IM5_3377_HiRes.jpg, 0.666666667]
+  ]
 ---
 
 ### brass quintet, electronics, light producing snare drums, custom electronics, custom software

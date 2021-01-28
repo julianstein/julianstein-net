@@ -3,17 +3,17 @@ title: 'structure couples'
 subtitle: 'generative audiovisual composition'
 year: '2018'
 featuredVideo: '344035370'
-featuredImage: 'Screenshot4.jpg'
+featuredImage: [Screenshot4.jpg, 1.5]
 images:
   [
-    Screenshot6.jpg,
-    Screenshot9.jpg,
-    Screenshot2.jpg,
-    Screenshot15.jpg,
-    Screenshot18.jpg,
-    Screenshot20.jpg,
-    Screenshot21.jpg,
-    Screenshot26.jpg
+    [Screenshot6.jpg, 1.5],
+    [Screenshot9.jpg, 1.5],
+    [Screenshot2.jpg, 1.5],
+    [Screenshot15.jpg, 1.5],
+    [Screenshot18.jpg, 1.5],
+    [Screenshot20.jpg, 1.5],
+    [Screenshot21.jpg, 1.5],
+    [Screenshot26.jpg, 1.5]
   ]
 ---
 

@@ -3,25 +3,25 @@ title: 'music for lamps'
 subtitle: 'audiovisual performance'
 year: '2012'
 featuredVideo: '86942447'
-featuredImage: '_MG_9387.jpg'
+featuredImage: [_MG_9387.jpg, 1.5]
 images:
   [
-    _MG_9398.jpg,
-    _MG_9433.jpg,
-    16664960_10155498682639879_1895354620637805921_o.jpg,
-    16665113_10155498681154879_5175109940094436888_o.jpg,
-    16715966_10155498680659879_621698374527124368_o.jpg,
-    18125315360_a062ee3df2_o.jpg,
-    18126379410_9c0c0729e4_o.jpg,
-    18309806552_69e1b1dfd8_o.jpg,
-    18315588281_45029ec3f0_o.jpg,
-    DSCF5837.jpg,
-    DSCF5928.jpg,
-    DSCF5931+-+Version+2.jpg,
-    DSCF6001.jpg,
-    DSCF6016.jpg,
-    IMG_1812.jpg,
-    timthumb.jpeg
+    [_MG_9398.jpg, 1.5],
+    [_MG_9433.jpg, 1.5],
+    [16664960_10155498682639879_1895354620637805921_o.jpg, 1.5],
+    [16665113_10155498681154879_5175109940094436888_o.jpg, 1.5],
+    [16715966_10155498680659879_621698374527124368_o.jpg, 1.5],
+    [18125315360_a062ee3df2_o.jpg, 1.5],
+    [18126379410_9c0c0729e4_o.jpg, 1.5],
+    [18309806552_69e1b1dfd8_o.jpg, 1.5],
+    [18315588281_45029ec3f0_o.jpg, 1.5],
+    [DSCF5837.jpg, 1.5],
+    [DSCF5928.jpg, 1.5],
+    [DSCF5931+-+Version+2.jpg, 1.5],
+    [DSCF6001.jpg, 1.5],
+    [DSCF6016.jpg, 1.5],
+    [IMG_1812.jpg, 1.5],
+    [timthumb.jpeg, 1.5]
   ]
 ---
 

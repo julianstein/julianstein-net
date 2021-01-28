@@ -3,17 +3,17 @@ title: 'invisible lines'
 subtitle: 'generative sound installation'
 year: '2013'
 featuredVideo: '78427816'
-featuredImage: '10InvisibleLines.jpg'
+featuredImage: [10InvisibleLines.jpg, 1.5]
 images:
   [
-    11InvisibleLines.jpg,
-    1508575_608358322573719_1576603077_n.jpg,
-    1656433_608358379240380_1513747182_n.jpg,
-    1932269_608358362573715_1336765978_n.jpg,
-    IMG_0277.jpg,
-    IMG_0299.jpg,
-    IMG_6710.jpg,
-    IMG_6774.jpg
+    [11InvisibleLines.jpg, 1.5],
+    [1508575_608358322573719_1576603077_n.jpg, 1.5],
+    [1656433_608358379240380_1513747182_n.jpg, 1.5],
+    [1932269_608358362573715_1336765978_n.jpg, 1.5],
+    [IMG_0277.jpg, 1],
+    [IMG_0299.jpg, 1.5],
+    [IMG_6710.jpg, 1.5],
+    [IMG_6774.jpg, 1.5]
   ]
 ---
 

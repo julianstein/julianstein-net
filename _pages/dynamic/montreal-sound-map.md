@@ -2,16 +2,16 @@
 title: 'montreal sound map'
 subtitle: 'online audio archive'
 year: '2009'
-featuredImage: 'Montréal-Sound-Map-1024x639.jpg'
+featuredImage: [Montréal-Sound-Map-1024x639.jpg, 1.5]
 images:
   [
-    montrealsoundmap-1.jpg,
-    montrealsoundmap-2.jpg,
-    montrealsoundmap-3.jpg,
-    montrealsoundmap-4.jpg,
-    montrealsoundmap-5.jpg,
-    montrealsoundmap-6.jpg,
-    montrealsoundmap-cca.jpg
+    [montrealsoundmap-1.jpg, 1.5],
+    [montrealsoundmap-2.jpg, 1.5],
+    [montrealsoundmap-3.jpg, 1.5],
+    [montrealsoundmap-4.jpg, 1.5],
+    [montrealsoundmap-5.jpg, 1.5],
+    [montrealsoundmap-6.jpg, 1.5],
+    [montrealsoundmap-cca.jpg, 1.5]
   ]
 ---
 

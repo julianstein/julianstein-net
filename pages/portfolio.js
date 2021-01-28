@@ -40,9 +40,6 @@ const DynamicPage = ({ posts }) => {
             {title} ({year})
           </h1>
           <h1 className="text-sm pb-4">{subtitle}</h1>
-          <p className="text-sm">
-            <PrintMarkdown markdown={content} />
-          </p>
         </div>
       ))}
     </div>
