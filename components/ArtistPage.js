@@ -30,6 +30,7 @@ const ArtistPage = ({ page }) => {
 
   const [imgRand, setImgRand] = useState(null);
   //const [imgDim, setImgDim] = useState(null);
+  const [rowLen, setRowLen] = useState(125);
 
   const size = 500;
 
@@ -38,16 +39,18 @@ const ArtistPage = ({ page }) => {
   Object.values(imgs).map((val, i) => imgElem.push([val.naturalWidth, val.naturalHeight]));
   setImgDim(imgElem);*/
 
-  const rowLen = [100, 200, 300];
-
   useLayoutEffect(() => {
     setImgRand(images.sort(() => Math.random() - 0.5));
+    let rowArr = [100, 125, 150, 175, 200];
+    rowArr.sort(() => Math.random() - 0.5);
+    setRowLen(rowArr[0]);
   }, []);
+  console.log(rowLen);
 
   return (
     <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">
       <div className=" text-3xl w-auto relative flex-initial text-left mb-20 xl:mt-20 mx-3 xl:ml-5 xl:mr-5 md:mt-8 md:ml-8 md:mr-10  ">
-        <div className="mb-8 hidden xl:flex">
+        <div className="mb-8 mx-1.5 hidden xl:flex">
           {featuredVideo && (
             <LazyLoadComponent>
               <EmbedPlayer src={featuredVideo} img={featuredImage[0]} slug={slug} />
@@ -68,8 +71,8 @@ const ArtistPage = ({ page }) => {
                 className="m-1.5 relative "
                 key={i}
                 style={{
-                  width: `${(image[1] * size * 125) / size}px`,
-                  flexGrow: `${(image[1] * size * 125) / size}`
+                  width: `${(image[1] * size * rowLen) / size}px`,
+                  flexGrow: `${(image[1] * size * rowLen) / size}`
                 }}>
                 <i
                   className="block"
@@ -90,7 +93,7 @@ const ArtistPage = ({ page }) => {
         </div>
 
         <FadeInSection name="back-to-top">
-          <p className="text-right ">
+          <p className="text-right mt-4 ">
             <Link href={'/' + slug + '#top'} as={'/' + slug}>
               <a href="#top">
                 <Icon.ChevronUp className=" w-12 h-12 inline" />
@@ -100,7 +103,7 @@ const ArtistPage = ({ page }) => {
         </FadeInSection>
       </div>
       <div className="text-3xl w-auto flex-shrink mx-3 xl:w-1/4 xl:flex-shrink-0 text-left mt-0 mb-8 md:mb-0 md:mt-20 md:ml-8 xl:mr-20 md:mr-10 ">
-        <div className="mb-8 flex xl:hidden">
+        <div className="mb-8 mx-1.5 flex xl:hidden">
           {featuredVideo && (
             <LazyLoadComponent>
               <EmbedPlayer src={featuredVideo} img={featuredImage[0]} slug={slug} />
@@ -114,14 +117,16 @@ const ArtistPage = ({ page }) => {
             />
           )}
         </div>
-        <h1 className="text-sm font-bold">
-          {title} ({year})
-        </h1>
-        <h1 className="text-sm pb-4">{subtitle}</h1>
+        <div className="mx-1.5">
+          <h1 className="text-sm font-bold">
+            {title} ({year})
+          </h1>
+          <h1 className="text-sm pb-4">{subtitle}</h1>
 
-        <p className="text-sm">
-          <PrintMarkdown markdown={content} />
-        </p>
+          <p className="text-sm">
+            <PrintMarkdown markdown={content} />
+          </p>
+        </div>
       </div>
     </div>
   );
