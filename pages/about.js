@@ -1,6 +1,17 @@
 import Head from 'next/head';
 import Image from 'next/image';
 
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import * as Icon from 'react-feather';
+import Link from 'next/link';
+
+import EmbedPlayer from '../components/EmbedPlayer';
+import TheImage from '../components/TheImage';
+
+import FadeInSection from '../components/FadeInSection';
+import PrintMarkdown from '../components/PrintMarkdown';
+import React, { useLayoutEffect, useState } from 'react';
+
 import Layout, { siteTitle } from '../components/layout';
 
 const AboutPage = () => {

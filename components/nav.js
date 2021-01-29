@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 const links = [
+  'recent sketches, 2020',
   'a room that i take care of',
   'structure couples',
   'rhythm assemblage',

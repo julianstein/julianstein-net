@@ -45,7 +45,6 @@ const ArtistPage = ({ page }) => {
     rowArr.sort(() => Math.random() - 0.5);
     setRowLen(rowArr[0]);
   }, []);
-  console.log(rowLen);
 
   return (
     <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">
