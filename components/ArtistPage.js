@@ -93,16 +93,6 @@ const ArtistPage = (props) => {
               </div>
             ))}
         </div>
-
-        <FadeInSection name="back-to-top">
-          <p className="text-right mt-4 ">
-            <Link href={'/' + slug + '#top'} as={'/' + slug}>
-              <a href="#top">
-                <Icon.ChevronUp className=" w-12 h-12 inline" />
-              </a>
-            </Link>
-          </p>
-        </FadeInSection>
       </div>
       <div className="text-3xl w-auto flex-shrink mx-3 xl:w-1/4 xl:flex-shrink-0 text-left mt-0 mb-8 md:mb-0 md:mt-20 md:ml-8 xl:mr-20 md:mr-10 ">
         <div className="mb-8 mx-1.5 flex xl:hidden">

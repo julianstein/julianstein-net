@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Nav from '../components/nav';
-import Projects from '../components/projects';
 
 //const name = 'Julian Stein';
 export const siteTitle = 'julian stein';
