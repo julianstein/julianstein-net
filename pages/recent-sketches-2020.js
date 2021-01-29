@@ -46,7 +46,7 @@ const VideoPage = () => {
   return (
     <div className=" flex">
       <div className=" text-3xl w-auto relative flex-initial text-left mb-20 xl:mt-20 mx-3 xl:ml-5 xl:mr-5 md:mt-8 md:ml-8 md:mr-10  ">
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap mr-9 sm:mr-0 md:mr-9">
           {vidRand !== null &&
             vidRand.map((video, i) => (
               <div
@@ -66,7 +66,7 @@ const VideoPage = () => {
                       loop
                       width="1000"
                       height="720"
-                      playsinline
+                      playsInLine
                       autoPlay
                       muted
                       className="absolute w-full h-full align-bottom top-0 object-cover">
