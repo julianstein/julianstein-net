@@ -33,15 +33,17 @@ const App = ({ Component, pageProps, router }) => {
           <Component {...pageProps} />
         </motion.div>
       </AnimatePresence>
-      <FadeInSection name="back-to-top">
-        <p className="text-right -mt-8 mb-8 ">
-          <Link href={router.asPath + '#top'} as={router.asPath}>
-            <a href="#top">
-              <Icon.ChevronUp className=" w-12 h-12 inline" />
-            </a>
-          </Link>
-        </p>
-      </FadeInSection>
+      {router.asPath !== '/' && (
+        <FadeInSection name="back-to-top">
+          <p className="text-right -mt-8 mb-8 ">
+            <Link href={router.asPath + '#top'} as={router.asPath}>
+              <a href="#top">
+                <Icon.ChevronUp className=" w-12 h-12 inline" />
+              </a>
+            </Link>
+          </p>
+        </FadeInSection>
+      )}
     </Layout>
   );
 };
