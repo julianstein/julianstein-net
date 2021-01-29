@@ -4,6 +4,7 @@ import slugify from 'slugify';
 import { AnimatePresence, motion, AnimateSharedLayout } from 'framer-motion';
 
 const links = [
+  'recent sketches, 2020',
   'a room that i take care of',
   'structure couples',
   'rhythm assemblage',
