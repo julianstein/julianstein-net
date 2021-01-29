@@ -39,23 +39,52 @@ const VideoPage = () => {
   }, []);
 
   const videos = [
-    'steinj-video_01.m4v',
-    'steinj-video_02.m4v',
-    'steinj-video_03.m4v',
-    'steinj-video_04.m4v',
-    'steinj-video_05.m4v',
-    'steinj-video_06.m4v',
-    'steinj-video_07.m4v',
-    'steinj-video_08.m4v',
-    'steinj-video_09.m4v',
-    'steinj-video_10.m4v',
-    'steinj-video_11.m4v',
-    'steinj-video_12.m4v',
-    'steinj-video_13.m4v',
-    'steinj-video_14.m4v',
-    'steinj-video_15.m4v',
-    'steinj-video_16.m4v'
+    'steinj-video_01',
+    'steinj-video_02',
+    'steinj-video_03',
+    'steinj-video_04',
+    'steinj-video_05',
+    'steinj-video_06',
+    'steinj-video_07',
+    'steinj-video_08',
+    'steinj-video_09',
+    'steinj-video_10',
+    'steinj-video_11',
+    'steinj-video_12',
+    'steinj-video_13',
+    'steinj-video_14',
+    'steinj-video_15',
+    'steinj-video_16'
   ];
+
+  useLayoutEffect(() => {
+    document.addEventListener('DOMContentLoaded', function () {
+      var lazyVideos = [].slice.call(document.querySelectorAll('video.lazy'));
+
+      if ('IntersectionObserver' in window) {
+        var lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (video) {
+            if (video.isIntersecting) {
+              for (var source in video.target.children) {
+                var videoSource = video.target.children[source];
+                if (typeof videoSource.tagName === 'string' && videoSource.tagName === 'SOURCE') {
+                  videoSource.src = videoSource.dataset.src;
+                }
+              }
+
+              video.target.load();
+              video.target.classList.remove('lazy');
+              lazyVideoObserver.unobserve(video.target);
+            }
+          });
+        });
+
+        lazyVideos.forEach(function (lazyVideo) {
+          lazyVideoObserver.observe(lazyVideo);
+        });
+      }
+    });
+  }, []);
 
   return (
     <div className=" flex">
@@ -82,9 +111,10 @@ const VideoPage = () => {
                       height="720"
                       playsInline
                       autoPlay
+                      poster={'/images/sketches-stills/' + video + '.jpg'}
                       muted
                       className="absolute w-full h-full align-bottom top-0 object-cover">
-                      <source src={'/videos/' + video}></source>
+                      <source src={'/videos/' + video + '.m4v'}></source>
                     </video>
                   </i>
                 </FadeInSection>
