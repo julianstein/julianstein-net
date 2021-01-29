@@ -23,7 +23,6 @@ const EmbedPlayer = (props) => {
     onLoad();
   });
   {
-    console.log(src);
   }
   type === 'player'
     ? (output = (

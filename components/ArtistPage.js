@@ -11,7 +11,9 @@ import FadeInSection from './FadeInSection';
 import PrintMarkdown from './PrintMarkdown';
 import React, { useLayoutEffect, useState } from 'react';
 
-const ArtistPage = ({ page }) => {
+const ArtistPage = (props) => {
+  const { page, windowSize } = props;
+
   const {
     title,
     subtitle,
@@ -41,10 +43,11 @@ const ArtistPage = ({ page }) => {
 
   useLayoutEffect(() => {
     setImgRand(images.sort(() => Math.random() - 0.5));
-    let rowArr = [100, 125, 150, 175, 200];
-    rowArr.sort(() => Math.random() - 0.5);
-    setRowLen(rowArr[0]);
   }, []);
+
+  useLayoutEffect(() => {
+    windowSize.width >= 640 ? setRowLen(125) : setRowLen(80);
+  }, [windowSize]);
 
   return (
     <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import slugify from 'slugify';
 import Projects from './projects';
 import * as Icon from 'react-feather';
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { useRouter } from 'next/router';
 
 const links = [
@@ -32,7 +32,7 @@ const Nav = () => {
   let slugs = [];
   slugs = links.map((value) => `/${slugify(value, { lower: true, strict: true })}`);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setActive(slugs.indexOf(path));
   }, [path]);
 

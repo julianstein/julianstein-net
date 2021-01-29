@@ -4,24 +4,38 @@ import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import * as Icon from 'react-feather';
 import Link from 'next/link';
 
-import EmbedPlayer from '../components/EmbedPlayer';
-
 import FadeInSection from '../components/FadeInSection';
-import PrintMarkdown from '../components/PrintMarkdown';
 import React, { useLayoutEffect, useState } from 'react';
+import useWindowSize from '../hooks/useWindowSize';
 
 const VideoPage = () => {
   const [vidRand, setVidRand] = useState(null);
   const [rowLen, setRowLen] = useState(125);
+  const windowSize = useWindowSize();
 
   const size = 200;
   const width = 1.5;
 
   useLayoutEffect(() => {
+    windowSize.width >= 1327
+      ? setRowLen(250)
+      : windowSize.width >= 1100
+      ? setRowLen(180)
+      : windowSize.width >= 1024
+      ? setRowLen(140)
+      : windowSize.width >= 900
+      ? setRowLen(120)
+      : windowSize.width >= 768
+      ? setRowLen(80)
+      : windowSize.width >= 640
+      ? setRowLen(150)
+      : windowSize.width >= 560
+      ? setRowLen(150)
+      : setRowLen(80);
+  }, [windowSize]);
+
+  useLayoutEffect(() => {
     setVidRand(videos.sort(() => Math.random() - 0.5));
-    let rowArr = [200];
-    rowArr.sort(() => Math.random() - 0.5);
-    setRowLen(rowArr[0]);
   }, []);
 
   const videos = [

@@ -56,7 +56,7 @@ const Projects = (active, path) => {
                   initial="pageInitial"
                   animate="pageAnimate"
                   exit="pageExit"
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.3 }}
                   variants={{
                     pageInitial: {
                       opacity: 0
