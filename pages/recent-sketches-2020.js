@@ -57,35 +57,6 @@ const VideoPage = () => {
     'steinj-video_16'
   ];
 
-  useLayoutEffect(() => {
-    document.addEventListener('DOMContentLoaded', function () {
-      var lazyVideos = [].slice.call(document.querySelectorAll('video.lazy'));
-
-      if ('IntersectionObserver' in window) {
-        var lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
-          entries.forEach(function (video) {
-            if (video.isIntersecting) {
-              for (var source in video.target.children) {
-                var videoSource = video.target.children[source];
-                if (typeof videoSource.tagName === 'string' && videoSource.tagName === 'SOURCE') {
-                  videoSource.src = videoSource.dataset.src;
-                }
-              }
-
-              video.target.load();
-              video.target.classList.remove('lazy');
-              lazyVideoObserver.unobserve(video.target);
-            }
-          });
-        });
-
-        lazyVideos.forEach(function (lazyVideo) {
-          lazyVideoObserver.observe(lazyVideo);
-        });
-      }
-    });
-  }, []);
-
   return (
     <div className=" flex">
       <div className=" text-3xl w-auto relative flex-initial text-left mb-20 xl:mt-20 mx-3 xl:ml-5 xl:mr-5 md:mt-8 md:ml-8 md:mr-10  ">
