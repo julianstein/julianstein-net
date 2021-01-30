@@ -62,34 +62,33 @@ const VideoPage = () => {
         <div className="flex flex-wrap">
           {vidRand !== null &&
             vidRand.map((video, i) => (
-              <LazyLoadComponent key={i}>
-                <div
-                  className="m-1.5 relative"
+              <div
+                className="m-1.5 relative"
+                key={i}
+                style={{
+                  width: `${(width * size * rowLen) / size}px`,
+                  flexGrow: `${(width * size * rowLen) / size}`
+                }}>
+                <i
+                  className="block"
                   style={{
-                    width: `${(width * size * rowLen) / size}px`,
-                    flexGrow: `${(width * size * rowLen) / size}`
+                    paddingBottom: `${(size / (width * size)) * 100}%`
                   }}>
                   <FadeInSection>
-                    <i
-                      className="block"
-                      style={{
-                        paddingBottom: `${(size / (width * size)) * 100}%`
-                      }}>
-                      <video
-                        loop
-                        width="1000"
-                        height="720"
-                        playsInline
-                        autoPlay
-                        poster={'/images/sketches-stills/' + video + '.jpg'}
-                        muted
-                        className="absolute w-full h-full align-bottom top-0 object-cover">
-                        <source src={'/videos/' + video + '.m4v'}></source>
-                      </video>
-                    </i>
+                    <video
+                      loop
+                      width="1000"
+                      height="720"
+                      playsInline
+                      autoPlay
+                      poster={'/images/sketches-stills/' + video + '.jpg'}
+                      muted
+                      className="absolute w-full h-full align-bottom top-0 object-cover">
+                      <source src={'/videos/' + video + '.m4v'}></source>
+                    </video>
                   </FadeInSection>
-                </div>
-              </LazyLoadComponent>
+                </i>
+              </div>
             ))}
         </div>
       </div>
