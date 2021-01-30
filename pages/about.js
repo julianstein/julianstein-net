@@ -10,7 +10,7 @@ import TheImage from '../components/TheImage';
 
 import FadeInSection from '../components/FadeInSection';
 import PrintMarkdown from '../components/PrintMarkdown';
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Layout, { siteTitle } from '../components/layout';
 

@@ -11,7 +11,7 @@ import Layout from '../components/layout';
 
 const App = ({ Component, pageProps, router }) => {
   return (
-    <Layout path={router.asPath}>
+    <Layout>
       <AnimatePresence exitBeforeEnter>
         <motion.div
           key={router.asPath}

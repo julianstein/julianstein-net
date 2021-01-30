@@ -45,10 +45,6 @@ const ArtistPage = (props) => {
     setImgRand(images.sort(() => Math.random() - 0.5));
   }, []);
 
-  useEffect(() => {
-    windowSize.width >= 640 ? setRowLen(125) : setRowLen(80);
-  }, []);
-
   return (
     <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">
       <div className=" text-3xl w-auto relative flex-initial text-left mb-20 xl:mt-20 mx-3 xl:ml-5 xl:mr-5 md:mt-8 md:ml-8 md:mr-10  ">
