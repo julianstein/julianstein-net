@@ -13,7 +13,6 @@ const VideoPage = () => {
 
   const size = 200;
   const width = 1.5;
-
   useEffect(() => {
     setVidRand(videos.sort(() => Math.random() - 0.5));
   }, []);
@@ -58,8 +57,8 @@ const VideoPage = () => {
                     }}>
                     <video
                       loop
-                      width="1000"
-                      height="720"
+                      width="640"
+                      height="360"
                       playsInline
                       autoPlay
                       poster={'/images/sketches-stills/' + video + '.jpg'}
