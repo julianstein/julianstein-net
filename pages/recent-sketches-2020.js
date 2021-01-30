@@ -13,9 +13,29 @@ const VideoPage = () => {
   const [vidRand, setVidRand] = useState(null);
   const [rowLen, setRowLen] = useState(250);
 
-  console.log(vidRand);
+  const windowSize = useWindowSize();
+
   const size = 200;
   const width = 1.5;
+
+  useEffect(() => {
+    windowSize.width >= 1327
+      ? setRowLen(250)
+      : windowSize.width >= 1100
+      ? setRowLen(180)
+      : windowSize.width >= 1024
+      ? setRowLen(140)
+      : windowSize.width >= 900
+      ? setRowLen(120)
+      : windowSize.width >= 768
+      ? setRowLen(80)
+      : windowSize.width >= 640
+      ? setRowLen(150)
+      : windowSize.width >= 560
+      ? setRowLen(150)
+      : setRowLen(150);
+  }, [windowSize]);
+
   useEffect(() => {
     setVidRand(videos.sort(() => Math.random() - 0.5));
   }, []);
