@@ -62,20 +62,19 @@ const VideoPage = () => {
         <div className="flex flex-wrap">
           {vidRand !== null &&
             vidRand.map((video, i) => (
-              <div
-                className="m-1.5 relative"
-                key={i}
-                style={{
-                  width: `${(width * size * rowLen) / size}px`,
-                  flexGrow: `${(width * size * rowLen) / size}`
-                }}>
-                <FadeInSection>
-                  <i
-                    className="block"
-                    style={{
-                      paddingBottom: `${(size / (width * size)) * 100}%`
-                    }}>
-                    <LazyLoadComponent>
+              <LazyLoadComponent key={i}>
+                <div
+                  className="m-1.5 relative"
+                  style={{
+                    width: `${(width * size * rowLen) / size}px`,
+                    flexGrow: `${(width * size * rowLen) / size}`
+                  }}>
+                  <FadeInSection>
+                    <i
+                      className="block"
+                      style={{
+                        paddingBottom: `${(size / (width * size)) * 100}%`
+                      }}>
                       <video
                         loop
                         width="1000"
@@ -87,10 +86,10 @@ const VideoPage = () => {
                         className="absolute w-full h-full align-bottom top-0 object-cover">
                         <source src={'/videos/' + video + '.m4v'}></source>
                       </video>
-                    </LazyLoadComponent>
-                  </i>
-                </FadeInSection>
-              </div>
+                    </i>
+                  </FadeInSection>
+                </div>
+              </LazyLoadComponent>
             ))}
         </div>
       </div>
