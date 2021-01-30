@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import Link from 'next/link';
+import LazyLoad from 'react-lazyload';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import TheVideo from '../components/TheVideo';
 
 import FadeInSection from '../components/FadeInSection';
 import React, { useEffect, useState } from 'react';
@@ -11,6 +13,7 @@ const VideoPage = () => {
   const [vidRand, setVidRand] = useState(null);
   const [rowLen, setRowLen] = useState(250);
 
+  console.log(vidRand);
   const size = 200;
   const width = 1.5;
   useEffect(() => {
@@ -55,17 +58,7 @@ const VideoPage = () => {
                     style={{
                       paddingBottom: `${(size / (width * size)) * 100}%`
                     }}>
-                    <video
-                      loop
-                      width="640"
-                      height="360"
-                      playsInline
-                      autoPlay
-                      poster={'/images/sketches-stills/' + video + '.jpg'}
-                      muted
-                      className="absolute w-full h-full align-bottom top-0 object-cover">
-                      <source src={'/videos/' + video + '.m4v'}></source>
-                    </video>
+                    <TheVideo src={video} />
                   </i>
                 </FadeInSection>
               </div>

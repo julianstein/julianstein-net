@@ -22,8 +22,7 @@ const EmbedPlayer = (props) => {
   useEffect(() => {
     onLoad();
   });
-  {
-  }
+
   type === 'player'
     ? (output = (
         <ReactPlayer

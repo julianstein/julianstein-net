@@ -18,7 +18,7 @@ const App = ({ Component, pageProps, router }) => {
           initial="pageInitial"
           animate="pageAnimate"
           exit="pageExit"
-          transition={{ duration: 0.25, type: 'tween' }}
+          transition={{ duration: 0.25 }}
           variants={{
             pageInitial: {
               opacity: 0
