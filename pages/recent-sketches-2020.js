@@ -75,17 +75,19 @@ const VideoPage = () => {
                     style={{
                       paddingBottom: `${(size / (width * size)) * 100}%`
                     }}>
-                    <video
-                      loop
-                      width="1000"
-                      height="720"
-                      playsInline
-                      autoPlay
-                      poster={'/images/sketches-stills/' + video + '.jpg'}
-                      muted
-                      className="absolute w-full h-full align-bottom top-0 object-cover">
-                      <source src={'/videos/' + video + '.m4v'}></source>
-                    </video>
+                    <LazyLoadComponent>
+                      <video
+                        loop
+                        width="1000"
+                        height="720"
+                        playsInline
+                        autoPlay
+                        poster={'/images/sketches-stills/' + video + '.jpg'}
+                        muted
+                        className="absolute w-full h-full align-bottom top-0 object-cover">
+                        <source src={'/videos/' + video + '.m4v'}></source>
+                      </video>
+                    </LazyLoadComponent>
                   </i>
                 </FadeInSection>
               </div>

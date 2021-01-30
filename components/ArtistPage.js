@@ -76,12 +76,14 @@ const ArtistPage = (props) => {
                   width: `${(image[1] * size * rowLen) / size}px`,
                   flexGrow: `${(image[1] * size * rowLen) / size}`
                 }}>
-                <TheImage
-                  src={'/images/' + slug + '/' + image[0]}
-                  width={image[1] * size}
-                  height={size}
-                  imgClass="absolute w-full align-bottom top-0"
-                />
+                <FadeInSection>
+                  <TheImage
+                    src={'/images/' + slug + '/' + image[0]}
+                    width={image[1] * size}
+                    height={size}
+                    imgClass="absolute w-full align-bottom top-0"
+                  />
+                </FadeInSection>
               </div>
             ))}
         </div>

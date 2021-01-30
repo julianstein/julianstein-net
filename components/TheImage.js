@@ -34,7 +34,7 @@ const TheImage = (props) => {
         </i>
       ))
     : (output = (
-        <span className={imgClass} ref={ref}>
+        <span>
           <Image
             className="images"
             priority="true"
