@@ -9,7 +9,7 @@ import TheImage from './TheImage';
 
 import FadeInSection from './FadeInSection';
 import PrintMarkdown from './PrintMarkdown';
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ArtistPage = (props) => {
   const { page, windowSize } = props;
@@ -41,13 +41,13 @@ const ArtistPage = (props) => {
   Object.values(imgs).map((val, i) => imgElem.push([val.naturalWidth, val.naturalHeight]));
   setImgDim(imgElem);*/
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setImgRand(images.sort(() => Math.random() - 0.5));
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     windowSize.width >= 640 ? setRowLen(125) : setRowLen(80);
-  }, [windowSize]);
+  }, []);
 
   return (
     <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">
@@ -76,20 +76,12 @@ const ArtistPage = (props) => {
                   width: `${(image[1] * size * rowLen) / size}px`,
                   flexGrow: `${(image[1] * size * rowLen) / size}`
                 }}>
-                <i
-                  className="block"
-                  style={{
-                    paddingBottom: `${(size / (image[1] * size)) * 100}%`
-                  }}>
-                  <FadeInSection>
-                    <TheImage
-                      src={'/images/' + slug + '/' + image[0]}
-                      width={image[1] * size}
-                      height={size}
-                      imgClass="absolute w-full align-bottom top-0"
-                    />
-                  </FadeInSection>
-                </i>
+                <TheImage
+                  src={'/images/' + slug + '/' + image[0]}
+                  width={image[1] * size}
+                  height={size}
+                  imgClass="absolute w-full align-bottom top-0"
+                />
               </div>
             ))}
         </div>
