@@ -7,15 +7,15 @@ export const siteTitle = 'julian stein';
 
 const Layout = ({ children }) => {
   return (
-    <div id="top">
+    <div id="top" className="px-4 sm:px-12 lg:px-20 pt-4 sm:py-8 md:py-16">
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header></header>
 
       <div className=" flex flex-col md:flex-row">
-        <Nav />
-        <main className="md:w-1/3 w-100 sm:mx-8 mx-5 flex-auto flex flex-col">{children}</main>
+        <Nav navClass="flex flex-col text-3xl text-left px-1.5 md:px-0 w-100 md:w-80 pb-8 " />
+        <main className="w-full md:w-3/4 flex-auto flex flex-col">{children}</main>
       </div>
     </div>
   );

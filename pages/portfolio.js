@@ -20,11 +20,11 @@ const DynamicPage = ({ posts }) => {
   } = posts;
 
   return (
-    <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">
+    <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse lg:flex-nowrap ">
       {Object.values(posts).map(({ slug, featuredImage, title, year, subtitle, content }) => (
         <div
           key={slug}
-          className="text-3xl w-auto flex-shrink mx-3 xl:w-1/4 xl:flex-shrink-0 text-left mt-0 mb-8 md:mb-0 md:mt-20 md:ml-8 xl:mr-20 md:mr-10 ">
+          className="text-3xl w-auto flex-shrink mx-3 lg:w-1/4 lg:flex-shrink-0 text-left mt-0 mb-8 md:mb-0 md:mt-20 md:ml-8 lg:mr-20 md:mr-10 ">
           <div className="mb-8 flex">
             <Image
               src={'/images/' + slug + '/' + featuredImage}

@@ -25,7 +25,7 @@ const ArtistPage = (props) => {
   //const [imgDim, setImgDim] = useState(null);
   const [rowLen, setRowLen] = useState(125);
 
-  const size = 500;
+  const size = 1000;
 
   /*let imgs = document.querySelectorAll('.images');
   let imgElem = [];
@@ -40,15 +40,15 @@ const ArtistPage = (props) => {
     windowSize.width >= 1400
       ? setRowLen(imageGrid !== undefined ? imageGrid : rowArr[0])
       : windowSize.width >= 640
-      ? setRowLen(125)
+      ? setRowLen(100)
       : setRowLen(100);
     console.log(rowLen);
     console.log(imageGrid);
   }, [imgRand]);
 
   return (
-    <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">
-      <div className=" text-3xl w-auto relative flex-initial text-left mb-20 xl:mt-20 mx-3 xl:ml-5 xl:mr-5 md:mt-8 md:ml-8 md:mr-10  ">
+    <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap md:pl-8 pt-3">
+      <div className=" text-3xl w-full relative flex-initial text-left pt-1 pb-20 md:px-3 xl:pr-8 xl:pr-12">
         <div className="mb-1 mx-1.5 hidden xl:flex">
           {featuredVideo && (
             <LazyLoadComponent>
@@ -85,8 +85,8 @@ const ArtistPage = (props) => {
             ))}
         </div>
       </div>
-      <div className="text-3xl w-auto flex-shrink mx-3 xl:w-1/4 xl:flex-shrink-0 text-left mt-0 mb-8 md:mb-0 md:mt-20 md:ml-8 xl:mr-20 md:mr-10 ">
-        <div className="mb-8 mx-1.5 flex xl:hidden">
+      <div className="text-3xl flex-shrink  md:px-3 w-full xl:w-80 xl:flex-shrink-0 text-left  ">
+        <div className="mb-8 px-1.5 flex xl:hidden">
           {featuredVideo && (
             <LazyLoadComponent>
               <EmbedPlayer src={featuredVideo} img={featuredImage[0]} slug={slug} />
@@ -100,7 +100,7 @@ const ArtistPage = (props) => {
             />
           )}
         </div>
-        <div className="mx-1.5">
+        <div className="px-1.5 mb-5">
           <h1 className="text-sm font-bold">
             {title} ({year})
           </h1>
