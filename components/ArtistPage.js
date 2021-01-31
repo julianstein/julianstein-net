@@ -1,15 +1,10 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
-import * as Icon from 'react-feather';
-import Link from 'next/link';
 
 import EmbedPlayer from './EmbedPlayer';
-import TheImage from './TheImage';
-
 import FadeInSection from './FadeInSection';
 import PrintMarkdown from './PrintMarkdown';
-import React, { useEffect, useState } from 'react';
+import TheImage from './TheImage';
 
 const ArtistPage = (props) => {
   const { page, windowSize } = props;
@@ -23,11 +18,7 @@ const ArtistPage = (props) => {
     images,
     featuredImage,
     featuredVideo,
-    videos,
-    template,
-    role,
-    aspect,
-    featuredAspect
+    imageGrid
   } = page;
 
   const [imgRand, setImgRand] = useState(null);
@@ -43,12 +34,22 @@ const ArtistPage = (props) => {
 
   useEffect(() => {
     setImgRand(images.sort(() => Math.random() - 0.5));
-  }, []);
+    let rowArr = [100, 125, 150, 175, 200, 300, 200, 300];
+    rowArr.sort(() => Math.random() - 0.5);
+
+    windowSize.width >= 1400
+      ? setRowLen(imageGrid !== undefined ? imageGrid : rowArr[0])
+      : windowSize.width >= 640
+      ? setRowLen(125)
+      : setRowLen(100);
+    console.log(rowLen);
+    console.log(imageGrid);
+  }, [imgRand]);
 
   return (
     <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap ">
       <div className=" text-3xl w-auto relative flex-initial text-left mb-20 xl:mt-20 mx-3 xl:ml-5 xl:mr-5 md:mt-8 md:ml-8 md:mr-10  ">
-        <div className="mb-8 mx-1.5 hidden xl:flex">
+        <div className="mb-1 mx-1.5 hidden xl:flex">
           {featuredVideo && (
             <LazyLoadComponent>
               <EmbedPlayer src={featuredVideo} img={featuredImage[0]} slug={slug} />
@@ -62,7 +63,7 @@ const ArtistPage = (props) => {
             />
           )}
         </div>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap" id="photo-grid">
           {imgRand !== null &&
             imgRand.map((image, i) => (
               <div

@@ -1,12 +1,7 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-import LazyLoad from 'react-lazyload';
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
-import TheVideo from '../components/TheVideo';
+import { useEffect, useState } from 'react';
 
 import FadeInSection from '../components/FadeInSection';
-import React, { useEffect, useState } from 'react';
+import TheVideo from '../components/TheVideo';
 import useWindowSize from '../hooks/useWindowSize';
 
 const VideoPage = () => {
@@ -18,22 +13,32 @@ const VideoPage = () => {
   const size = 200;
   const width = 1.5;
 
+  /* let widthBox = windowSize.width <= 1280 ? 545 : 620;
+
+  //1280 - 545
+  console.log('window-size:', windowSize.width - widthBox);
+  console.log('width:' + (width * size * rowLen) / size);
+  console.log('rowLen:' + rowLen);
+  console.log('number of boxes:', (windowSize.width - widthBox) / ((width * size * rowLen) / size));
+  console.log('widthbox:', widthBox);
+
+  //width of nav is 320
+  //window-width - 320 is working width(not taking into consideration the margins) */
+
   useEffect(() => {
-    windowSize.width >= 1327
+    windowSize.width >= 1465
       ? setRowLen(250)
-      : windowSize.width >= 1100
-      ? setRowLen(180)
-      : windowSize.width >= 1024
-      ? setRowLen(140)
-      : windowSize.width >= 900
+      : windowSize.width >= 1279
+      ? setRowLen(200)
+      : windowSize.width >= 1060
+      ? setRowLen(170)
+      : windowSize.width >= 920
       ? setRowLen(120)
       : windowSize.width >= 768
-      ? setRowLen(80)
+      ? setRowLen(90)
       : windowSize.width >= 640
-      ? setRowLen(150)
-      : windowSize.width >= 560
-      ? setRowLen(150)
-      : setRowLen(150);
+      ? setRowLen(220)
+      : setRowLen(100);
   }, [windowSize]);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
-import unified from 'unified';
 import parse from 'remark-parse';
 import remark2react from 'remark-react';
+import unified from 'unified';
 
 const PrintMarkdown = ({ markdown }) => {
   // Convert the Markdown into React

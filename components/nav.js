@@ -15,7 +15,6 @@ const links = [
   'the wind repeats itself: blue grama',
   'sounding out spaces: garden ecologies',
   'time lenses: palimpsest',
-  'in levitation, lightness',
   'invisible lines',
   'music for lamps',
   'aurora urbem',

@@ -1,10 +1,11 @@
 import ArtistPage from '../components/ArtistPage';
 import PortfolioPage from '../components/PortfolioPage';
 import useWindowSize from '../hooks/useWindowSize';
-
 import { getAllDynamicPages, getDynamicPageContentBySlug } from '../lib/markdown';
 
 const DynamicPage = ({ page, posts }) => {
+  const windowSize = useWindowSize();
+
   const {
     title,
     subtitle,
@@ -18,12 +19,13 @@ const DynamicPage = ({ page, posts }) => {
     template,
     link,
     featuredAspect,
-    aspect
+    aspect,
+    imageGrid
   } = page;
 
   return (
     <div>
-      {template !== 'portfolio' && <ArtistPage page={page} posts={posts} />}
+      {template !== 'portfolio' && <ArtistPage page={page} posts={posts} windowSize={windowSize} />}
       {template === 'portfolio' && <PortfolioPage page={page} posts={posts} />}
     </div>
   );
@@ -48,7 +50,8 @@ export async function getStaticProps({ params }) {
     'role',
     'link',
     'aspect',
-    'featuredAspect'
+    'featuredAspect',
+    'imageGrid'
   ]);
 
   const posts = getAllDynamicPages([
@@ -66,7 +69,8 @@ export async function getStaticProps({ params }) {
     'role',
     'link',
     'aspect',
-    'featuredAspect'
+    'featuredAspect',
+    'imageGrid'
   ]);
 
   return {

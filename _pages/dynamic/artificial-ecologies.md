@@ -4,6 +4,7 @@ subtitle: 'Virtual Gallery'
 year: '2020'
 featuredImage: [artecol_01.jpg, 1.77777778]
 images: [[artecol_02.jpg, 1.77777778], [artecol_03.png, 1.59914712], [artecol_04.png, 1.59914712]]
+imageGrid: 200
 ---
 
 ### _Creative Coding/Development using cables.gl (WebGL)_

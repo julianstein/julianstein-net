@@ -15,6 +15,7 @@ images:
     [IMG_6710.jpg, 1.5],
     [IMG_6774.jpg, 1.5]
   ]
+imageGrid: 200
 ---
 
 ### Invisible Lines explores the artistic potential of controlled feedback, and subsequently, the ability to compose temporal structures with microphone feedback as primary material. Six iconic SM58 microphones are coupled with six extracted speaker cones. Functioning as elementary components in both sound reinforcement systems and the history of sound art, the relationship between each microphone/speaker pair becomes audible. The six audible feedback loops are controlled by custom software which oscillates between states of stability and instability, resulting in a self-regulating and self-balancing system.

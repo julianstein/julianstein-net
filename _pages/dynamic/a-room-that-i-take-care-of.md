@@ -4,16 +4,17 @@ subtitle: 'responsive installation'
 year: '2019'
 featuredVideo: '344031360'
 featuredImage: [IBG_0006.png, 1.5]
+imageGrid: '200'
 images:
   [
     [IBG_0015.png, 1.5],
     [IBG_0032.png, 1.5],
-    [steinj_02.png, 1.5],
+    [steinj_02.png, 0.666666667],
     [steinj_03.png, 1.5],
     [steinj_04.png, 1.5],
     [steinj_05.png, 1.5],
     [IBG_9864.jpg, 1.5],
-    [IBG_9874.jpg, 1.5],
+    [IBG_9874.jpg, 0.666666667],
     [IBG_9879.jpg, 1.5],
     [IBG_9880.jpg, 1.5],
     [IBG_9882.jpg, 1.5]

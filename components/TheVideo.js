@@ -1,4 +1,3 @@
-import React, { useEffect, useState, useRef } from 'react';
 import { LazyLoadComponent, trackWindowScroll } from 'react-lazy-load-image-component';
 
 const TheVideo = (props, { scrollPosition }) => {
@@ -8,6 +7,9 @@ const TheVideo = (props, { scrollPosition }) => {
     <LazyLoadComponent scrollPosition={scrollPosition}>
       <video
         loop
+        onContextMenu={(e) => {
+          e.preventDefault();
+        }}
         width="640"
         height="360"
         playsInline

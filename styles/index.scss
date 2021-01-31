@@ -60,6 +60,11 @@ h3 {
   visibility: visible;
 }
 
+#photo-grid::after {
+  content: '';
+  flex-grow: 1e4;
+  min-width: 133%;
+}
 /* Write your own custom base styles here */
 
 /* Start purging... */

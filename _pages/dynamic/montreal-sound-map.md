@@ -2,17 +2,18 @@
 title: 'montreal sound map'
 subtitle: 'online audio archive'
 year: '2009'
-featuredImage: [Montréal-Sound-Map-1024x639.jpg, 1.5]
+featuredImage: [Montréal-Sound-Map-1024x639.jpg, 1.666]
 images:
   [
-    [montrealsoundmap-1.jpg, 1.5],
-    [montrealsoundmap-2.jpg, 1.5],
-    [montrealsoundmap-3.jpg, 1.5],
-    [montrealsoundmap-4.jpg, 1.5],
-    [montrealsoundmap-5.jpg, 1.5],
-    [montrealsoundmap-6.jpg, 1.5],
-    [montrealsoundmap-cca.jpg, 1.5]
+    [montrealsoundmap-1.jpg, 2],
+    [montrealsoundmap-2.jpg, 2],
+    [montrealsoundmap-3.jpg, 2],
+    [montrealsoundmap-4.jpg, 2],
+    [montrealsoundmap-5.jpg, 2],
+    [montrealsoundmap-6.jpg, 2],
+    [montrealsoundmap-cca.jpg, 2]
   ]
+imageGrid: 150
 ---
 
 ### The Montréal Sound Map ([montrealsoundmap.com)](https://www.montrealsoundmap.com) is a web-based soundscape project that allows users to upload field recordings to a Google Map of Montréal.
