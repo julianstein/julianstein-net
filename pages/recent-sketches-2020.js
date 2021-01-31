@@ -66,7 +66,7 @@ const VideoPage = () => {
 
   return (
     <div className=" flex">
-      <div className=" text-3xl w-full relative flex-initial text-left pt-4 pb-20  md:pl-16  ">
+      <div className=" text-3xl w-full relative flex-initial text-left md:pt-4 pb-20 md:pl-16  ">
         <div className="flex flex-wrap">
           {vidRand !== null &&
             vidRand.map((video, i) => (

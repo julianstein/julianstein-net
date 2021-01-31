@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
       <header></header>
 
       <div className=" flex flex-col md:flex-row">
-        <Nav navClass="flex flex-col text-3xl text-left px-1.5 md:px-0 w-100 md:w-80 pb-8 " />
+        <Nav navClass="flex flex-col text-3xl text-left px-1.5 w-100 md:w-80 pb-8 " />
         <main className="w-full md:w-3/4 flex-auto flex flex-col">{children}</main>
       </div>
     </div>
