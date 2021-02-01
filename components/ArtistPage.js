@@ -42,13 +42,11 @@ const ArtistPage = (props) => {
       : windowSize.width >= 640
       ? setRowLen(100)
       : setRowLen(100);
-    console.log(rowLen);
-    console.log(imageGrid);
   }, [imgRand]);
 
   return (
     <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap md:pl-8 pt-3">
-      <div className=" text-3xl w-full relative flex-initial text-left pt-1 pb-20 md:px-3 xl:pr-8 xl:pr-12">
+      <div className=" text-3xl w-full relative flex-initial text-left pt-1 pb-8 md:px-3 xl:pr-6">
         <div className="mb-1 mx-1.5 hidden xl:flex">
           {featuredVideo && (
             <LazyLoadComponent>
@@ -58,8 +56,9 @@ const ArtistPage = (props) => {
           {!featuredVideo && (
             <TheImage
               src={'/images/' + slug + '/' + featuredImage[0]}
-              width={featuredImage[1] * 500}
-              height={1 * 500}
+              width={featuredImage[1] * 1000}
+              height={1 * 1000}
+              alt={`${title} (${year}): featured image`}
             />
           )}
         </div>
@@ -79,6 +78,7 @@ const ArtistPage = (props) => {
                     width={image[1] * size}
                     height={size}
                     imgClass="absolute w-full align-bottom top-0"
+                    alt={title + '-' + [i + 1]}
                   />
                 </FadeInSection>
               </div>
@@ -95,8 +95,9 @@ const ArtistPage = (props) => {
           {!featuredVideo && (
             <TheImage
               src={'/images/' + slug + '/' + featuredImage[0]}
-              width={featuredImage[1] * 500}
-              height={1 * 500}
+              width={featuredImage[1] * 1000}
+              height={1 * 1000}
+              alt={`${title} (${year}): featured image`}
             />
           )}
         </div>
@@ -105,7 +106,6 @@ const ArtistPage = (props) => {
             {title} ({year})
           </h1>
           <h1 className="text-sm pb-4">{subtitle}</h1>
-
           <p className="text-sm">
             <PrintMarkdown markdown={content} />
           </p>

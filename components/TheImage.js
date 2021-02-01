@@ -5,7 +5,7 @@ import { useImageZoom } from 'react-medium-image-zoom';
 const TheImage = (props) => {
   const [screenWidth, setScreenWidth] = useState(0);
 
-  const { src, width, height, imgClass } = props;
+  const { src, width, height, imgClass, alt } = props;
 
   let zoom = props.zoom;
 
@@ -36,7 +36,7 @@ const TheImage = (props) => {
               src={src}
               width={width}
               height={height}
-              alt="Picture of the author"
+              alt={alt}
               layout="intrinsic"
               objectFit="cover"
             />
@@ -57,7 +57,7 @@ const TheImage = (props) => {
               src={src}
               width={width}
               height={height}
-              alt="Picture of the author"
+              alt={alt}
               layout="intrinsic"
               objectFit="cover"
             />
@@ -72,7 +72,7 @@ const TheImage = (props) => {
             src={src}
             width={width}
             height={height}
-            alt="Picture of the author"
+            alt={alt}
             layout="intrinsic"
             objectFit="cover"
           />

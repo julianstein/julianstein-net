@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@react-hook/resize-observer": "^1.1.0",
+    "@tanem/react-nprogress": "^3.0.54",
     "@vimeo/player": "^2.14.1",
     "date-fns": "^2.16.1",
     "eslint-config-prettier": "^7.1.0",
