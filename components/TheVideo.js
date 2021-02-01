@@ -15,7 +15,6 @@ const TheVideo = (props, { scrollPosition }) => {
         }}
         width="640"
         height="360"
-        poster={'/images/sketches-stills/' + src + '.jpg'}
         className="absolute w-full h-full align-bottom top-0 object-cover">
         <source src={'/videos/' + src + '.m4v'}></source>
       </video>
