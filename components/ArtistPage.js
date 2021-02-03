@@ -18,7 +18,10 @@ const ArtistPage = (props) => {
     images,
     featuredImage,
     featuredVideo,
-    imageGrid
+    imageGrid,
+    videoPlayer,
+    videoTime,
+    author
   } = page;
 
   const [imgRand, setImgRand] = useState(null);
@@ -50,14 +53,20 @@ const ArtistPage = (props) => {
         <div className="mb-1 mx-1.5 hidden xl:flex">
           {featuredVideo && (
             <LazyLoadComponent>
-              <EmbedPlayer src={featuredVideo} img={featuredImage[0]} slug={slug} />
+              <EmbedPlayer
+                src={featuredVideo}
+                img={featuredImage[0]}
+                slug={slug}
+                videoPlayer={videoPlayer}
+                videoTime={videoTime}
+              />
             </LazyLoadComponent>
           )}
           {!featuredVideo && (
             <TheImage
               src={'/images/' + slug + '/' + featuredImage[0]}
-              width={featuredImage[1] * 1000}
-              height={1 * 1000}
+              width={featuredImage[1] * size}
+              height={1 * size}
               alt={`${title} (${year}): featured image`}
             />
           )}
@@ -89,7 +98,13 @@ const ArtistPage = (props) => {
         <div className="mb-8 px-1.5 flex xl:hidden">
           {featuredVideo && (
             <LazyLoadComponent>
-              <EmbedPlayer src={featuredVideo} img={featuredImage[0]} slug={slug} />
+              <EmbedPlayer
+                src={featuredVideo}
+                img={featuredImage[0]}
+                videoPlayer={videoPlayer}
+                videoTime={videoTime}
+                slug={slug}
+              />
             </LazyLoadComponent>
           )}
           {!featuredVideo && (
@@ -102,9 +117,16 @@ const ArtistPage = (props) => {
           )}
         </div>
         <div className="px-1.5 mb-5">
-          <h1 className="text-sm font-bold">
-            {title} ({year})
-          </h1>
+          {!author && (
+            <h1 className="text-sm bold">
+              {title} ({year})
+            </h1>
+          )}
+          {author && (
+            <h1 className="text-sm bold">
+              {title} ({year}) — {author}
+            </h1>
+          )}
           <h1 className="text-sm pb-4">{subtitle}</h1>
           <p className="text-sm">
             <PrintMarkdown markdown={content} />

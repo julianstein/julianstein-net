@@ -89,13 +89,16 @@ const Nav = (props) => {
             </Link>
           </li>
           <li>
-            <a
-              className="hover:text-gray-400 leading-normal"
-              href="https://portfolio.julianstein.net/"
-              rel="noreferrer"
-              target="_blank">
-              portfolio
-            </a>
+            <Link href={'/portfolio'}>
+              <a
+                className={
+                  path === '/portfolio'
+                    ? 'font-bold hover:text-black'
+                    : 'font-normal hover:text-gray-400 '
+                }>
+                portfolio
+              </a>
+            </Link>
           </li>
           <li>
             <a

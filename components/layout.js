@@ -4,28 +4,30 @@ import Router from 'next/router';
 import { useEffect, useState } from 'react';
 import * as Icon from 'react-feather';
 
-import FadeInSection from '../components/FadeInSection';
-import Nav from '../components/nav';
+import FadeInSection from './FadeInSection';
+import Nav from './nav';
 
 //const name = 'Julian Stein';
-export const siteTitle = 'julian stein';
+export const siteTitle = 'julian stein | media artist';
 
 const Layout = ({ children }) => {
   const [isVisible, setVisible] = useState(false);
 
   const showArrow = () => {
-    window.document.documentElement.scrollHeight - 100 >
-    window.document.documentElement.clientHeight
-      ? setVisible(true)
-      : setVisible(false);
+    setTimeout(() => {
+      window.document.documentElement.scrollHeight - 100 >
+      window.document.documentElement.clientHeight
+        ? setVisible(true)
+        : setVisible(false);
+    }, 500);
   };
 
   Router.events.on('routeChangeStart', () => setVisible(false));
-  Router.events.on('routeChangeComplete', () =>
-    setTimeout(() => {
-      showArrow();
-    }, 500)
-  );
+  Router.events.on('routeChangeComplete', () => showArrow());
+
+  useEffect(() => {
+    showArrow();
+  }, []);
 
   return (
     <div>

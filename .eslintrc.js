@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['simple-import-sort'],
+  plugins: ['simple-import-sort', 'jsx-a11y'],
   root: true, // Make sure eslint picks up the config at the root of the directory
   parserOptions: {
     ecmaVersion: 2020, // Use the latest ecmascript standard
@@ -27,6 +27,7 @@ module.exports = {
   rules: {
     'prettier/prettier': ['error', { endOfLine: 'auto' }, { usePrettierrc: true }], // Use our .prettierrc file as source
     'react/react-in-jsx-scope': 'off',
+    'jsx-a11y/rule-name': 2,
     'jsx-a11y/anchor-is-valid': [
       'error',
       {

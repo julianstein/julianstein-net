@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 const EmbedPlayer = (props) => {
   const player = useRef(null);
 
-  const { img, slug, src, type } = props;
+  const { img, slug, src, videoPlayer, videoTime } = props;
   let output;
   //  console.log(src);
   // console.log('/images/' + slug + '/' + img);
@@ -12,6 +12,14 @@ const EmbedPlayer = (props) => {
   const handleEnded = () => {
     //  console.log('onEnded');
     player.current.showPreview();
+  };
+
+  const handleSeekTime = () => {
+    //  console.log('onEnded');
+    if (videoTime !== undefined) {
+      player.current.seekTo(videoTime);
+      console.log(videoTime);
+    }
   };
 
   const onLoad = () => {
@@ -23,18 +31,17 @@ const EmbedPlayer = (props) => {
     onLoad();
   });
 
-  type === 'player'
+  videoPlayer === 'youtube'
     ? (output = (
         <ReactPlayer
           ref={player}
           playing={true}
           className="absolute w-full align-bottom top-0"
-          url={'/videos/' + src}
+          url={`https://www.youtube.com/watch?v=` + src}
           width="100%"
-          light={false}
-          controls={false}
-          muted={true}
-          loop={true}
+          light={'/images/' + slug + '/' + img}
+          controls
+          onEnded={handleEnded}
           height="100%"
           config={{
             file: {
@@ -56,6 +63,8 @@ const EmbedPlayer = (props) => {
           onEnded={handleEnded}
           height="100%"
           controls
+          playing
+          onReady={handleSeekTime}
           config={{
             vimeo: {
               playerOptions: {

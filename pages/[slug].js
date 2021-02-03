@@ -20,7 +20,8 @@ const DynamicPage = ({ page, posts }) => {
     link,
     featuredAspect,
     aspect,
-    imageGrid
+    imageGrid,
+    videoPlayer
   } = page;
 
   return (
@@ -51,7 +52,10 @@ export async function getStaticProps({ params }) {
     'link',
     'aspect',
     'featuredAspect',
-    'imageGrid'
+    'imageGrid',
+    'videoPlayer',
+    'videoTime',
+    'author'
   ]);
 
   const posts = getAllDynamicPages([
@@ -70,7 +74,10 @@ export async function getStaticProps({ params }) {
     'link',
     'aspect',
     'featuredAspect',
-    'imageGrid'
+    'imageGrid',
+    'videoPlayer',
+    'videoTime',
+    'author'
   ]);
 
   return {
