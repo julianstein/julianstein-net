@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 import { useEffect, useState } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
@@ -28,7 +28,7 @@ const DynamicPage = ({ posts }) => {
 
   let postsArr = Object.values(posts);
 
-  let sortOrder = [10, 17, 1, 20, 0, 15, 11, 14, 4, 16, 7, 13, 18, 12, 3, 19, 5, 6, 2, 9, 8];
+  let sortOrder = [16, 1, 19, 0, 14, 10, 13, 4, 15, 7, 12, 17, 11, 3, 18, 5, 6, 2, 9, 8];
 
   postsArr = sortOrder.map((a) => postsArr[a]);
 
@@ -45,6 +45,26 @@ const DynamicPage = ({ posts }) => {
     <div className="flex">
       <div className=" text-3xl w-full relative flex-initial text-left md:pt-4 pb-20 md:pl-16 ">
         <div className="flex flex-wrap" id="photo-grid">
+          <div
+            className="m-1.5 relative "
+            style={{
+              width: `${(1.5 * size * rowLen) / size}px`,
+              flexGrow: `${(1.5 * size * rowLen) / size}`
+            }}>
+            <Link href={'/recent-sketches-2020'}>
+              <a>
+                <TheImage
+                  src={'/images/recent-sketches-2020/2020-11-01-22-11-02-170.jpg'}
+                  width={1.5 * size}
+                  height={size}
+                  imgClass="absolute w-full align-bottom top-0"
+                  alt={'recent sketches - 1'}
+                  zoom={false}
+                  title={'recent sketches (2020)'}
+                />
+              </a>
+            </Link>
+          </div>
           {postsArr.map(({ slug, featuredImage, title, year }, i) => (
             <div
               key={slug}
