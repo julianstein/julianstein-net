@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@react-hook/resize-observer": "^1.1.0",
+    "@reduxjs/toolkit": "^1.5.0",
     "@vimeo/player": "^2.14.1",
     "date-fns": "^2.16.1",
     "eslint": "^7.19.0",
@@ -27,6 +28,7 @@
     "react-lazy-load-image-component": "^1.5.1",
     "react-medium-image-zoom": "^5.0.0-beta.1",
     "react-player": "^2.7.2",
+    "react-redux": "^7.2.2",
     "react-use-dimensions": "^1.2.1",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",

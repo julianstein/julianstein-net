@@ -32,7 +32,7 @@ const DynamicPage = ({ posts }) => {
 
   postsArr = sortOrder.map((a) => postsArr[a]);
 
-  const [rowLen, setRowLen] = useState(220);
+  const [rowLen, setRowLen] = useState(350);
 
   const size = 1000;
 
@@ -43,7 +43,7 @@ const DynamicPage = ({ posts }) => {
 
   return (
     <div className="flex">
-      <div className=" text-3xl w-full relative flex-initial text-left md:pt-4 pb-20 md:pl-16 ">
+      <div className=" text-3xl w-full relative flex-initial text-left md:pt-4 pb-20  ">
         <div className="flex flex-wrap" id="photo-grid">
           <div
             className="m-1.5 relative "

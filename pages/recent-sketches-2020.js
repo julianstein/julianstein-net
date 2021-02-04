@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 import FadeInSection from '../components/FadeInSection';
 import TheVideo from '../components/TheVideo';
@@ -41,7 +41,7 @@ const VideoPage = () => {
       : setRowLen(100);
   }, [windowSize]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setVidRand(videos.sort(() => Math.random() - 0.5));
   }, []);
 

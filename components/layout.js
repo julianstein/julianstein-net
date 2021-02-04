@@ -1,17 +1,26 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Router from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
 import * as Icon from 'react-feather';
 
 import FadeInSection from './FadeInSection';
 import Nav from './nav';
 
+import { useDispatch } from 'react-redux';
+
+import { toggle } from '../lib/slices/navSlice';
+
 //const name = 'Julian Stein';
 export const siteTitle = 'julian stein | media artist';
 
 const Layout = ({ children }) => {
+  const router = useRouter();
+  let path = router.asPath;
+
   const [isVisible, setVisible] = useState(false);
+  const [siteType, setSiteType] = useState('website');
 
   const showArrow = () => {
     setTimeout(() => {
@@ -29,22 +38,39 @@ const Layout = ({ children }) => {
     showArrow();
   }, []);
 
+  const dispatch = useDispatch();
+
+  function dispatchToggle() {
+    dispatch(toggle(siteType));
+  }
+
+  useLayoutEffect(() => {
+    path === '/portfolio' && siteType === 'website'
+      ? (setSiteType('portfolio'), dispatchToggle())
+      : (setSiteType(siteType), dispatchToggle());
+  });
+
   return (
     <div>
-      <div className="px-4 sm:px-12 lg:px-20 pt-4 sm:py-8 md:py-16 max-w-screen-2xl">
+      <div
+        className={` ${
+          siteType === 'website'
+            ? 'max-w-screen-2xl px-4 sm:px-12 lg:px-20 pt-4 sm:py-8 md:py-16'
+            : 'mx-auto px-4 sm:px-12 lg:px-12 sm:py-4 md:py-4'
+        }`}>
         <Head>
           <title>{siteTitle}</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <header></header>
 
-        <div className=" flex flex-col md:flex-row">
-          <Nav navClass="flex flex-col text-3xl text-left px-1.5 w-100 md:w-80 pb-8 " />
-          <main className="w-full md:w-2/3 flex-auto flex flex-col">{children}</main>
+        <div className={`flex flex-col ${siteType === 'website' ? 'md:flex-row' : ' '}`}>
+          <Nav path={path} display={siteType} />
+          <main className="w-full md:w-100 flex-auto flex flex-col">{children}</main>
         </div>
       </div>
       {isVisible && (
-        <FadeInSection>
+        <FadeInSection name={'back-to-top'}>
           <div className=" text-right pr-8 pb-8">
             <Icon.ChevronUp
               onClick={() => scrollTo({ top: 0 })}

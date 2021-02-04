@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 import EmbedPlayer from './EmbedPlayer';
 import FadeInSection from './FadeInSection';
 import PrintMarkdown from './PrintMarkdown';
 import TheImage from './TheImage';
+import { useSelector } from 'react-redux';
+
+import { toggle, selectNav } from '../lib/slices/navSlice';
 
 const ArtistPage = (props) => {
   const { page, windowSize } = props;
@@ -30,12 +33,14 @@ const ArtistPage = (props) => {
 
   const size = 1000;
 
+  const siteType = useSelector(selectNav);
+
   /*let imgs = document.querySelectorAll('.images');
   let imgElem = [];
   Object.values(imgs).map((val, i) => imgElem.push([val.naturalWidth, val.naturalHeight]));
   setImgDim(imgElem);*/
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setImgRand(images.sort(() => Math.random() - 0.5));
     let rowArr = [100, 125, 150, 175, 200, 300, 200, 300];
     rowArr.sort(() => Math.random() - 0.5);
@@ -48,8 +53,11 @@ const ArtistPage = (props) => {
   }, [imgRand]);
 
   return (
-    <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap md:pl-8 pt-3">
-      <div className=" text-3xl w-full relative flex-initial text-left pt-1 pb-8 md:px-3 xl:pr-6">
+    <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap pt-3">
+      <div
+        className={`text-3xl w-full relative flex-initial text-left pt-1 pb-8 xl:pr-6 ${
+          siteType === 'website' ? 'md:px-3' : ' '
+        }`}>
         <div className="mb-1 mx-1.5 hidden xl:flex">
           {featuredVideo && (
             <LazyLoadComponent>
@@ -94,7 +102,7 @@ const ArtistPage = (props) => {
             ))}
         </div>
       </div>
-      <div className="text-3xl flex-shrink  md:px-3 w-full xl:w-80 xl:flex-shrink-0 text-left  ">
+      <div className="text-3xl flex-shrink md:px-3 w-full xl:w-80 xl:flex-shrink-0 text-left  ">
         <div className="mb-8 px-1.5 flex xl:hidden">
           {featuredVideo && (
             <LazyLoadComponent>
