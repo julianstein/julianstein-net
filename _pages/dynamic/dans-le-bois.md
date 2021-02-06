@@ -1,6 +1,6 @@
 ---
 title: 'Dans le bois'
-subtitle: 'Lighting Design, Hardware Design'
+subtitle: 'Public Installation'
 author: 'Odace Événements'
 year: '2014'
 featuredVideo: 132958724
@@ -16,8 +16,8 @@ images:
 imageGrid: 175
 ---
 
-### _Dans le bois_ was a public art installation by Stéphanie Leduc and Manuel Baumann, built outside of the Mont Royal metro station in Montreal, QC.
+### _Lighting Design, Hardware Design, Software Development (Max/MSP)_
 
-### The work featured two large panels of 350 LED lights, individually controlled via DMX.
+### _Dans le bois_ was a public art installation by Stéphanie Leduc and Manuel Baumann, built outside of the Mont Royal metro station in Montreal, QC. The work featured two large panels of 350 LED lights, individually controlled via custom software and DMX.
 
 ### _in collaboration with Jerome Delapierre_

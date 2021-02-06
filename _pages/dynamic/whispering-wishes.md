@@ -1,7 +1,7 @@
 ---
 title: 'Whispering Wishes'
 subtitle: 'Responsive Sound Design'
-author: 'Plan 8'
+author: 'Plan8'
 year: '2019'
 featuredVideo: 380809396
 videoTime: 87
@@ -10,8 +10,14 @@ images: [[WhisperingWishes_01-1920.jpg, 1.777], [WishingTree_exterior_01_hero-11
 imageGrid: 175
 ---
 
-### custom algorithms transforming the human voice into animal sounds.
+### _Software Development (Max/MSP)_
 
-### The Wishing Forest is a collection of interactive installations for Brookfield properties, operating shopping malls in MA and CT. The three experiences Holiday Bells Grove, Wishing Tree Grove and Whispering Wishes Grove encapsulate the Holiday spirit with dazzling light and sound interactions.
+### With [Plan8](https://plan8.co), development of custom algorithms for transforming the human voice into animal sounds for _Whispering Wishes_, as part of _The Wishing Forest_ collection of interactive installations presented at Brookfield shopping malls in Massachusetts and Connecticut during the holiday season of 2019.
 
 ### Link: [plan8.co/work/wishing-forest/](https://plan8.co/work/wishing-forest/)
+
+## Two Things — Creative Agency
+
+## Red Paper Heart — Interactive Design Studio
+
+### Plan8 — Sound Design

@@ -102,7 +102,10 @@ const ArtistPage = (props) => {
             ))}
         </div>
       </div>
-      <div className="text-3xl flex-shrink md:px-3 w-full xl:w-80 xl:flex-shrink-0 text-left  ">
+      <div
+        className={`flex-shrink md:px-3 font-normal w-full xl:flex-shrink-0 text-left ${
+          siteType === 'website' ? 'text-sm xl:w-80' : 'text-lg xl:w-96'
+        }`}>
         <div className="mb-8 px-1.5 flex xl:hidden">
           {featuredVideo && (
             <LazyLoadComponent>
@@ -126,17 +129,17 @@ const ArtistPage = (props) => {
         </div>
         <div className="px-1.5 mb-5">
           {!author && (
-            <h1 className="text-sm bold">
+            <h1 className=" font-semibold  ">
               {title} ({year})
             </h1>
           )}
           {author && (
-            <h1 className="text-sm bold">
+            <h1 className=" font-semibold  	">
               {title} ({year}) — {author}
             </h1>
           )}
-          <h1 className="text-sm pb-4">{subtitle}</h1>
-          <p className="text-sm">
+          <h3 className=" ">{subtitle}</h3>
+          <p className="leading-normal">
             <PrintMarkdown markdown={content} />
           </p>
         </div>

@@ -1,6 +1,6 @@
 ---
 title: 'Turcot: la route devenue architecture'
-subtitle: 'Sound / Interaction Design for dome environment'
+subtitle: 'Interactive Installation for Dome Envrionment'
 author: 'Berengère L. Marin-Dubuard (beewoo)'
 year: '2014'
 featuredVideo: aIeMBZxyZTc
@@ -16,6 +16,8 @@ images:
   ]
 imageGrid: 175
 ---
+
+### _Software Development (PureData), Multi-channel Sound Design_
 
 “The interactive and immersive installation Turcot: la route devenue architecture offers a tour of an interchange from the point of view of a pedestrian or cyclist. The Satosphere’s spherical projection sweeps visitors into the heart of this gigantic work by offering a perceptual experience on human scale. Visitors can transform the interchange in real time, changing its structure and the journey, by manipulating a wooden model placed, like a construction game, at the centre of the dome. They create another architecture, one that is dynamic and unstable, altering the idea we have of the structure and its final form.”
 

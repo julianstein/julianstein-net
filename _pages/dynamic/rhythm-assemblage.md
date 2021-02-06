@@ -14,7 +14,9 @@ images:
   ]
 ---
 
-## stepper motors, spools, rubber cable, perlite blocks, custom electronics, custom software
+### _rhythm assemblage_ explores the coordinated and patterned movements of five cables situated in parallel, each coupled with a motorized pulley on each side.
+
+## _stepper motors, spools, rubber cable, perlite blocks, custom electronics, custom software_
 
 ---
 

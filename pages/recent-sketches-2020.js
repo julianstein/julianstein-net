@@ -24,6 +24,24 @@ const VideoPage = () => {
 
   //width of nav is 320
   //window-width - 320 is working width(not taking into consideration the margins) */
+  const videos = [
+    'steinj-video_01',
+    'steinj-video_02',
+    'steinj-video_03',
+    'steinj-video_04',
+    'steinj-video_05',
+    'steinj-video_06',
+    'steinj-video_07',
+    'steinj-video_08',
+    'steinj-video_09',
+    'steinj-video_10',
+    'steinj-video_11',
+    'steinj-video_12',
+    'steinj-video_13',
+    'steinj-video_14',
+    'steinj-video_15',
+    'steinj-video_16'
+  ];
 
   useEffect(() => {
     windowSize.width >= 1465
@@ -45,28 +63,9 @@ const VideoPage = () => {
     setVidRand(videos.sort(() => Math.random() - 0.5));
   }, []);
 
-  const videos = [
-    'steinj-video_01',
-    'steinj-video_02',
-    'steinj-video_03',
-    'steinj-video_04',
-    'steinj-video_05',
-    'steinj-video_06',
-    'steinj-video_07',
-    'steinj-video_08',
-    'steinj-video_09',
-    'steinj-video_10',
-    'steinj-video_11',
-    'steinj-video_12',
-    'steinj-video_13',
-    'steinj-video_14',
-    'steinj-video_15',
-    'steinj-video_16'
-  ];
-
   return (
     <div className=" flex">
-      <div className=" text-3xl w-full relative flex-initial text-left md:pt-4 pb-20 md:pl-16  ">
+      <div className=" text-3xl w-full relative flex-initial text-left md:pt-4 pb-20   ">
         <div className="flex flex-wrap">
           {vidRand !== null &&
             vidRand.map((video, i) => (

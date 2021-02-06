@@ -36,13 +36,13 @@ const Nav = (props) => {
   console.log(path);
   display === 'website'
     ? (output = (
-        <nav className="flex flex-col text-3xl text-left px-1.5 w-100 md:w-80 pb-8 ">
+        <nav className="flex flex-col text-3xl flex-none text-left px-1.5 w-100 md:w-80 pb-8 ">
           <ul className="pb-4">
             <Link href="/">
               <a
                 className={
                   path === '/'
-                    ? 'font-bold hover:text-black text-base'
+                    ? 'font-semibold hover:text-black text-base'
                     : 'font-normal hover:text-gray-400 text-base'
                 }>
                 julian stein
@@ -59,7 +59,7 @@ const Nav = (props) => {
                     <a
                       className={
                         active === index
-                          ? 'font-bold hover:text-black'
+                          ? 'font-semibold hover:text-black'
                           : 'font-normal hover:text-gray-400 '
                       }>
                       {value}
@@ -74,7 +74,7 @@ const Nav = (props) => {
                   <a
                     className={
                       path === '/about'
-                        ? 'font-bold hover:text-black'
+                        ? 'font-semibold hover:text-black'
                         : 'font-normal hover:text-gray-400 '
                     }>
                     about
@@ -86,7 +86,7 @@ const Nav = (props) => {
                   <a
                     className={
                       path === '/portfolio'
-                        ? 'font-bold hover:text-black'
+                        ? 'font-semibold hover:text-black'
                         : 'font-normal hover:text-gray-400 '
                     }>
                     portfolio
@@ -126,40 +126,47 @@ const Nav = (props) => {
         </nav>
       ))
     : (output = (
-        <nav className="flex flex-col text-base md:text-2xl text-left px-1.5 pt-3 ">
-          <div className=" w-full text-left flex flex-row relative flex-initial pt-1 pb-4  ">
-            <div className="w-full">
+        <nav className="flex flex-col text-base md:text-lg text-left pt-1 pb-3 px-1.5 ">
+          <div className=" w-full text-left flex flex-row relative flex-initial lg:flex-shrink-0 pt-4 sm:pt-2 md:px-3 xl:px-0  ">
+            <div className="w-24 sm:w-44 flex-shrink-0 ">
               <Link href="/portfolio">
-                <a className="hover:text-gray-400 pl-3 xl:pl-0 pr-6 md:pr-12">julian stein</a>
+                <a className="text-base sm:text-2xl font-normal hover:text-gray-400  ">
+                  julian stein
+                </a>
               </Link>
             </div>
-            <div className="text-right w-full ">
-              <Link href="/portfolio">
-                <a
-                  className={
-                    path === '/portfolio' || path !== '/about'
-                      ? 'font-bold hover:text-black pr-4'
-                      : 'font-normal hover:text-gray-400 pr-4'
-                  }>
-                  work
-                </a>
-              </Link>
-              <Link href="/about">
-                <a
-                  className={
-                    path === '/about'
-                      ? 'font-bold hover:text-black pr-4'
-                      : 'font-normal hover:text-gray-400 pr-4'
-                  }>
-                  about
-                </a>
-              </Link>
+            <div className="flex flex-row w-full justify-end xl:justify-start xl:text-left self-end">
+              <div className="pr-1.5 md:pr-3">
+                <Link href="/portfolio">
+                  <a
+                    className={
+                      path === '/portfolio' || path !== '/about'
+                        ? 'font-semibold hover:text-black'
+                        : 'font-normal hover:text-gray-400'
+                    }>
+                    work
+                  </a>
+                </Link>
+              </div>
+              <div className="px-1.5 md:px-3">
+                <Link href="/about">
+                  <a
+                    className={
+                      path === '/about'
+                        ? 'font-medium hover:text-black'
+                        : 'font-normal hover:text-gray-400 '
+                    }>
+                    about
+                  </a>
+                </Link>
+              </div>
 
-              <a href="mailto:julian.stein@gmail.com" className="hover:text-gray-400">
+              <a
+                href="mailto:julian.stein@gmail.com"
+                className=" pl-1.5 md:pl-3 font-normal hover:text-gray-400 ">
                 contact
               </a>
             </div>
-            <div className="flex-shrink md:px-3 w-0 xl:w-80 xl:flex-shrink-0 " />
           </div>
         </nav>
       ));

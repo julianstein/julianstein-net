@@ -65,13 +65,14 @@ const TheImage = (props) => {
               objectFit="cover"
             />
           </span>
-          {hover && (
-            <span
-              className="absolute m-2 p-1 text-lg text-black bg-white bg-opacity-80"
-              id="hoverText">
-              {title + ' '}
-            </span>
-          )}
+
+          <span
+            className={`${
+              hover ? 'sm:opacity-100' : 'sm:opacity-0'
+            } opacity-100 absolute m-2 md:m-4 pt-1 pb-2 px-3 md:pt-2 md:pb-3 md:px-3 text-sm sm:text-xl md:text-2xl lg:text-2xl text-white bg-black bg-opacity-50 self-center`}
+            id="hoverText">
+            {title + ' '}
+          </span>
         </i>
       ))
     : (output = (

@@ -28,7 +28,7 @@ const DynamicPage = ({ posts }) => {
 
   let postsArr = Object.values(posts);
 
-  let sortOrder = [16, 1, 19, 0, 14, 10, 13, 4, 15, 7, 12, 17, 11, 3, 18, 5, 6, 2, 9, 8];
+  let sortOrder = [16, 1, 19, 0, 14, 10, 13, 4, 15, 7, 12, 17, 11, 3, 18, 5, 6, 9, 2, 8];
 
   postsArr = sortOrder.map((a) => postsArr[a]);
 

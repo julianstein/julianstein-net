@@ -22,4 +22,6 @@ imageGrid: 175
 
 ### _MindTravel_ is an immersive musical experience that takes place in iconic theaters and beautiful outdoor spaces. Gorgeous and provocative avant-garde real-time piano compositions, spontaneously improvised, infused with wisdom traditions, theoretical physics and the power of communal elevation.
 
-### software originally by Joshua Goldberg
+## Murray Hidary (Concept / Artist)
+
+## Joshua Goldberg (Original Software Developer)
