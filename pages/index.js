@@ -1,14 +1,19 @@
 import Head from 'next/head';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import FadeInSection from '../components/FadeInSection';
 import TheVideo from '../components/TheVideo';
+import useWindowSize from '../hooks/useWindowSize';
 
 import Layout, { siteTitle } from '../components/layout';
 
 const IndexPage = () => {
+  const windowSize = useWindowSize();
+
   const [vidRand, setVidRand] = useState(null);
   const [rowLen, setRowLen] = useState(100);
+  const [showVid, setShowVid] = useState(true);
 
   const videos = [
     'aroom_01',
@@ -36,32 +41,40 @@ const IndexPage = () => {
     'steinj-video_15',
     'steinj-video_16'
   ];
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     videos.sort(() => Math.random() - 0.5);
     setVidRand(videos[0]);
   }, []);
+
+  useEffect(() => {
+    windowSize.width < 640 ? setShowVid(false) : setShowVid(true);
+    console.log(windowSize.width);
+  }, [windowSize]);
 
   const size = 200;
   const width = 1.5;
 
   return (
-    <div className=" flex  max-w-3xl mt-4 ">
-      <div
-        className=" relative  "
-        style={{
-          width: `${(width * size * rowLen) / size}px`,
-          flexGrow: `${(width * size * rowLen) / size}`
-        }}>
-        <i
-          className="block "
-          style={{
-            paddingBottom: `${(size / (width * size)) * 100}%`
-          }}>
-          <TheVideo src={vidRand} />
-        </i>
-      </div>
-    </div>
+    showVid && (
+      <FadeInSection>
+        <div className=" flex max-w-xl mt-14 ">
+          <div
+            className=" relative  "
+            style={{
+              width: `${350}px`,
+              flexGrow: `${350}`
+            }}>
+            <i
+              className="block "
+              style={{
+                paddingBottom: `${66.6666}%`
+              }}>
+              <TheVideo src={vidRand} />
+            </i>
+          </div>
+        </div>
+      </FadeInSection>
+    )
   );
 };
 

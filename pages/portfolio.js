@@ -61,6 +61,7 @@ const DynamicPage = ({ posts }) => {
                   alt={'recent sketches - 1'}
                   zoom={false}
                   title={'recent sketches (2020)'}
+                  portfolio={true}
                 />
               </a>
             </Link>
@@ -83,6 +84,7 @@ const DynamicPage = ({ posts }) => {
                     alt={title + '-' + [i + 1]}
                     zoom={false}
                     title={`${title} (${year})`}
+                    portfolio={true}
                   />
                 </a>
               </Link>

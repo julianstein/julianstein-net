@@ -1,10 +1,10 @@
-import { LazyLoadComponent, trackWindowScroll } from 'react-lazy-load-image-component';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
-const TheVideo = (props, { scrollPosition }) => {
+const TheVideo = (props) => {
   const { src } = props;
 
   return (
-    <LazyLoadComponent scrollPosition={scrollPosition}>
+    <LazyLoadComponent>
       <video
         loop
         playsInline
@@ -22,4 +22,4 @@ const TheVideo = (props, { scrollPosition }) => {
   );
 };
 
-export default trackWindowScroll(TheVideo);
+export default TheVideo;

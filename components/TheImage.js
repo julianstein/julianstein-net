@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useImageZoom } from 'react-medium-image-zoom';
+import { useSelector } from 'react-redux';
+
+import { toggle, selectNav } from '../lib/slices/navSlice';
 
 const TheImage = (props) => {
   const [screenWidth, setScreenWidth] = useState(0);
   const [hover, setHover] = useState(false);
 
-  const { src, width, height, imgClass, alt, title } = props;
+  const { src, width, height, imgClass, alt, title, portfolio } = props;
+
+  const siteType = useSelector(selectNav);
 
   let zoom = props.zoom;
 
@@ -44,7 +49,7 @@ const TheImage = (props) => {
           </span>
         </i>
       ))
-    : imgClass !== undefined && !showZoom
+    : imgClass !== undefined && !showZoom && portfolio
     ? (output = (
         <i
           onMouseEnter={() => setHover(true)}
@@ -74,6 +79,21 @@ const TheImage = (props) => {
             {title + ' '}
           </span>
         </i>
+      ))
+    : imgClass !== undefined && !showZoom
+    ? (output = (
+        <span>
+          <Image
+            className="images"
+            priority="true"
+            src={src}
+            width={width}
+            height={height}
+            alt={alt}
+            layout="intrinsic"
+            objectFit="cover"
+          />
+        </span>
       ))
     : (output = (
         <span>
