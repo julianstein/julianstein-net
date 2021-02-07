@@ -1,14 +1,10 @@
-import Head from 'next/head';
 import Link from 'next/link';
+import { NextSeo } from 'next-seo';
+import { useState } from 'react';
 
-import { useEffect, useState } from 'react';
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
-
-import FadeInSection from '../components/FadeInSection';
 import TheImage from '../components/TheImage';
-import PrintMarkdown from '../components/PrintMarkdown';
-import { getAllDynamicPages, getDynamicPageContentBySlug } from '../lib/markdown';
 import useWindowSize from '../hooks/useWindowSize';
+import { getAllDynamicPages } from '../lib/markdown';
 
 const DynamicPage = ({ posts }) => {
   const windowSize = useWindowSize();
@@ -42,57 +38,60 @@ const DynamicPage = ({ posts }) => {
   setImgDim(imgElem);*/
 
   return (
-    <div className="flex">
-      <div className=" text-3xl w-full relative flex-initial text-left md:pt-4 pb-20  ">
-        <div className="flex flex-wrap" id="photo-grid">
+    <>
+      <NextSeo
+        title="julian stein — portfolio"
+        description="Julian Stein is a media artist based in Los Angeles, CA. His work examine relationships between the analog and the digital, primarily through expressions of sound, and movement, and light"
+        noIndex="true"
+      />
+      <div className=" flex text-3xl w-full relative flex-wrap text-left md:pt-4 pb-20  ">
+        <div
+          className="m-1.5 relative "
+          style={{
+            width: `${(1.5 * size * rowLen) / size}px`,
+            flexGrow: `${(1.5 * size * rowLen) / size}`
+          }}>
+          <Link href={'/recent-sketches-2020'}>
+            <a>
+              <TheImage
+                src={'/images/recent-sketches-2020/2020-11-01-22-11-02-170.jpg'}
+                width={1.5 * size}
+                height={size}
+                imgClass="absolute w-full align-bottom top-0"
+                alt={'recent sketches - 1'}
+                zoom={false}
+                title={'recent sketches (2020)'}
+                portfolio={true}
+              />
+            </a>
+          </Link>
+        </div>
+        {postsArr.map(({ slug, featuredImage, title, year }, i) => (
           <div
+            key={slug}
             className="m-1.5 relative "
             style={{
-              width: `${(1.5 * size * rowLen) / size}px`,
-              flexGrow: `${(1.5 * size * rowLen) / size}`
+              width: `${(featuredImage[1] * size * rowLen) / size}px`,
+              flexGrow: `${(featuredImage[1] * size * rowLen) / size}`
             }}>
-            <Link href={'/recent-sketches-2020'}>
+            <Link href={'/' + slug}>
               <a>
                 <TheImage
-                  src={'/images/recent-sketches-2020/2020-11-01-22-11-02-170.jpg'}
-                  width={1.5 * size}
+                  src={'/images/' + slug + '/' + featuredImage[0]}
+                  width={featuredImage[1] * size}
                   height={size}
                   imgClass="absolute w-full align-bottom top-0"
-                  alt={'recent sketches - 1'}
+                  alt={title + '-' + [i + 1]}
                   zoom={false}
-                  title={'recent sketches (2020)'}
+                  title={`${title} (${year})`}
                   portfolio={true}
                 />
               </a>
             </Link>
           </div>
-          {postsArr.map(({ slug, featuredImage, title, year }, i) => (
-            <div
-              key={slug}
-              className="m-1.5 relative "
-              style={{
-                width: `${(featuredImage[1] * size * rowLen) / size}px`,
-                flexGrow: `${(featuredImage[1] * size * rowLen) / size}`
-              }}>
-              <Link href={'/' + slug}>
-                <a>
-                  <TheImage
-                    src={'/images/' + slug + '/' + featuredImage[0]}
-                    width={featuredImage[1] * size}
-                    height={size}
-                    imgClass="absolute w-full align-bottom top-0"
-                    alt={title + '-' + [i + 1]}
-                    zoom={false}
-                    title={`${title} (${year})`}
-                    portfolio={true}
-                  />
-                </a>
-              </Link>
-            </div>
-          ))}
-        </div>
+        ))}
       </div>
-    </div>
+    </>
   );
 };
 

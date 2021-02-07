@@ -1,12 +1,9 @@
-import Head from 'next/head';
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
-
+import { NextSeo } from 'next-seo';
 import { useEffect, useLayoutEffect, useState } from 'react';
+
 import FadeInSection from '../components/FadeInSection';
 import TheVideo from '../components/TheVideo';
 import useWindowSize from '../hooks/useWindowSize';
-
-import Layout, { siteTitle } from '../components/layout';
 
 const IndexPage = () => {
   const windowSize = useWindowSize();
@@ -55,7 +52,13 @@ const IndexPage = () => {
   const width = 1.5;
 
   return (
-    showVid && (
+    <>
+      <NextSeo
+        title="julian stein — media artist"
+        description="Julian Stein is a media artist based in Los Angeles, CA. His work examine relationships between the analog and the digital, primarily through expressions of sound, and movement, and light"
+        noIndex={false}
+      />
+      showVid && (
       <FadeInSection>
         <div className=" flex max-w-xl mt-14 ">
           <div
@@ -74,7 +77,8 @@ const IndexPage = () => {
           </div>
         </div>
       </FadeInSection>
-    )
+      )
+    </>
   );
 };
 

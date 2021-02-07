@@ -1,15 +1,20 @@
+import { NextSeo } from 'next-seo';
+import * as Icon from 'react-feather';
 import { useSelector } from 'react-redux';
 
-import { toggle, selectNav } from '../lib/slices/navSlice';
-import * as Icon from 'react-feather';
+import { selectNav } from '../lib/slices/navSlice';
 
 const AboutPage = () => {
   const siteType = useSelector(selectNav);
 
   return (
-    <div className=" flex">
+    <>
+      <NextSeo
+        title="julian stein — about"
+        description="Julian Stein is a media artist based in Los Angeles, CA. His work examine relationships between the analog and the digital, primarily through expressions of sound, and movement, and light."
+      />
       <div
-        className={`text-base sm:text-lg md:text-xl ${
+        className={` flex flex-col text-base sm:text-lg md:text-xl ${
           siteType === 'website'
             ? 'md:pt-12 pl-1.5 md:pl-0 lg:pl-6 max-w-prose'
             : 'max-w-prose pt-6 pl-1.5 '
@@ -49,7 +54,7 @@ const AboutPage = () => {
               rel="noreferrer"
               target="_blank"
               className="hover:text-gray-400">
-              <Icon.GitHub className="w-6 h-6 ml-2" />
+              <Icon.GitHub className="w-6 h-6 mx-2" />
             </a>
             <a
               href="https://github.com/julianstein/"
@@ -61,7 +66,7 @@ const AboutPage = () => {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

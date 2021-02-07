@@ -1,10 +1,14 @@
+import { set } from 'date-fns';
+import { NextSeo } from 'next-seo';
+import { useEffect, useState } from 'react';
+
 import ArtistPage from '../components/ArtistPage';
-import PortfolioPage from '../components/PortfolioPage';
 import useWindowSize from '../hooks/useWindowSize';
 import { getAllDynamicPages, getDynamicPageContentBySlug } from '../lib/markdown';
 
 const DynamicPage = ({ page, posts }) => {
   const windowSize = useWindowSize();
+  const [index, setIndex] = useState(true);
 
   const {
     title,
@@ -21,14 +25,19 @@ const DynamicPage = ({ page, posts }) => {
     featuredAspect,
     aspect,
     imageGrid,
-    videoPlayer
+    videoPlayer,
+    seoDescr
   } = page;
 
+  useEffect(() => {
+    seoDescr !== 'none' ? setIndex(true) : setIndex(false);
+  });
+
   return (
-    <div>
-      {template !== 'portfolio' && <ArtistPage page={page} posts={posts} windowSize={windowSize} />}
-      {template === 'portfolio' && <PortfolioPage page={page} posts={posts} />}
-    </div>
+    <>
+      <NextSeo title={`julian stein — ${title}`} description={seoDescr} noIndex={index} />
+      <ArtistPage page={page} posts={posts} windowSize={windowSize} />
+    </>
   );
 };
 
@@ -55,7 +64,8 @@ export async function getStaticProps({ params }) {
     'imageGrid',
     'videoPlayer',
     'videoTime',
-    'author'
+    'author',
+    'seoDescr'
   ]);
 
   const posts = getAllDynamicPages([
@@ -77,7 +87,8 @@ export async function getStaticProps({ params }) {
     'imageGrid',
     'videoPlayer',
     'videoTime',
-    'author'
+    'author',
+    'seoDescr'
   ]);
 
   return {

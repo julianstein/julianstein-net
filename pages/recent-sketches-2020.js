@@ -1,14 +1,12 @@
+import { NextSeo } from 'next-seo';
 import { useEffect, useLayoutEffect, useState } from 'react';
-
-import FadeInSection from '../components/FadeInSection';
-import TheVideo from '../components/TheVideo';
-import TheFooter from '../components/TheFooter';
-
-import useWindowSize from '../hooks/useWindowSize';
-
 import { useSelector } from 'react-redux';
 
-import { selectNav, toggle } from '../lib/slices/navSlice';
+import FadeInSection from '../components/FadeInSection';
+import TheFooter from '../components/TheFooter';
+import TheVideo from '../components/TheVideo';
+import useWindowSize from '../hooks/useWindowSize';
+import { selectNav } from '../lib/slices/navSlice';
 
 const VideoPage = () => {
   const [vidRand, setVidRand] = useState(null);
@@ -72,7 +70,11 @@ const VideoPage = () => {
   }, []);
 
   return (
-    <div>
+    <>
+      <NextSeo
+        title="julian stein — recent sketches, 2020"
+        description="recent video synthesis compositions using MaxMSP/Jitter and vsynth"
+      />
       <div className=" flex">
         <div className=" text-3xl w-full relative flex-initial text-left md:pt-4 pb-20   ">
           <div className="flex flex-wrap">
@@ -99,8 +101,8 @@ const VideoPage = () => {
           </div>
         </div>
       </div>
-      <TheFooter display={siteType} />
-    </div>
+      {siteType === 'portfolio' && <TheFooter />}
+    </>
   );
 };
 

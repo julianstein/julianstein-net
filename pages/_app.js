@@ -1,15 +1,10 @@
 import '../styles/index.scss';
-import FadeInSection from '../components/FadeInSection';
-import Link from 'next/link';
 
 import { AnimatePresence, motion } from 'framer-motion';
-
-import Layout from '../components/layout';
-
 import { Provider } from 'react-redux';
 
+import Layout from '../components/layout';
 import store from '../store';
-//Binding events.
 
 const App = ({ Component, pageProps, router }) => {
   return (
