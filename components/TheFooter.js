@@ -1,11 +1,9 @@
-import Link from 'next/link';
-import slugify from 'slugify';
-import Projects from './projects';
-import FadeInSection from './FadeInSection';
-import useKeyPress from '../hooks/useKeyPress';
-import * as Icon from 'react-feather';
-import { useState, useEffect, useLayoutEffect } from 'react';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import * as Icon from 'react-feather';
+import slugify from 'slugify';
+
+import useKeyPress from '../hooks/useKeyPress';
 
 const links = [
   'recent sketches, 2020',
@@ -61,9 +59,9 @@ const TheFooter = (props) => {
     }
   }, [keyEsc]);
 
-  function mod(a, n) {
+  const mod = (a, n) => {
     return a - n * Math.floor(a / n);
-  }
+  };
 
   let slugs = [];
   slugs = links.map((value) => `/${slugify(value, { lower: true, strict: true })}`);
@@ -72,35 +70,27 @@ const TheFooter = (props) => {
     setActive(slugs.indexOf(path));
   }, [path]);
 
-  let output;
+  return (
+    <footer
+      className={`${
+        path === '/recent-sketches-2020' ? '' : 'xl:pr-5 xl:flex-shrink-0'
+      } flex pb-8 md:pb-6 md:pt-2 mx-auto justify-center  flex-row`}>
+      <Icon.ChevronsLeft
+        onClick={() => router.push(slugs[mod(active - 1, 20)])}
+        className=" w-8 h-8 mr-12 md:mr-24 hover:text-gray-400 cursor-pointer"
+      />
+      <Icon.Grid
+        onClick={() => router.push('/portfolio')}
+        className=" hover:text-gray-400 w-6 h-6 mx-12 mt-1 md:mx-24 cursor-pointer"
+      />
 
-  console.log(active);
-
-  display === 'portfolio'
-    ? (output = (
-        <footer
-          className={`${
-            path === '/recent-sketches-2020' ? '' : 'xl:pr-5 xl:flex-shrink-0'
-          } flex pb-8 md:pb-6 md:pt-2 mx-auto justify-center  flex-row`}>
-          <Icon.ChevronsLeft
-            onClick={() => router.push(slugs[mod(active - 1, 20)])}
-            className=" w-8 h-8 mr-12 md:mr-24 hover:text-gray-400 cursor-pointer"
-          />
-          <Icon.Grid
-            onClick={() => router.push('/portfolio')}
-            className=" hover:text-gray-400 w-6 h-6 mx-12 mt-1 md:mx-24 cursor-pointer"
-          />
-
-          <Icon.ChevronsRight
-            onClick={() => router.push(slugs[mod(active + 1, 21)])}
-            className="w-8 h-8 ml-12 md:ml-24 hover:text-gray-400 cursor-pointer"
-          />
-          <div className={`w-0 ${path === '/recent-sketches-2020' ? '' : 'xl:w-96'}`} />
-        </footer>
-      ))
-    : (output = <footer></footer>);
-
-  return output;
+      <Icon.ChevronsRight
+        onClick={() => router.push(slugs[mod(active + 1, 21)])}
+        className="w-8 h-8 ml-12 md:ml-24 hover:text-gray-400 cursor-pointer"
+      />
+      <div className={`w-0 ${path === '/recent-sketches-2020' ? '' : 'xl:w-96'}`} />
+    </footer>
+  );
 };
 
 export default TheFooter;

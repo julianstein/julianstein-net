@@ -1,7 +1,7 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import slugify from 'slugify';
-import { AnimatePresence, motion, AnimateSharedLayout } from 'framer-motion';
 
 const links = [
   'recent sketches, 2020',
@@ -38,46 +38,45 @@ const Projects = (active, path) => {
   }, [path]);
 
   return (
-    <nav className=" flex md:hidden flex-col text-3xl text-left w-100 ">
-      <div className="text-left text-sm text-black">
-        <button className="pb-1 text-gray-400 leading-normal" onClick={() => setOpen(!open)}>
-          projects
-        </button>
-
-        <AnimatePresence key="bboop">
-          {open && (
-            <motion.ul layout className=" leading-tight tracking-tight pb-3">
-              {links.map((value, index) => (
-                <motion.li
-                  key={index}
-                  className="pb-1"
-                  onClick={() => setOpen(false)}
-                  initial="pageInitial"
-                  animate="pageAnimate"
-                  exit="pageExit"
-                  transition={{
-                    duration: 0.3
-                  }}
-                  variants={{
-                    pageInitial: {
-                      opacity: 0
-                    },
-                    pageAnimate: {
-                      opacity: 1
-                    },
-                    pageExit: {
-                      opacity: 0
-                    }
-                  }}>
-                  <Link href={slugify(value, { lower: true, strict: true })}>
-                    <a className={active === index ? 'font-bold ' : 'font-normal'}>{value}</a>
-                  </Link>
-                </motion.li>
-              ))}
-            </motion.ul>
-          )}
-        </AnimatePresence>
-      </div>
+    <nav className=" flex md:hidden flex-col text-left w-100 text-sm text-black">
+      <button
+        className="pb-1 text-gray-400 text-left leading-normal"
+        onClick={() => setOpen(!open)}>
+        projects
+      </button>
+      <AnimatePresence key="bboop">
+        {open && (
+          <motion.ul layout className=" leading-tight tracking-tight pb-3">
+            {links.map((value, index) => (
+              <motion.li
+                key={index}
+                className="pb-1"
+                onClick={() => setOpen(false)}
+                initial="pageInitial"
+                animate="pageAnimate"
+                exit="pageExit"
+                transition={{
+                  duration: 0.3
+                }}
+                variants={{
+                  pageInitial: {
+                    opacity: 0
+                  },
+                  pageAnimate: {
+                    opacity: 1
+                  },
+                  pageExit: {
+                    opacity: 0
+                  }
+                }}>
+                <Link href={slugify(value, { lower: true, strict: true })}>
+                  <a className={active === index ? 'font-bold ' : 'font-normal'}>{value}</a>
+                </Link>
+              </motion.li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

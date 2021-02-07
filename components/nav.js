@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import slugify from 'slugify';
-import Projects from './projects';
+import { useEffect, useState } from 'react';
 import * as Icon from 'react-feather';
-import { useState, useEffect, useLayoutEffect } from 'react';
-import { useRouter } from 'next/router';
+import slugify from 'slugify';
+
+import Projects from './projects';
 
 const links = [
   'recent sketches, 2020',

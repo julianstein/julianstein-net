@@ -1,5 +1,5 @@
+import { useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player/lazy';
-import { useRef, useEffect } from 'react';
 
 const EmbedPlayer = (props) => {
   const player = useRef(null);

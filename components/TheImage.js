@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { useImageZoom } from 'react-medium-image-zoom';
 import { useSelector } from 'react-redux';
 
-import { toggle, selectNav } from '../lib/slices/navSlice';
+import { selectNav } from '../lib/slices/navSlice';
 
 const TheImage = (props) => {
   const [screenWidth, setScreenWidth] = useState(0);

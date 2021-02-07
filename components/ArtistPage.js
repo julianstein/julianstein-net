@@ -1,8 +1,8 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useSelector } from 'react-redux';
 
-import { selectNav, toggle } from '../lib/slices/navSlice';
+import { selectNav } from '../lib/slices/navSlice';
 import EmbedPlayer from './EmbedPlayer';
 import FadeInSection from './FadeInSection';
 import PrintMarkdown from './PrintMarkdown';
@@ -53,7 +53,7 @@ const ArtistPage = (props) => {
   }, [imgRand]);
 
   return (
-    <div>
+    <>
       <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap pt-3">
         <div
           className={`text-3xl w-full relative flex-initial text-left pt-1 pb-8 xl:pr-6 ${
@@ -135,7 +135,7 @@ const ArtistPage = (props) => {
               </h1>
             )}
             {author && (
-              <h1 className=" font-semibold  	">
+              <h1 className=" font-semibold">
                 {title} ({year}) — {author}
               </h1>
             )}
@@ -146,8 +146,8 @@ const ArtistPage = (props) => {
           </div>
         </div>
       </div>
-      <TheFooter display={siteType} />
-    </div>
+      {siteType === 'portfolio' && <TheFooter />}
+    </>
   );
 };
 
