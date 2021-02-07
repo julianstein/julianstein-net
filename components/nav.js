@@ -127,7 +127,7 @@ const Nav = (props) => {
       ))
     : (output = (
         <nav className="flex flex-col text-base md:text-lg text-left pt-1 pb-3 px-1.5 ">
-          <div className=" w-full text-left flex flex-row relative flex-initial lg:flex-shrink-0 pt-4 sm:pt-2 md:px-3 xl:px-0  ">
+          <div className=" w-full text-left flex flex-row relative flex-initial lg:flex-shrink-0 pt-4 sm:pt-2 md:px-0 xl:px-0  ">
             <div className="w-24 sm:w-44 flex-shrink-0 ">
               <Link href="/portfolio">
                 <a className="text-base sm:text-2xl font-normal hover:text-gray-400  ">

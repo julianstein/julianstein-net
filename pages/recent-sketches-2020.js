@@ -2,7 +2,13 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 
 import FadeInSection from '../components/FadeInSection';
 import TheVideo from '../components/TheVideo';
+import TheFooter from '../components/TheFooter';
+
 import useWindowSize from '../hooks/useWindowSize';
+
+import { useSelector } from 'react-redux';
+
+import { selectNav, toggle } from '../lib/slices/navSlice';
 
 const VideoPage = () => {
   const [vidRand, setVidRand] = useState(null);
@@ -12,6 +18,8 @@ const VideoPage = () => {
 
   const size = 200;
   const width = 1.5;
+
+  const siteType = useSelector(selectNav);
 
   /* let widthBox = windowSize.width <= 1280 ? 545 : 620;
 
@@ -64,31 +72,34 @@ const VideoPage = () => {
   }, []);
 
   return (
-    <div className=" flex">
-      <div className=" text-3xl w-full relative flex-initial text-left md:pt-4 pb-20   ">
-        <div className="flex flex-wrap">
-          {vidRand !== null &&
-            vidRand.map((video, i) => (
-              <div
-                className="m-1.5 relative"
-                key={i}
-                style={{
-                  width: `${(width * size * rowLen) / size}px`,
-                  flexGrow: `${(width * size * rowLen) / size}`
-                }}>
-                <FadeInSection>
-                  <i
-                    className="block"
-                    style={{
-                      paddingBottom: `${(size / (width * size)) * 100}%`
-                    }}>
-                    <TheVideo src={video} />
-                  </i>
-                </FadeInSection>
-              </div>
-            ))}
+    <div>
+      <div className=" flex">
+        <div className=" text-3xl w-full relative flex-initial text-left md:pt-4 pb-20   ">
+          <div className="flex flex-wrap">
+            {vidRand !== null &&
+              vidRand.map((video, i) => (
+                <div
+                  className="m-1.5 relative"
+                  key={i}
+                  style={{
+                    width: `${(width * size * rowLen) / size}px`,
+                    flexGrow: `${(width * size * rowLen) / size}`
+                  }}>
+                  <FadeInSection>
+                    <i
+                      className="block"
+                      style={{
+                        paddingBottom: `${(size / (width * size)) * 100}%`
+                      }}>
+                      <TheVideo src={video} />
+                    </i>
+                  </FadeInSection>
+                </div>
+              ))}
+          </div>
         </div>
       </div>
+      <TheFooter display={siteType} />
     </div>
   );
 };

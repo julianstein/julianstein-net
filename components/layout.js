@@ -6,6 +6,7 @@ import { useEffect, useState, useLayoutEffect } from 'react';
 import * as Icon from 'react-feather';
 
 import FadeInSection from './FadeInSection';
+
 import Nav from './nav';
 
 import { useDispatch } from 'react-redux';
@@ -69,7 +70,7 @@ const Layout = ({ children }) => {
           <main className="w-full md:w-100 flex-auto flex flex-col">{children}</main>
         </div>
       </div>
-      {isVisible && (
+      {isVisible && siteType !== 'portfolio' && (
         <FadeInSection name={'back-to-top'}>
           <div className=" text-right pr-8 pb-8">
             <Icon.ChevronUp

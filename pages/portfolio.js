@@ -32,7 +32,7 @@ const DynamicPage = ({ posts }) => {
 
   postsArr = sortOrder.map((a) => postsArr[a]);
 
-  const [rowLen, setRowLen] = useState(350);
+  const [rowLen, setRowLen] = useState(290);
 
   const size = 1000;
 
