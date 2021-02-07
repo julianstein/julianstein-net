@@ -33,7 +33,6 @@ const Nav = (props) => {
   }, [path]);
 
   let output;
-  console.log(path);
   display === 'website'
     ? (output = (
         <nav className="flex flex-col text-3xl flex-none text-left px-1.5 w-100 md:w-80 pb-8 ">

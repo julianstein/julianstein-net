@@ -45,7 +45,6 @@ const IndexPage = () => {
 
   useEffect(() => {
     windowSize.width < 640 ? setShowVid(false) : setShowVid(true);
-    console.log(windowSize.width);
   }, [windowSize]);
 
   const size = 200;
