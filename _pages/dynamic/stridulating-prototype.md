@@ -10,4 +10,4 @@ seoDescr: '"stridulating prototype" is a kinetic installation that exhibits rota
 
 ### _stepper motors, disk cams, found objects, custom electronics, custom software_
 
-### rotating disks etched with everyday rhythms set found objects in motion
+### rotating disks that are etched with everyday rhythms set found objects in motion.

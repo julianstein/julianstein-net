@@ -11,4 +11,4 @@ seoDescr: '"the wind repeats itself: blue grama" is a generative sound installat
 
 ### _tall grasses, photoresistors, sound, physical models, oscillating fan, light, custom software_
 
-### the movement of grasses embedded with photocell sensors are set in motion by wind, exciting by a series of sonic physical models.
+### tall grasses that are embedded with photocell sensors are set in motion by wind, exciting a series of sonic physical models.
