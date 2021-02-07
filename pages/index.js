@@ -58,26 +58,26 @@ const IndexPage = () => {
         description="Julian Stein is a media artist based in Los Angeles, CA. His work examine relationships between the analog and the digital, primarily through expressions of sound, and movement, and light"
         noIndex={false}
       />
-      showVid && (
-      <FadeInSection>
-        <div className=" flex max-w-xl mt-14 ">
-          <div
-            className=" relative  "
-            style={{
-              width: `${350}px`,
-              flexGrow: `${350}`
-            }}>
-            <i
-              className="block "
+      {showVid && (
+        <FadeInSection>
+          <div className=" flex max-w-xl mt-14 ">
+            <div
+              className=" relative  "
               style={{
-                paddingBottom: `${66.6666}%`
+                width: `${350}px`,
+                flexGrow: `${350}`
               }}>
-              <TheVideo src={vidRand} />
-            </i>
+              <i
+                className="block "
+                style={{
+                  paddingBottom: `${66.6666}%`
+                }}>
+                <TheVideo src={vidRand} />
+              </i>
+            </div>
           </div>
-        </div>
-      </FadeInSection>
-      )
+        </FadeInSection>
+      )}
     </>
   );
 };
