@@ -22,7 +22,7 @@ images:
   ]
 ---
 
-### _stepper motors, disk cams, concrete blocks, spools, rubber cable, tall grasses, blower fans, sensors, found objects, custom electronics, custom software_
+### _stepper motors, disk cams, concrete blocks, spools, rubber cable, tall grasses, blower fans, sensors, found objects, custom hardware, custom software_
 
 ### _a room that i take care of_ is a responsive installation that is composed yet cultivated for its uncertainties – a balance between automation and something looked after. It is an environmental reduction that emphasizes the rhythmic and patterned structure of observable phenomena to seek out shared qualities between the natural and built world. This is demonstrated through the actuation of kinetic sculptures that find influence in various environmental systems, such as the stridulatory mechanisms of sound-producing insects, elements of infrastructure, and patterns of wind.
 

@@ -1,6 +1,6 @@
 ---
 title: "don't fog yourself with rosy clouds, or yellow"
-subtitle: 'generative audiovisual installation'
+subtitle: 'generative audiovisual landscapes'
 year: '2018'
 seoDescr: "'don't fog yourself with rosy clouds, or yellow' is a generative audiovisual installation"
 featuredVideo: '291011339'
@@ -9,9 +9,7 @@ images: [[fogedit1b.png, 1.5], [fogedit3.png, 1.5]]
 imageGrid: 300
 ---
 
-### _single channel visuals, 8.1 channel audio, custom projection surface, custom software_
-
-### generative audiovisual landscapes are projected on an elongated 14’ × 4’ × 4’ surface.
+### _single channel projection, 8.1 channel audio, 14’ × 4’ × 4’ projection surface, custom software_
 
 ---
 
