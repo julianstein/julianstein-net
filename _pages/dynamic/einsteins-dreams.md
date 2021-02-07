@@ -4,6 +4,7 @@ subtitle: 'Responsive Environment'
 author: 'Topological Media Lab'
 year: '2014'
 featuredVideo: 74327393
+seoDescr: none
 featuredImage: [einsteins-dreams_01.jpg, 1.5]
 images:
   [

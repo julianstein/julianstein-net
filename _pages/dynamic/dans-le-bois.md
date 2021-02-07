@@ -4,6 +4,7 @@ subtitle: 'Public Installation'
 author: 'Odace Événements'
 year: '2014'
 featuredVideo: 132958724
+seoDescr: none
 featuredImage: [dans-le-bois_01.jpg, 1.5]
 images:
   [

@@ -12,11 +12,12 @@ images:
     [rhythmassemblage_doc-4.png, 1.5],
     [rhythmassemblage_doc-5.png, 1.5]
   ]
+seoDescr: 'rhythm assemblage is a kinetic installation that exhibits a coordinated and patterned display of parallel lines that are set in motion through an array of motorized pulleys that stretch and release five rubber cables.'
 ---
 
-### _rhythm assemblage_ explores the coordinated and patterned movements of five cables situated in parallel, each coupled with a motorized pulley on each side.
+### _stepper motors, spools, rubber cable, perlite blocks, custom electronics, custom software_
 
-## _stepper motors, spools, rubber cable, perlite blocks, custom electronics, custom software_
+### a coordinated and patterned display of parallel lines that are set in motion through an array of motorized pulleys that stretch and release five rubber cables.
 
 ---
 

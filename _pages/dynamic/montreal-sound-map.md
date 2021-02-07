@@ -14,6 +14,7 @@ images:
     [montrealsoundmap-cca.jpg, 2]
   ]
 imageGrid: 150
+seoDescr: 'The Montréal Sound Map (Max Stein, Julian Stein) is a web-based soundscape project that allows users to upload field recordings to a Google Map of Montréal.'
 ---
 
 ### The Montréal Sound Map ([montrealsoundmap.com)](https://www.montrealsoundmap.com) is a web-based soundscape project that allows users to upload field recordings to a Google Map of Montréal.

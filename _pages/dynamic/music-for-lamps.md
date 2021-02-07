@@ -22,6 +22,7 @@ images:
     [IMG_1812.jpg, 1.5],
     [timthumb.jpeg, 1.5]
   ]
+seoDescr: 'Music for Lamps (Adam Basanta, Max Stein, Julian Stein) is an installation and performance work for 12 sound and light emitting lamps.'
 ---
 
 ### [Music for Lamps](https://www.musicforlamps.com) is an installation and performance work for 12 sound and light emitting lamps. Each lamp is discreetly outfitted with a surface transducer speaker, turning the lamps into both light and sound emitters. The lamps are arranged to both surround and permeate audience members, creating a 12 channel light and 14 channel sound performance.

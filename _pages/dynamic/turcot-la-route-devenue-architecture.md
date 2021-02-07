@@ -15,6 +15,7 @@ images:
     [turcot_06.jpg, 1.5]
   ]
 imageGrid: 175
+seoDescr: none
 ---
 
 ### _Software Development (PureData), Multi-channel Sound Design_

@@ -16,6 +16,7 @@ images:
     [serra_01.png, 1.777]
   ]
 imageGrid: 175
+seoDescr: none
 ---
 
 ### _Sound Design, Software Development (Max/MSP)_

@@ -15,6 +15,7 @@ images:
     [tiooj_web8.png, 0.4625789]
   ]
 imageGrid: 175
+seoDescr: none
 ---
 
 ### _React, Gatsby.js, Redux, graphQL, netlify_

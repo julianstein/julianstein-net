@@ -5,6 +5,7 @@ author: 'Curated by Isabel Beavers and CultureHub LA'
 year: '2020'
 featuredImage: [artecol_01.jpg, 1.77777778]
 images: [[artecol_02.jpg, 1.77777778], [artecol_03.png, 1.59914712], [artecol_04.png, 1.59914712]]
+seoDescr: 'Artificial Ecologies is a virtual exhibition — both an architectural space and thematic grouping of the artworks of Isabel Beavers, Maru Garcia, Richelle Gribble, and Julian Stein. '
 imageGrid: 200
 ---
 

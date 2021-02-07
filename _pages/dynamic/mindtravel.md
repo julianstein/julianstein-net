@@ -16,6 +16,7 @@ images:
     [mindtravel_09.png, 1.5]
   ]
 imageGrid: 175
+seoDescr: none
 ---
 
 ### _Visual Design, Software Development (Max/MSP)_

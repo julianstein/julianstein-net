@@ -8,6 +8,7 @@ videoTime: 87
 featuredImage: [WhisperingWishes_02-1920.jpg, 1.777]
 images: [[WhisperingWishes_01-1920.jpg, 1.777], [WishingTree_exterior_01_hero-1136.jpg, 1]]
 imageGrid: 175
+seoDescr: none
 ---
 
 ### _Software Development (Max/MSP)_

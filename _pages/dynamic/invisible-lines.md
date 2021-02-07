@@ -4,6 +4,7 @@ subtitle: 'generative sound installation'
 year: '2013'
 featuredVideo: '78427816'
 featuredImage: [10InvisibleLines.jpg, 1.5]
+seoDescr: 'Invisible Lines (Adam Basanta, Julian Stein) is a generative sound installation that explores the artistic potential of controlled feedback.'
 images:
   [
     [11InvisibleLines.jpg, 1.5],
