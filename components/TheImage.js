@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useImageZoom } from 'react-medium-image-zoom';
 import { useSelector } from 'react-redux';
 
@@ -9,7 +9,7 @@ const TheImage = (props) => {
   const [screenWidth, setScreenWidth] = useState(0);
   const [hover, setHover] = useState(false);
 
-  const { src, width, height, imgClass, alt, title, portfolio } = props;
+  const { src, width, height, imgClass, alt, title, portfolio, isZoomed, setIsZoomed } = props;
 
   const siteType = useSelector(selectNav);
 
@@ -22,8 +22,12 @@ const TheImage = (props) => {
   let showZoom = screenWidth >= 850 && zoom === undefined;
 
   let { ref } = useImageZoom({
-    overlayBgColorEnd: 'rgba(0,0,0, 0.5)',
-    zoomMargin: 50
+    overlayBgColor: 'rgba(0,0,0, 0.7)',
+    zoomMargin: 50,
+    transitionDuration: 500,
+    onZoomChange: (isZoomed) => {
+      setIsZoomed(isZoomed);
+    }
   });
 
   let output;

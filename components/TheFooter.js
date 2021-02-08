@@ -30,7 +30,7 @@ const links = [
 ];
 
 const TheFooter = (props) => {
-  const { display } = props;
+  const { display, isZoomed } = props;
   const [active, setActive] = useState(null);
 
   const router = useRouter();
@@ -42,22 +42,24 @@ const TheFooter = (props) => {
   const keyEsc = useKeyPress('Escape');
 
   useEffect(() => {
-    if (keyArrowL) {
+    if (keyArrowL && !isZoomed) {
       router.push(slugs[mod(active - 1, 21)]);
     }
   }, [keyArrowL]);
 
   useEffect(() => {
-    if (keyArrowR) {
+    if (keyArrowR && !isZoomed) {
       router.push(slugs[mod(active + 1, 21)]);
     }
   }, [keyArrowR]);
 
   useEffect(() => {
-    if (keyEsc) {
+    if (keyEsc && !isZoomed) {
       router.push('/portfolio');
     }
   }, [keyEsc]);
+
+  console.log('zoomed:', isZoomed);
 
   const mod = (a, n) => {
     return a - n * Math.floor(a / n);

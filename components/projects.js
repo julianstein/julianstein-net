@@ -34,7 +34,7 @@ const Projects = (active, path) => {
   active = active.active;
 
   useEffect(() => {
-    path === '/' ? setOpen(true) : setOpen(false);
+    path === '/' ? setOpen(false) : setOpen(false);
   }, [path]);
 
   return (

@@ -30,6 +30,7 @@ const ArtistPage = (props) => {
   const [imgRand, setImgRand] = useState(null);
   //const [imgDim, setImgDim] = useState(null);
   const [rowLen, setRowLen] = useState(125);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const size = 1000;
 
@@ -97,6 +98,8 @@ const ArtistPage = (props) => {
                       height={size}
                       imgClass="absolute w-full align-bottom top-0"
                       alt={title + '-' + [i + 1]}
+                      isZoomed={isZoomed}
+                      setIsZoomed={setIsZoomed}
                     />
                   </FadeInSection>
                 </div>
@@ -146,7 +149,7 @@ const ArtistPage = (props) => {
           </div>
         </div>
       </div>
-      {siteType === 'portfolio' && <TheFooter />}
+      {siteType === 'portfolio' && <TheFooter isZoomed={isZoomed} />}
     </>
   );
 };
