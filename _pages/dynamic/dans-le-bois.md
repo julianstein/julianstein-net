@@ -14,7 +14,6 @@ images:
     [dans-le-bois_06.jpg, 1.5],
     [dans-le-bois_07.jpg, 1.5]
   ]
-imageGrid: 175
 ---
 
 ### _Lighting Design, Hardware Design, Software Development (Max/MSP)_

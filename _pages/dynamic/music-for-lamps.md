@@ -4,7 +4,6 @@ subtitle: 'audiovisual performance'
 year: '2012'
 featuredVideo: '86942447'
 featuredImage: [_MG_9387.jpg, 1.5]
-imageGrid: 200
 images:
   [
     [_MG_9398.jpg, 1.5],

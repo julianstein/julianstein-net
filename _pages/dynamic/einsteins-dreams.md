@@ -14,7 +14,6 @@ images:
     [einsteins-dreams_05.png, 1.777],
     [einsteins-dreams_06.jpg, 1.5]
   ]
-imageGrid: 175
 ---
 
 ### _Lighting Design, Software Development (Max/MSP)_

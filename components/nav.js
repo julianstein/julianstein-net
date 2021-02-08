@@ -135,7 +135,7 @@ const Nav = (props) => {
               </Link>
             </div>
             <div className="flex flex-row w-full justify-end xl:justify-start xl:text-left self-end">
-              <div className="pr-1.5 md:pr-3">
+              <div className="pr-2 md:pr-3">
                 <Link href="/portfolio">
                   <a
                     className={
@@ -147,7 +147,7 @@ const Nav = (props) => {
                   </a>
                 </Link>
               </div>
-              <div className="px-1.5 md:px-3">
+              <div className="px-2 md:px-3">
                 <Link href="/about">
                   <a
                     className={
@@ -162,7 +162,7 @@ const Nav = (props) => {
 
               <a
                 href="mailto:julian.stein@gmail.com"
-                className=" pl-1.5 md:pl-3 font-normal hover:text-gray-400 ">
+                className=" pl-2 md:pl-3 font-normal hover:text-gray-400 ">
                 contact
               </a>
             </div>

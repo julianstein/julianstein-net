@@ -3,7 +3,6 @@ title: 'aurora urbem'
 subtitle: 'kinetic sculpture & video installation'
 year: '2011'
 featuredImage: [aurora_01.jpg, 1.5]
-imageGrid: 200
 seoDescr: '"aurora urbem" is a three-piece installation of kinetic sound sculptures and video by Drew Barnet, Max Stein, and Julian Stein.'
 images:
   [

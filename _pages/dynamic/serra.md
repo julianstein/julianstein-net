@@ -15,7 +15,6 @@ images:
     [serra_07.png, 1.777],
     [serra_01.png, 1.777]
   ]
-imageGrid: 175
 seoDescr: none
 ---
 

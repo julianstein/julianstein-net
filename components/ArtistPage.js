@@ -32,7 +32,7 @@ const ArtistPage = (props) => {
   const [rowLen, setRowLen] = useState(125);
   const [isZoomed, setIsZoomed] = useState(false);
 
-  const size = 1000;
+  const size = 1200;
 
   const siteType = useSelector(selectNav);
 
@@ -46,11 +46,33 @@ const ArtistPage = (props) => {
     let rowArr = [100, 125, 150, 175, 200, 300, 200, 300];
     rowArr.sort(() => Math.random() - 0.5);
 
-    windowSize.width >= 1400
-      ? setRowLen(imageGrid !== undefined ? imageGrid : rowArr[0])
-      : windowSize.width >= 640
-      ? setRowLen(100)
-      : setRowLen(100);
+    if (siteType === 'website') {
+      windowSize.width >= 1536
+        ? setRowLen(210)
+        : windowSize.width >= 1280
+        ? setRowLen(140)
+        : windowSize.width >= 1024
+        ? setRowLen(130)
+        : windowSize.width >= 768
+        ? setRowLen(80)
+        : windowSize.width >= 640
+        ? setRowLen(140)
+        : setRowLen(140);
+    } else {
+      windowSize.width >= 2560
+        ? setRowLen(500)
+        : windowSize.width >= 1536
+        ? setRowLen(300)
+        : windowSize.width >= 1280
+        ? setRowLen(210)
+        : windowSize.width >= 1024
+        ? setRowLen(200)
+        : windowSize.width >= 768
+        ? setRowLen(180)
+        : windowSize.width >= 640
+        ? setRowLen(140)
+        : setRowLen(140);
+    }
   }, [imgRand]);
 
   return (
@@ -125,8 +147,8 @@ const ArtistPage = (props) => {
             {!featuredVideo && (
               <TheImage
                 src={'/images/' + slug + '/' + featuredImage[0]}
-                width={featuredImage[1] * 1000}
-                height={1 * 1000}
+                width={featuredImage[1] * 1200}
+                height={1 * 1200}
                 alt={`${title} (${year}): featured image`}
               />
             )}

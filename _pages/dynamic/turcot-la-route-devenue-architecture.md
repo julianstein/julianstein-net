@@ -14,7 +14,6 @@ images:
     [turcot_05.jpg, 1.5],
     [turcot_06.jpg, 1.5]
   ]
-imageGrid: 175
 seoDescr: none
 ---
 

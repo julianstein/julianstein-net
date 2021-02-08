@@ -4,7 +4,6 @@ subtitle: 'responsive installation'
 year: '2019'
 featuredVideo: '344031360'
 featuredImage: [IBG_0006.png, 1.5]
-imageGrid: '200'
 seoDescr: "'a room that i take care of' is an assemblage of kinetic sculptures that find influence from environmental systems, such as the stridulatory mechanisms of insects and patterns of wind."
 images:
   [

@@ -15,7 +15,6 @@ images:
     [mindtravel_08.png, 1.3333],
     [mindtravel_09.png, 1.5]
   ]
-imageGrid: 175
 seoDescr: none
 ---
 

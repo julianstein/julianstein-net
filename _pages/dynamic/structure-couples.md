@@ -16,7 +16,6 @@ images:
     [Screenshot21.jpg, 1.5],
     [Screenshot26.jpg, 1.5]
   ]
-imageGrid: 300
 ---
 
 ## a song and dance for realtime 2D motion capture (openpose) + physical models

@@ -5,7 +5,6 @@ year: '2017'
 featuredVideo: '225078397'
 featuredImage: [solar.jpg, 1.5]
 images: [[DSC01554-3.jpg, 1.5], [sos_arduino.png, 1.5]]
-imageGrid: 300
 seoDescr: 'Sounding Out Spaces: Garden Ecologies (Lauren Hayes, Julian Stein) is a site-responsive sonic art project that explores ecosystemic relationships between people, sounds and spaces.'
 ---
 

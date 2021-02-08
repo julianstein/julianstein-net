@@ -17,7 +17,7 @@ const AboutPage = () => {
         className={` flex flex-col text-base sm:text-lg md:text-xl ${
           siteType === 'website'
             ? 'md:pt-12 pl-1.5 md:pl-0 lg:pl-6 max-w-prose'
-            : 'max-w-prose pt-6 pl-1.5 '
+            : 'max-w-prose text-sm pt-6 pl-1.5 '
         }`}>
         <p className="">
           Julian Stein is a media artist based in Los Angeles, CA. He creates performances and
@@ -29,41 +29,43 @@ const AboutPage = () => {
         <br />
         <p className="">
           MFA from the University of California Los Angeles in Design Media Arts, BFA from Concordia
-          University in Electroacoustic Studies, co-creator of the Montreal Sound Map.
+          University in Electroacoustic Studies.
         </p>
         <br />
+
         {siteType === 'portfolio' && (
-          <p className="italic">
-            This portfolio was built using Next.js and deployed using Vercel.
-          </p>
-        )}
-        {siteType === 'portfolio' && (
-          <div className="flex pt-8 -ml-0">
+          <div className="flex pt-2 -ml-0">
             <a
               href="https://www.instagram.com/steinjulian/"
               rel="noreferrer"
               target="_blank"
               className="hover:text-gray-400">
-              <Icon.Instagram className=" w-6 h-6 mr-2 " />
+              <Icon.Instagram className=" w-6 h-6 mr-3 " />
             </a>
             <a href="mailto:julian.stein@gmail.com" className="hover:text-gray-400">
-              <Icon.Mail className="w-6 h-6 mx-2" />
+              <Icon.Mail className="w-6 h-6 mx-3" />
             </a>
             <a
               href="https://github.com/julianstein/"
               rel="noreferrer"
               target="_blank"
               className="hover:text-gray-400">
-              <Icon.GitHub className="w-6 h-6 mx-2" />
+              <Icon.GitHub className="w-6 h-6 mx-3" />
             </a>
             <a
-              href="https://github.com/julianstein/"
+              href="https://www.linkedin.com/in/julian-stein-991707b4/"
               rel="noreferrer"
               target="_blank"
               className="hover:text-gray-400">
-              <Icon.Linkedin className="w-6 h-6 ml-2" />
+              <Icon.Linkedin className="w-6 h-6 ml-3" />
             </a>
           </div>
+        )}
+        <br />
+        {siteType === 'portfolio' && (
+          <p className="italic pt-1">
+            This portfolio was built using Next.js and deployed using Vercel.
+          </p>
         )}
       </div>
     </>

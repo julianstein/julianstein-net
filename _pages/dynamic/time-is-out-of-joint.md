@@ -14,7 +14,6 @@ images:
     [tiooj_web7.png, 0.4625789],
     [tiooj_web8.png, 0.4625789]
   ]
-imageGrid: 175
 seoDescr: none
 ---
 
