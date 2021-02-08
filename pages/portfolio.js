@@ -42,7 +42,7 @@ const DynamicPage = ({ posts }) => {
       <NextSeo
         title="julian stein — portfolio"
         description="Julian Stein is a media artist based in Los Angeles, CA. His work examine relationships between the analog and the digital, primarily through expressions of sound, and movement, and light"
-        noIndex={true}
+        noindex={true}
       />
       <div className=" flex text-3xl w-full relative flex-wrap text-left md:pt-4 pb-20  ">
         <div

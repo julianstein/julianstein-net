@@ -8,7 +8,7 @@ import { getAllDynamicPages, getDynamicPageContentBySlug } from '../lib/markdown
 
 const DynamicPage = ({ page, posts }) => {
   const windowSize = useWindowSize();
-  const [index, setIndex] = useState(true);
+  const [index, setIndex] = useState(false);
 
   const {
     title,
@@ -35,7 +35,7 @@ const DynamicPage = ({ page, posts }) => {
 
   return (
     <>
-      <NextSeo title={`julian stein — ${title}`} description={seoDescr} noIndex={index} />
+      <NextSeo title={`julian stein — ${title}`} description={seoDescr} noindex={index} />
       <ArtistPage page={page} posts={posts} windowSize={windowSize} />
     </>
   );

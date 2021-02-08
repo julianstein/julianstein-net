@@ -55,7 +55,6 @@ const IndexPage = () => {
       <NextSeo
         title="julian stein — media artist"
         description="Julian Stein is a media artist based in Los Angeles, CA. His work examine relationships between the analog and the digital, primarily through expressions of sound, and movement, and light"
-        noIndex={false}
       />
       {showVid && (
         <FadeInSection>
