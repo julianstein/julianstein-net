@@ -46,16 +46,6 @@ const Layout = ({ children }) => {
       : (setSiteType(siteType), dispatchToggle());
   });
 
-  const scrollTo = (ref) => {
-    if (ref /* + other conditions */) {
-      ref.scrollIntoView({});
-    }
-  };
-
-  useEffect(() => {
-    scrollTo();
-  }, [path]);
-
   return (
     <>
       <div
@@ -66,9 +56,7 @@ const Layout = ({ children }) => {
         }`}>
         <div className={`flex flex-col ${siteType === 'website' ? 'md:flex-row' : ' '}`}>
           <Nav path={path} display={siteType} />
-          <main ref={scrollTo} className="w-full md:w-100 flex-auto flex flex-col">
-            {children}
-          </main>
+          <main className="w-full md:w-100 flex-auto flex flex-col">{children}</main>
         </div>
       </div>
       {isVisible && siteType !== 'portfolio' && (
