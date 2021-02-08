@@ -13,7 +13,6 @@ import TheImage from './TheImage';
 
 const ArtistPage = (props) => {
   const { page } = props;
-  const scrollTo = useRef(null);
 
   const {
     title,
@@ -43,10 +42,6 @@ const ArtistPage = (props) => {
   let imgElem = [];
   Object.values(imgs).map((val, i) => imgElem.push([val.naturalWidth, val.naturalHeight]));
   setImgDim(imgElem);*/
-
-  const scrollToElem = () => {
-    scrollTo.current.scrollIntoView();
-  };
 
   useLayoutEffect(() => {
     setImgRand(images.sort(() => Math.random() - 0.5));
@@ -82,15 +77,9 @@ const ArtistPage = (props) => {
     }
   }, [imgRand]);
 
-  useEffect(() => {
-    scrollToElem();
-  }, [imgRand]);
-
   return (
     <>
-      <div
-        ref={scrollTo}
-        className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap pt-3">
+      <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap pt-3">
         <div
           className={`text-3xl w-full relative flex-initial text-left pt-1 pb-8 xl:pr-6 ${
             siteType === 'website' ? 'md:px-3' : ' '
