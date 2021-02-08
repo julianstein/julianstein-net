@@ -1,16 +1,17 @@
 import { NextSeo } from 'next-seo';
 import { useEffect, useLayoutEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import FadeInSection from '../components/FadeInSection';
 import TheVideo from '../components/TheVideo';
-import useWindowSize from '../hooks/useWindowSize';
+import { selectWindow } from '../lib/slices/windowSlice';
 
 const IndexPage = () => {
-  const windowSize = useWindowSize();
-
   const [vidRand, setVidRand] = useState(null);
   const [rowLen, setRowLen] = useState(100);
   const [showVid, setShowVid] = useState(true);
+
+  const windowWidth = useSelector(selectWindow);
 
   const videos = [
     'aroom_01',
@@ -44,8 +45,8 @@ const IndexPage = () => {
   }, []);
 
   useEffect(() => {
-    windowSize.width < 640 ? setShowVid(false) : setShowVid(true);
-  }, [windowSize]);
+    windowWidth < 640 ? setShowVid(false) : setShowVid(true);
+  }, [windowWidth]);
 
   const size = 200;
   const width = 1.5;

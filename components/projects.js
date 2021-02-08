@@ -33,8 +33,6 @@ const Projects = (props) => {
 
   const { path, active } = props;
 
-  console.log(path);
-
   useEffect(() => {
     path !== '/about' ? setOpen(true) : setOpen(false);
   }, [path]);

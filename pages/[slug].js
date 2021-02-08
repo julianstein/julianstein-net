@@ -3,11 +3,9 @@ import { NextSeo } from 'next-seo';
 import { useEffect, useState } from 'react';
 
 import ArtistPage from '../components/ArtistPage';
-import useWindowSize from '../hooks/useWindowSize';
 import { getAllDynamicPages, getDynamicPageContentBySlug } from '../lib/markdown';
 
 const DynamicPage = ({ page, posts }) => {
-  const windowSize = useWindowSize();
   const [index, setIndex] = useState(false);
 
   const {
@@ -36,7 +34,7 @@ const DynamicPage = ({ page, posts }) => {
   return (
     <>
       <NextSeo title={`julian stein — ${title}`} description={seoDescr} noindex={index} />
-      <ArtistPage page={page} posts={posts} windowSize={windowSize} />
+      <ArtistPage page={page} posts={posts} />
     </>
   );
 };

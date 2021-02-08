@@ -1,14 +1,16 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import TheImage from '../components/TheImage';
-import useWindowSize from '../hooks/useWindowSize';
 import { getAllDynamicPages } from '../lib/markdown';
+import { selectWindow } from '../lib/slices/windowSlice';
 
 const DynamicPage = ({ posts }) => {
-  const windowSize = useWindowSize();
-  const [postsSort, setPostsSort] = useState(null);
+  const [rowLen, setRowLen] = useState(290);
+
+  const windowWidth = useSelector(selectWindow);
 
   const {
     title,
@@ -28,9 +30,23 @@ const DynamicPage = ({ posts }) => {
 
   postsArr = sortOrder.map((a) => postsArr[a]);
 
-  const [rowLen, setRowLen] = useState(290);
-
   const size = 1000;
+
+  useEffect(() => {
+    windowWidth >= 2560
+      ? setRowLen(500)
+      : windowWidth >= 1536
+      ? setRowLen(300)
+      : windowWidth >= 1280
+      ? setRowLen(210)
+      : windowWidth >= 1024
+      ? setRowLen(200)
+      : windowWidth >= 768
+      ? setRowLen(180)
+      : windowWidth >= 640
+      ? setRowLen(140)
+      : setRowLen(140);
+  }, [windowWidth]);
 
   /*let imgs = document.querySelectorAll('.images');
   let imgElem = [];

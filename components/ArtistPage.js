@@ -1,8 +1,10 @@
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState, useRef, useEffect } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useSelector } from 'react-redux';
 
 import { selectNav } from '../lib/slices/navSlice';
+import { selectWindow } from '../lib/slices/windowSlice';
+
 import EmbedPlayer from './EmbedPlayer';
 import FadeInSection from './FadeInSection';
 import PrintMarkdown from './PrintMarkdown';
@@ -10,7 +12,8 @@ import TheFooter from './TheFooter';
 import TheImage from './TheImage';
 
 const ArtistPage = (props) => {
-  const { page, windowSize } = props;
+  const { page } = props;
+  const scrollTo = useRef(null);
 
   const {
     title,
@@ -35,11 +38,15 @@ const ArtistPage = (props) => {
   const size = 1200;
 
   const siteType = useSelector(selectNav);
-
+  const windowWidth = useSelector(selectWindow);
   /*let imgs = document.querySelectorAll('.images');
   let imgElem = [];
   Object.values(imgs).map((val, i) => imgElem.push([val.naturalWidth, val.naturalHeight]));
   setImgDim(imgElem);*/
+
+  const scrollToElem = () => {
+    scrollTo.current.scrollIntoView();
+  };
 
   useLayoutEffect(() => {
     setImgRand(images.sort(() => Math.random() - 0.5));
@@ -47,37 +54,43 @@ const ArtistPage = (props) => {
     rowArr.sort(() => Math.random() - 0.5);
 
     if (siteType === 'website') {
-      windowSize.width >= 1536
+      windowWidth >= 1536
         ? setRowLen(210)
-        : windowSize.width >= 1280
+        : windowWidth >= 1280
         ? setRowLen(140)
-        : windowSize.width >= 1024
+        : windowWidth >= 1024
         ? setRowLen(130)
-        : windowSize.width >= 768
+        : windowWidth >= 768
         ? setRowLen(80)
-        : windowSize.width >= 640
+        : windowWidth >= 640
         ? setRowLen(140)
         : setRowLen(140);
     } else {
-      windowSize.width >= 2560
+      windowWidth >= 2560
         ? setRowLen(500)
-        : windowSize.width >= 1536
+        : windowWidth >= 1536
         ? setRowLen(300)
-        : windowSize.width >= 1280
+        : windowWidth >= 1280
         ? setRowLen(210)
-        : windowSize.width >= 1024
+        : windowWidth >= 1024
         ? setRowLen(200)
-        : windowSize.width >= 768
+        : windowWidth >= 768
         ? setRowLen(180)
-        : windowSize.width >= 640
+        : windowWidth >= 640
         ? setRowLen(140)
         : setRowLen(140);
     }
   }, [imgRand]);
 
+  useEffect(() => {
+    scrollToElem();
+  }, [imgRand]);
+
   return (
     <>
-      <div className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap pt-3">
+      <div
+        ref={scrollTo}
+        className="flex md:flex-row flex-col-reverse md:flex-wrap-reverse xl:flex-nowrap pt-3">
         <div
           className={`text-3xl w-full relative flex-initial text-left pt-1 pb-8 xl:pr-6 ${
             siteType === 'website' ? 'md:px-3' : ' '

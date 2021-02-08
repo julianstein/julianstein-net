@@ -49,7 +49,7 @@ const Nav = (props) => {
             </Link>
           </ul>
           <div className="text-left text-sm text-black">
-            <Projects active={active} path={path} />
+            <Projects active={active} path={path} display={display} />
 
             <ul className="hidden md:block leading-tight tracking-tight">
               {links.map((value, index) => (

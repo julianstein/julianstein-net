@@ -1,22 +1,46 @@
 import { useRouter } from 'next/router';
 import Router from 'next/router';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState, useRef } from 'react';
 import * as Icon from 'react-feather';
 import { useDispatch } from 'react-redux';
 
 import { toggle } from '../lib/slices/navSlice';
+import { width } from '../lib/slices/windowSlice';
+
 import FadeInSection from './FadeInSection';
 import Nav from './nav';
+import useWindowSize from '../hooks/useWindowSize';
 
 //const name = 'Julian Stein';
 export const siteTitle = 'julian stein | media artist';
 
 const Layout = ({ children }) => {
+  const windowSize = useWindowSize();
+
   const router = useRouter();
   let path = router.asPath;
 
   const [isVisible, setVisible] = useState(false);
   const [siteType, setSiteType] = useState('website');
+  const [windowWidth, setWindowWidth] = useState(null);
+
+  Router.events.on('routeChangeStart', () => setVisible(false));
+  Router.events.on('routeChangeComplete', () => showArrow());
+
+  useEffect(() => {
+    showArrow();
+    // `current` points to the mounted text input element
+  }, []);
+
+  const dispatch = useDispatch();
+
+  function dispatchToggle() {
+    dispatch(toggle(siteType));
+  }
+
+  function dispatchWidth() {
+    dispatch(width(windowWidth));
+  }
 
   const showArrow = () => {
     setTimeout(() => {
@@ -27,23 +51,26 @@ const Layout = ({ children }) => {
     }, 500);
   };
 
-  Router.events.on('routeChangeStart', () => setVisible(false));
-  Router.events.on('routeChangeComplete', () => showArrow());
-
-  useEffect(() => {
-    showArrow();
-  }, []);
-
-  const dispatch = useDispatch();
-
-  function dispatchToggle() {
-    dispatch(toggle(siteType));
-  }
-
   useLayoutEffect(() => {
     path === '/portfolio' && siteType === 'website'
       ? (setSiteType('portfolio'), dispatchToggle())
       : (setSiteType(siteType), dispatchToggle());
+  });
+
+  useLayoutEffect(() => {
+    windowSize.width >= 2560
+      ? (setWindowWidth(2560), dispatchWidth())
+      : windowSize.width >= 1536
+      ? (setWindowWidth(1536), dispatchWidth())
+      : windowSize.width >= 1280
+      ? (setWindowWidth(1280), dispatchWidth())
+      : windowSize.width >= 1024
+      ? (setWindowWidth(1024), dispatchWidth())
+      : windowSize.width >= 768
+      ? (setWindowWidth(768), dispatchWidth())
+      : windowSize.width >= 640
+      ? (setWindowWidth(640), dispatchWidth())
+      : (setWindowWidth(0), dispatchWidth());
   });
 
   return (

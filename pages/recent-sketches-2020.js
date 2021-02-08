@@ -5,14 +5,14 @@ import { useSelector } from 'react-redux';
 import FadeInSection from '../components/FadeInSection';
 import TheFooter from '../components/TheFooter';
 import TheVideo from '../components/TheVideo';
-import useWindowSize from '../hooks/useWindowSize';
 import { selectNav } from '../lib/slices/navSlice';
+import { selectWindow } from '../lib/slices/windowSlice';
 
 const VideoPage = () => {
   const [vidRand, setVidRand] = useState(null);
   const [rowLen, setRowLen] = useState(250);
 
-  const windowSize = useWindowSize();
+  const windowWidth = useSelector(selectWindow);
 
   const size = 200;
   const width = 1.5;
@@ -50,20 +50,34 @@ const VideoPage = () => {
   ];
 
   useEffect(() => {
-    windowSize.width >= 1465
-      ? setRowLen(250)
-      : windowSize.width >= 1279
-      ? setRowLen(200)
-      : windowSize.width >= 1060
-      ? setRowLen(170)
-      : windowSize.width >= 920
-      ? setRowLen(120)
-      : windowSize.width >= 768
-      ? setRowLen(90)
-      : windowSize.width >= 640
-      ? setRowLen(220)
-      : setRowLen(100);
-  }, [windowSize]);
+    if (siteType === 'website') {
+      windowWidth >= 1536
+        ? setRowLen(210)
+        : windowWidth >= 1280
+        ? setRowLen(140)
+        : windowWidth >= 1024
+        ? setRowLen(130)
+        : windowWidth >= 768
+        ? setRowLen(80)
+        : windowWidth >= 640
+        ? setRowLen(140)
+        : setRowLen(140);
+    } else {
+      windowWidth >= 2560
+        ? setRowLen(500)
+        : windowWidth >= 1536
+        ? setRowLen(300)
+        : windowWidth >= 1280
+        ? setRowLen(210)
+        : windowWidth >= 1024
+        ? setRowLen(200)
+        : windowWidth >= 768
+        ? setRowLen(180)
+        : windowWidth >= 640
+        ? setRowLen(140)
+        : setRowLen(140);
+    }
+  }, [windowWidth]);
 
   useLayoutEffect(() => {
     setVidRand(videos.sort(() => Math.random() - 0.5));
