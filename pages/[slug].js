@@ -30,7 +30,7 @@ const DynamicPage = ({ page, posts }) => {
   } = page;
 
   useEffect(() => {
-    seoDescr !== 'none' ? setIndex(true) : setIndex(false);
+    seoDescr === 'none' ? setIndex(true) : setIndex(false);
   });
 
   return (

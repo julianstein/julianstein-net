@@ -28,13 +28,15 @@ const linksTwo = [
   { href: 'https://github.com/vercel/next.js', label: 'music' }
 ];
 
-const Projects = (active, path) => {
+const Projects = (props) => {
   const [open, setOpen] = useState(null);
-  path = active.path;
-  active = active.active;
+
+  const { path, active } = props;
+
+  console.log(path);
 
   useEffect(() => {
-    path === '/' ? setOpen(false) : setOpen(false);
+    path !== '/about' ? setOpen(true) : setOpen(false);
   }, [path]);
 
   return (
@@ -51,7 +53,6 @@ const Projects = (active, path) => {
               <motion.li
                 key={index}
                 className="pb-1"
-                onClick={() => setOpen(false)}
                 initial="pageInitial"
                 animate="pageAnimate"
                 exit="pageExit"
