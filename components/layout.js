@@ -52,9 +52,11 @@ const Layout = ({ children }) => {
   };
 
   useLayoutEffect(() => {
-    path === '/portfolio' && siteType === 'website'
-      ? (setSiteType('portfolio'), dispatchToggle())
-      : (setSiteType(siteType), dispatchToggle());
+    if (path === '/portfolio') {
+      setSiteType('portfolio'), dispatchToggle();
+    } else if (path === '/') {
+      setSiteType('website'), dispatchToggle();
+    }
   });
 
   useLayoutEffect(() => {

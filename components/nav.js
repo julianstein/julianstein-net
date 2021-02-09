@@ -41,8 +41,8 @@ const Nav = (props) => {
               <a
                 className={
                   path === '/'
-                    ? 'font-semibold hover:text-black text-base'
-                    : 'font-normal hover:text-gray-400 text-base'
+                    ? 'font-semibold md:hover:text-black text-base'
+                    : 'font-normal md:hover:text-gray-400 text-base'
                 }>
                 julian stein
               </a>
@@ -58,8 +58,8 @@ const Nav = (props) => {
                     <a
                       className={
                         active === index
-                          ? 'font-semibold hover:text-black'
-                          : 'font-normal hover:text-gray-400 '
+                          ? 'font-semibold md:hover:text-black'
+                          : 'font-normal md:hover:text-gray-400 '
                       }>
                       {value}
                     </a>
@@ -73,8 +73,8 @@ const Nav = (props) => {
                   <a
                     className={
                       path === '/about'
-                        ? 'font-semibold hover:text-black'
-                        : 'font-normal hover:text-gray-400 '
+                        ? 'font-semibold md:hover:text-black'
+                        : 'font-normal md:hover:text-gray-400 '
                     }>
                     about
                   </a>
@@ -85,8 +85,8 @@ const Nav = (props) => {
                   <a
                     className={
                       path === '/portfolio'
-                        ? 'font-semibold hover:text-black'
-                        : 'font-normal hover:text-gray-400 '
+                        ? 'font-semibold md:hover:text-black'
+                        : 'font-normal md:hover:text-gray-400 '
                     }>
                     portfolio
                   </a>
@@ -94,7 +94,7 @@ const Nav = (props) => {
               </li>
               <li>
                 <a
-                  className="hover:text-gray-400 leading-normal"
+                  className="md:hover:text-gray-400 leading-normal"
                   href="https://soundcloud.com/julianstein"
                   rel="noreferrer"
                   target="_blank">
@@ -108,17 +108,17 @@ const Nav = (props) => {
               href="https://www.instagram.com/steinjulian/"
               rel="noreferrer"
               target="_blank"
-              className="hover:text-gray-400">
+              className="md:hover:text-gray-400">
               <Icon.Instagram className=" w-4 mx-1.5 " />
             </a>
-            <a href="mailto:julian.stein@gmail.com" className="hover:text-gray-400">
+            <a href="mailto:julian.stein@gmail.com" className="md:hover:text-gray-400">
               <Icon.Mail className="w-4 mx-1" />
             </a>
             <a
               href="https://github.com/julianstein/"
               rel="noreferrer"
               target="_blank"
-              className="hover:text-gray-400">
+              className="md:hover:text-gray-400">
               <Icon.GitHub className="w-4 mx-1.5" />
             </a>
           </div>
@@ -128,8 +128,8 @@ const Nav = (props) => {
         <nav className="flex flex-col text-base md:text-lg text-left pt-1 pb-3 px-1.5 ">
           <div className=" w-full text-left flex flex-row relative flex-initial lg:flex-shrink-0 pt-4 sm:pt-2 md:px-0 xl:px-0  ">
             <div className="w-24 sm:w-44 flex-shrink-0 ">
-              <Link href="/portfolio">
-                <a className="text-base sm:text-2xl font-normal hover:text-gray-400  ">
+              <Link href="/">
+                <a className="text-base sm:text-2xl font-normal md:hover:text-gray-400  ">
                   julian stein
                 </a>
               </Link>
@@ -140,10 +140,10 @@ const Nav = (props) => {
                   <a
                     className={
                       path === '/portfolio' || path !== '/about'
-                        ? 'font-semibold hover:text-black'
-                        : 'font-normal hover:text-gray-400'
+                        ? 'font-semibold md:hover:text-black'
+                        : 'font-normal md:hover:text-gray-400'
                     }>
-                    work
+                    portfolio
                   </a>
                 </Link>
               </div>
@@ -152,8 +152,8 @@ const Nav = (props) => {
                   <a
                     className={
                       path === '/about'
-                        ? 'font-medium hover:text-black'
-                        : 'font-normal hover:text-gray-400 '
+                        ? 'font-medium md:hover:text-black'
+                        : 'font-normal md:hover:text-gray-400 '
                     }>
                     about
                   </a>
@@ -162,7 +162,7 @@ const Nav = (props) => {
 
               <a
                 href="mailto:julian.stein@gmail.com"
-                className=" pl-2 md:pl-3 font-normal hover:text-gray-400 ">
+                className=" pl-2 md:pl-3 font-normal md:hover:text-gray-400 ">
                 contact
               </a>
             </div>
