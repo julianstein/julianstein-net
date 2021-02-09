@@ -2,7 +2,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import slugify from 'slugify';
-
+import { useSelector } from 'react-redux';
+import { selectWindow } from '../lib/slices/windowSlice';
+import useDidMountEffect from '../hooks/useDidMountEffect';
 const links = [
   'recent sketches, 2020',
   'a room that i take care of',
@@ -30,8 +32,17 @@ const linksTwo = [
 
 const Projects = (props) => {
   const [open, setOpen] = useState(null);
-
+  const [scroll, setScroll] = useState(false);
   const { path, active } = props;
+  const windowWidth = useSelector(selectWindow);
+
+  useDidMountEffect(() => {
+    const scrollTo = document.querySelector('main');
+
+    if (windowWidth < 640) {
+      scrollTo.scrollIntoView();
+    }
+  }, [path]);
 
   useEffect(() => {
     path !== '/about' ? setOpen(true) : setOpen(false);

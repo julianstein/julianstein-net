@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
 
   const [isVisible, setVisible] = useState(false);
   const [siteType, setSiteType] = useState('website');
-  const [windowWidth, setWindowWidth] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(1280);
 
   Router.events.on('routeChangeStart', () => setVisible(false));
   Router.events.on('routeChangeComplete', () => showArrow());
