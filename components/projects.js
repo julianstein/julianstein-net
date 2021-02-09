@@ -39,7 +39,7 @@ const Projects = (props) => {
   const { path, active } = props;
 
   useEffect(() => {
-    path === '/' ? setOpen(true) : setTimeout(() => setOpen(false), 300);
+    path === '/' ? setOpen(true) : setTimeout(() => setOpen(false), 400);
   }, [path]);
 
   const scrollY = useScrollPosition(5);
@@ -90,7 +90,7 @@ const Projects = (props) => {
                 height: 0,
                 opacity: 0,
                 marginTop: '-.75rem',
-                transition: { duration: 1.5, type: 'spring', ease: 'easeInOut' }
+                transition: { duration: 2, type: 'spring', ease: 'easeInOut' }
               }
             }}>
             {links.map((value, index) => (
