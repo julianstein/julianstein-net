@@ -48,7 +48,7 @@ const Projects = (props) => {
     if (scrollY > 200) {
       setGate(true);
     }
-    if (gate && scrollY < 50) {
+    if (gate && scrollY < 100) {
       setOpen(true);
     }
   }, [scrollY]);
@@ -73,7 +73,7 @@ const Projects = (props) => {
             initial="pageInitial"
             animate="pageAnimate"
             exit="pageExit"
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
             variants={{
               pageInitial: {
                 height: 0,
