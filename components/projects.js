@@ -66,7 +66,7 @@ const Projects = (props) => {
         onClick={() => setOpen(!open)}>
         projects
       </button>
-      <AnimatePresence exitBeforeEnter="true" key="bboop">
+      <AnimatePresence key="bboop">
         {open && (
           <motion.ul
             className=" leading-tight tracking-tight pb-3"
