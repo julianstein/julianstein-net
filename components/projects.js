@@ -5,6 +5,9 @@ import slugify from 'slugify';
 import { useSelector } from 'react-redux';
 import { selectWindow } from '../lib/slices/windowSlice';
 import useDidMountEffect from '../hooks/useDidMountEffect';
+import useScrollPosition from '@react-hook/window-scroll';
+import { set } from 'date-fns';
+
 const links = [
   'recent sketches, 2020',
   'a room that i take care of',
@@ -32,21 +35,32 @@ const linksTwo = [
 
 const Projects = (props) => {
   const [open, setOpen] = useState(null);
-  const [scroll, setScroll] = useState(false);
+  const [gate, setGate] = useState(false);
+
   const { path, active } = props;
+
   const windowWidth = useSelector(selectWindow);
 
-  useDidMountEffect(() => {
-    const scrollTo = document.querySelector('main');
-
-    if (windowWidth < 640) {
-      scrollTo.scrollIntoView();
-    }
+  useEffect(() => {
+    path === '/' ? setOpen(true) : setOpen(false);
   }, [path]);
+
+  const scrollY = useScrollPosition(5);
 
   useEffect(() => {
-    path !== '/about' ? setOpen(true) : setOpen(false);
-  }, [path]);
+    if (scrollY > 200) {
+      setGate(true);
+    }
+    if (gate && scrollY < 50) {
+      setOpen(true);
+    }
+  }, [scrollY]);
+
+  useEffect(() => {
+    if (!open) {
+      setGate(false);
+    }
+  }, [open]);
 
   return (
     <nav className=" flex md:hidden flex-col text-left w-100 text-sm text-black">
