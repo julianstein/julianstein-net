@@ -39,7 +39,7 @@ const Projects = (props) => {
   const { path, active } = props;
 
   useEffect(() => {
-    path === '/' ? setOpen(true) : setOpen(false);
+    path === '/' ? setOpen(true) : setTimeout(() => setOpen(false), 500);
   }, [path]);
 
   const scrollY = useScrollPosition(5);
