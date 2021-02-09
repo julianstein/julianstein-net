@@ -81,11 +81,15 @@ const IndexPage = () => {
                 <motion.i
                   whileHover={{
                     scale: 1.05,
-                    transition: { duration: 1, ease: 'easeInOut' }
+                    transition: { duration: 2.5, type: 'spring' }
+                  }}
+                  whileTap={{
+                    scale: 1,
+                    transition: { duration: 2.5, type: 'spring' }
                   }}
                   drag
                   animate={transitioning ? 'true' : 'false'}
-                  transition={{ duration: 2, ease: 'easeInOut' }}
+                  transition={{ duration: 2.5, type: 'spring' }}
                   variants={variants}
                   dragConstraints={{
                     top: 0,
