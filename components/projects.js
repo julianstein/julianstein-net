@@ -66,7 +66,7 @@ const Projects = (props) => {
         onClick={() => setOpen(!open)}>
         projects
       </button>
-      <AnimatePresence key="bboop">
+      <AnimatePresence layout key="bboop">
         {open && (
           <motion.ul
             className=" leading-tight tracking-tight pb-3"
@@ -74,7 +74,7 @@ const Projects = (props) => {
             animate="pageAnimate"
             exit="pageExit"
             transition={{
-              duration: 0.3
+              duration: 0.5
             }}
             variants={{
               pageInitial: {
@@ -95,7 +95,7 @@ const Projects = (props) => {
                 animate="pageAnimate"
                 exit="pageExit"
                 transition={{
-                  duration: 0.3
+                  duration: 0.5
                 }}
                 variants={{
                   pageInitial: {
