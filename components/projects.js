@@ -59,12 +59,6 @@ const Projects = (props) => {
     }
   }, [open]);
 
-  const transition = {
-    opacity: { ease: 'anticipate', duration: 0.3 },
-    height: { ease: 'anticipate', duration: 0.5 },
-    paddingBottom: { ease: 'anticipate', duration: 0.2 }
-  };
-
   return (
     <nav className=" flex md:hidden flex-col text-left w-100 text-sm text-black">
       <button
@@ -75,34 +69,34 @@ const Projects = (props) => {
       <AnimatePresence exitBeforeEnter="true" key="bboop">
         {open && (
           <motion.ul
-            className=" leading-tight tracking-tight"
+            className=" leading-tight tracking-tight pb-3"
             initial="pageInitial"
             animate="pageAnimate"
             exit="pageExit"
-            transition={{ transition }}
+            transition={{ duration: 0.5 }}
             variants={{
               pageInitial: {
                 height: 0,
-                paddingBottom: '0rem',
+                marginTop: '-.75rem',
                 opacity: 0
               },
               pageAnimate: {
                 height: 'auto',
                 opacity: 1,
-                paddingBottom: '0.75rem'
+                marginTop: '0rem'
               },
               pageExit: {
                 height: 0,
                 opacity: 0,
-                paddingBottom: '0rem'
+                marginTop: '-.75rem'
               }
             }}>
             {links.map((value, index) => (
-              <li key={index} className="pb-1">
+              <motion.li key={index} className="pb-1">
                 <Link href={slugify(value, { lower: true, strict: true })}>
                   <a className={active === index ? 'font-bold ' : 'font-normal'}>{value}</a>
                 </Link>
-              </li>
+              </motion.li>
             ))}
           </motion.ul>
         )}
