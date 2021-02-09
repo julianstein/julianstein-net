@@ -48,8 +48,8 @@ const Projects = (props) => {
     if (scrollY > 200) {
       setGate(true);
     }
-    if (gate && scrollY < 100) {
-      setOpen(true);
+    if (gate && scrollY < 50) {
+      setTimeout(() => setOpen(true), 250);
     }
   }, [scrollY]);
 
@@ -73,7 +73,7 @@ const Projects = (props) => {
             initial="pageInitial"
             animate="pageAnimate"
             exit="pageExit"
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            transition={{ duration: 0.7, ease: 'easeInOut' }}
             variants={{
               pageInitial: {
                 height: 0,
