@@ -84,7 +84,7 @@ const Projects = (props) => {
                 height: 'auto',
                 opacity: 1,
                 marginTop: '0rem',
-                transition: { duration: 0.6, ease: 'easeInOut' }
+                transition: { duration: 1, type: 'spring', ease: 'easeInOut' }
               },
               pageExit: {
                 height: 0,
