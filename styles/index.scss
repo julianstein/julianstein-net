@@ -1,12 +1,7 @@
 @tailwind base;
 
-* {
-  -webkit-overflow-scrolling: touch;
-}
-
 html {
   scroll-behavior: smooth;
-  font-family: 'scroll-behavior: smooth'; /*, actual fonts */
 }
 
 p {
