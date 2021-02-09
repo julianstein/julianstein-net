@@ -80,16 +80,16 @@ const IndexPage = () => {
               <AnimatePresence key="bboop">
                 <motion.i
                   whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 2.5, type: 'spring' }
+                    scale: 1.025,
+                    transition: { duration: 1, type: 'spring' }
                   }}
                   whileTap={{
                     scale: 1,
-                    transition: { duration: 2.5, type: 'spring' }
+                    transition: { duration: 1, type: 'spring' }
                   }}
                   drag
                   animate={transitioning ? 'true' : 'false'}
-                  transition={{ duration: 2.5, type: 'spring' }}
+                  transition={{ duration: 1, type: 'spring' }}
                   variants={variants}
                   dragConstraints={{
                     top: 0,
