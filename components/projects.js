@@ -49,7 +49,7 @@ const Projects = (props) => {
       setGate(true);
     }
     if (gate && scrollY < 50) {
-      setTimeout(() => setOpen(true), 700);
+      setTimeout(() => setOpen(true), 300);
     }
   }, [scrollY]);
 
@@ -90,7 +90,7 @@ const Projects = (props) => {
                 height: 0,
                 opacity: 0,
                 marginTop: '-.75rem',
-                transition: { duration: 2, type: 'spring', ease: 'easeInOut' }
+                transition: { duration: 3, type: 'spring', ease: 'easeInOut' }
               }
             }}>
             {links.map((value, index) => (
