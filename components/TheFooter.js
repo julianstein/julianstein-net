@@ -59,8 +59,6 @@ const TheFooter = (props) => {
     }
   }, [keyEsc]);
 
-  console.log('zoomed:', isZoomed);
-
   const mod = (a, n) => {
     return a - n * Math.floor(a / n);
   };

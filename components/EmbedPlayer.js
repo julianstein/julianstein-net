@@ -18,7 +18,7 @@ const EmbedPlayer = (props) => {
     //  console.log('onEnded');
     if (videoTime !== undefined) {
       player.current.seekTo(videoTime);
-      console.log(videoTime);
+      //  console.log(videoTime);
     }
   };
 

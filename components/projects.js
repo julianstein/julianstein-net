@@ -36,10 +36,7 @@ const linksTwo = [
 const Projects = (props) => {
   const [open, setOpen] = useState(null);
   const [gate, setGate] = useState(false);
-
   const { path, active } = props;
-
-  const windowWidth = useSelector(selectWindow);
 
   useEffect(() => {
     path === '/' ? setOpen(true) : setOpen(false);
@@ -71,7 +68,25 @@ const Projects = (props) => {
       </button>
       <AnimatePresence key="bboop">
         {open && (
-          <motion.ul layout className=" leading-tight tracking-tight pb-3">
+          <motion.ul
+            className=" leading-tight tracking-tight pb-3"
+            initial="pageInitial"
+            animate="pageAnimate"
+            exit="pageExit"
+            transition={{
+              duration: 0.3
+            }}
+            variants={{
+              pageInitial: {
+                height: 0
+              },
+              pageAnimate: {
+                height: 'auto'
+              },
+              pageExit: {
+                height: 0
+              }
+            }}>
             {links.map((value, index) => (
               <motion.li
                 key={index}
