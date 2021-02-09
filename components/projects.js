@@ -49,7 +49,7 @@ const Projects = (props) => {
       setGate(true);
     }
     if (gate && scrollY < 50) {
-      setTimeout(() => setOpen(true), 250);
+      setTimeout(() => setOpen(true), 1000);
     }
   }, [scrollY]);
 
@@ -73,22 +73,24 @@ const Projects = (props) => {
             initial="pageInitial"
             animate="pageAnimate"
             exit="pageExit"
-            transition={{ duration: 0.7, ease: 'easeInOut' }}
             variants={{
               pageInitial: {
                 height: 0,
                 marginTop: '-.75rem',
-                opacity: 0
+                opacity: 0,
+                transition: { duration: 2, type: 'spring', ease: 'easeInOut' }
               },
               pageAnimate: {
                 height: 'auto',
                 opacity: 1,
-                marginTop: '0rem'
+                marginTop: '0rem',
+                transition: { duration: 2, type: 'spring', ease: 'easeInOut' }
               },
               pageExit: {
                 height: 0,
                 opacity: 0,
-                marginTop: '-.75rem'
+                marginTop: '-.75rem',
+                transition: { duration: 1.5, type: 'spring', ease: 'easeInOut' }
               }
             }}>
             {links.map((value, index) => (
