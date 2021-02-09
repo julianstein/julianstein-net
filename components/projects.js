@@ -73,9 +73,6 @@ const Projects = (props) => {
             initial="pageInitial"
             animate="pageAnimate"
             exit="pageExit"
-            transition={{
-              duration: 0.4
-            }}
             variants={{
               pageInitial: {
                 height: 0,
