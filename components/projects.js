@@ -66,7 +66,7 @@ const Projects = (props) => {
         onClick={() => setOpen(!open)}>
         projects
       </button>
-      <AnimatePresence layout key="bboop">
+      <AnimatePresence exitBeforeEnter key="bboop">
         {open && (
           <motion.ul
             className=" leading-tight tracking-tight pb-3"
@@ -74,44 +74,28 @@ const Projects = (props) => {
             animate="pageAnimate"
             exit="pageExit"
             transition={{
-              duration: 0.5
+              duration: 0.4
             }}
             variants={{
               pageInitial: {
-                height: 0
+                height: 0,
+                opacity: 0
               },
               pageAnimate: {
-                height: 'auto'
+                height: 'auto',
+                opacity: 1
               },
               pageExit: {
-                height: 0
+                height: 0,
+                opacity: 0
               }
             }}>
             {links.map((value, index) => (
-              <motion.li
-                key={index}
-                className="pb-1"
-                initial="pageInitial"
-                animate="pageAnimate"
-                exit="pageExit"
-                transition={{
-                  duration: 0.5
-                }}
-                variants={{
-                  pageInitial: {
-                    opacity: 0
-                  },
-                  pageAnimate: {
-                    opacity: 1
-                  },
-                  pageExit: {
-                    opacity: 0
-                  }
-                }}>
+              <li key={index} className="pb-1">
                 <Link href={slugify(value, { lower: true, strict: true })}>
                   <a className={active === index ? 'font-bold ' : 'font-normal'}>{value}</a>
                 </Link>
-              </motion.li>
+              </li>
             ))}
           </motion.ul>
         )}
