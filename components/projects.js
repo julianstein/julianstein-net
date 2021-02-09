@@ -39,7 +39,7 @@ const Projects = (props) => {
   const { path, active } = props;
 
   useEffect(() => {
-    path === '/' ? setTimeout(() => setOpen(true), 300) : setTimeout(() => setOpen(false), 300);
+    path === '/' ? setTimeout(() => setOpen(true), 500) : setTimeout(() => setOpen(false), 500);
   }, [path]);
 
   const scrollY = useScrollPosition(5);
@@ -73,7 +73,7 @@ const Projects = (props) => {
             initial="pageInitial"
             animate="pageAnimate"
             exit="pageExit"
-            transition={{ duration: 0.6, ease: 'easeInOut' }}
+            transition={{ duration: 0.7, ease: 'easeInOut' }}
             variants={{
               pageInitial: {
                 height: 0,
