@@ -1,12 +1,25 @@
 import '../styles/index.scss';
 
+import { useEffect } from 'react';
+
 import { AnimatePresence, motion } from 'framer-motion';
 import { Provider } from 'react-redux';
 
 import Layout from '../components/layout';
+import * as gtag from '../lib/gtag';
 import store from '../store';
 
 const App = ({ Component, pageProps, router }) => {
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <Provider store={store}>
       <Layout>
