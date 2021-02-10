@@ -48,33 +48,43 @@ const VideoPage = () => {
     'steinj-video_15',
     'steinj-video_16'
   ];
-
+  console.log(siteType);
   useEffect(() => {
     if (siteType === 'website') {
-      windowWidth >= 1536
-        ? setRowLen(210)
+      windowWidth >= 1920
+        ? setRowLen(160)
+        : windowWidth >= 1680
+        ? setRowLen(160)
+        : windowWidth >= 1536
+        ? setRowLen(150)
+        : windowWidth >= 1440
+        ? setRowLen(150)
         : windowWidth >= 1280
-        ? setRowLen(140)
+        ? setRowLen(125)
         : windowWidth >= 1024
-        ? setRowLen(130)
+        ? setRowLen(170)
         : windowWidth >= 768
-        ? setRowLen(80)
+        ? setRowLen(150)
         : windowWidth >= 640
-        ? setRowLen(140)
+        ? setRowLen(170)
         : setRowLen(140);
     } else {
-      windowWidth >= 2560
-        ? setRowLen(500)
+      windowWidth >= 1920
+        ? setRowLen(250)
+        : windowWidth >= 1680
+        ? setRowLen(250)
         : windowWidth >= 1536
-        ? setRowLen(300)
-        : windowWidth >= 1280
-        ? setRowLen(210)
-        : windowWidth >= 1024
+        ? setRowLen(220)
+        : windowWidth >= 1440
         ? setRowLen(200)
+        : windowWidth >= 1280
+        ? setRowLen(185)
+        : windowWidth >= 1024
+        ? setRowLen(260)
         : windowWidth >= 768
-        ? setRowLen(180)
+        ? setRowLen(210)
         : windowWidth >= 640
-        ? setRowLen(140)
+        ? setRowLen(170)
         : setRowLen(140);
     }
   }, [windowWidth]);

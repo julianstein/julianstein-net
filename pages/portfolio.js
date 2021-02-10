@@ -30,22 +30,26 @@ const DynamicPage = ({ posts }) => {
 
   postsArr = sortOrder.map((a) => postsArr[a]);
 
-  const size = 1000;
+  const size = 1280;
 
   useEffect(() => {
-    windowWidth >= 2560
-      ? setRowLen(500)
+    windowWidth >= 1920
+      ? setRowLen(400)
+      : windowWidth >= 1680
+      ? setRowLen(387)
       : windowWidth >= 1536
-      ? setRowLen(300)
+      ? setRowLen(350)
+      : windowWidth >= 1440
+      ? setRowLen(320)
       : windowWidth >= 1280
-      ? setRowLen(210)
+      ? setRowLen(280)
       : windowWidth >= 1024
-      ? setRowLen(200)
+      ? setRowLen(230)
       : windowWidth >= 768
-      ? setRowLen(180)
+      ? setRowLen(300)
       : windowWidth >= 640
-      ? setRowLen(140)
-      : setRowLen(140);
+      ? setRowLen(300)
+      : setRowLen(300);
   }, [windowWidth]);
 
   /*let imgs = document.querySelectorAll('.images');

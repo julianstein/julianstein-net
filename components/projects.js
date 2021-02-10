@@ -51,6 +51,9 @@ const Projects = (props) => {
     if (gate && scrollY < 50) {
       setTimeout(() => setOpen(true), 800);
     }
+    return () => {
+      clearTimeout();
+    };
   }, [scrollY]);
 
   useEffect(() => {

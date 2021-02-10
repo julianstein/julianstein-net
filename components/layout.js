@@ -62,8 +62,14 @@ const Layout = ({ children }) => {
   useLayoutEffect(() => {
     windowSize.width >= 2560
       ? (setWindowWidth(2560), dispatchWidth())
+      : windowSize.width >= 1920
+      ? (setWindowWidth(1920), dispatchWidth())
+      : windowSize.width >= 1680
+      ? (setWindowWidth(1680), dispatchWidth())
       : windowSize.width >= 1536
       ? (setWindowWidth(1536), dispatchWidth())
+      : windowSize.width >= 1440
+      ? (setWindowWidth(1440), dispatchWidth())
       : windowSize.width >= 1280
       ? (setWindowWidth(1280), dispatchWidth())
       : windowSize.width >= 1024
@@ -81,7 +87,7 @@ const Layout = ({ children }) => {
         className={` ${
           siteType === 'website'
             ? 'max-w-screen-2xl px-4 sm:px-12 lg:px-20 pt-4 sm:py-8 md:py-16'
-            : 'mx-auto px-4 sm:px-12 lg:px-12 sm:py-4 md:py-4'
+            : 'max-w-screen-1920px mx-auto px-4 sm:px-12 lg:px-12 sm:py-4 md:py-4'
         }`}>
         <div className={`flex flex-col ${siteType === 'website' ? 'md:flex-row' : ' '}`}>
           <Nav path={path} display={siteType} />

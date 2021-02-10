@@ -34,7 +34,7 @@ const ArtistPage = (props) => {
   const [rowLen, setRowLen] = useState(125);
   const [isZoomed, setIsZoomed] = useState(false);
 
-  const size = 1200;
+  const size = 1280;
 
   const siteType = useSelector(selectNav);
   const windowWidth = useSelector(selectWindow);
@@ -49,10 +49,16 @@ const ArtistPage = (props) => {
     rowArr.sort(() => Math.random() - 0.5);
 
     if (siteType === 'website') {
-      windowWidth >= 1536
+      windowWidth >= 1920
+        ? setRowLen(300)
+        : windowWidth >= 1680
+        ? setRowLen(140)
+        : windowWidth >= 1536
+        ? setRowLen(210)
+        : windowWidth >= 1440
         ? setRowLen(210)
         : windowWidth >= 1280
-        ? setRowLen(140)
+        ? setRowLen(130)
         : windowWidth >= 1024
         ? setRowLen(130)
         : windowWidth >= 768
@@ -61,10 +67,14 @@ const ArtistPage = (props) => {
         ? setRowLen(140)
         : setRowLen(140);
     } else {
-      windowWidth >= 2560
-        ? setRowLen(500)
-        : windowWidth >= 1536
+      windowWidth >= 1920
         ? setRowLen(300)
+        : windowWidth >= 1680
+        ? setRowLen(280)
+        : windowWidth >= 1536
+        ? setRowLen(250)
+        : windowWidth >= 1440
+        ? setRowLen(240)
         : windowWidth >= 1280
         ? setRowLen(210)
         : windowWidth >= 1024

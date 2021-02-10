@@ -63,6 +63,10 @@ strong {
   visibility: visible;
 }
 
+.max-w-screen-1920px {
+  max-width: 1920px;
+}
+
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
@@ -79,11 +83,6 @@ Write your own custom base styles here */
 /* Start purging... */
 @tailwind components;
 /* Stop purging. */
-
-html,
-body {
-  @apply bg-gray-50 dark:bg-gray-50;
-}
 
 /* Write your own custom component styles here */
 .btn-blue {
