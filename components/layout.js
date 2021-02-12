@@ -20,6 +20,8 @@ const Layout = ({ children }) => {
   const router = useRouter();
   let path = router.asPath;
 
+  console.log(path);
+
   const [isVisible, setVisible] = useState(false);
   const [siteType, setSiteType] = useState('website');
   const [windowWidth, setWindowWidth] = useState(1280);
