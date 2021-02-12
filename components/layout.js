@@ -59,20 +59,11 @@ const Layout = ({ children }) => {
   };
 
   useLayoutEffect(() => {
-    if (window.location.hostname == 'portfolio.julianstein.net' && path === '/') {
-      setSiteType('portfolio'), dispatchToggle();
-      router.push('/portfolio', '/');
-    } else if (window.location.hostname == 'portfolio.julianstein.net' && path === '/portfolio') {
-      setSiteType('portfolio'), dispatchToggle();
-      router.push('/portfolio', '/');
-    } else if (window.location.hostname == 'portfolio.julianstein.net') {
-      setSiteType('portfolio'), dispatchToggle();
-    } else if (path === '/portfolio') {
+    if (path === '/portfolio') {
       setSiteType('portfolio'), dispatchToggle();
     } else if (path === '/') {
       setSiteType('website'), dispatchToggle();
     }
-
     // console.log('fire');
   }, [route === 'start']);
 

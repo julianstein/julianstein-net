@@ -24,16 +24,12 @@ const links = [
 const Nav = (props) => {
   const { path, display } = props;
   const [active, setActive] = useState(null);
-  const [homePath, setHomePath] = useState('/');
 
   let slugs = [];
   slugs = links.map((value) => `/${slugify(value, { lower: true, strict: true })}`);
 
   useEffect(() => {
     setActive(slugs.indexOf(path));
-    window.location.hostname == 'portfolio.julianstein.net'
-      ? setHomePath('/portfolio')
-      : setHomePath('/');
   }, [path]);
 
   let output;
@@ -132,7 +128,7 @@ const Nav = (props) => {
         <nav className="flex flex-col text-base md:text-lg text-left pt-1 pb-3 px-1.5 ">
           <div className=" w-full text-left flex flex-row relative flex-initial lg:flex-shrink-0 pt-4 sm:pt-2 md:px-0 xl:px-0  ">
             <div className="w-24 sm:w-44 flex-shrink-0 ">
-              <Link href={homePath}>
+              <Link href="/">
                 <a className="text-base sm:text-2xl font-normal md:hover:text-gray-400  ">
                   julian stein
                 </a>
