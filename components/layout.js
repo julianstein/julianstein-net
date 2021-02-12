@@ -20,13 +20,18 @@ const Layout = ({ children }) => {
   const router = useRouter();
   let path = router.asPath;
 
-  console.log(path);
+  //  console.log(router);
 
   const [isVisible, setVisible] = useState(false);
+  const [route, setRoute] = useState(false);
+
   const [siteType, setSiteType] = useState('website');
   const [windowWidth, setWindowWidth] = useState(1280);
 
   Router.events.on('routeChangeStart', () => setVisible(false));
+  Router.events.on('routeChangeStart', () => setRoute('start'));
+  Router.events.on('routeChangeComplete', () => setRoute('complete'));
+
   Router.events.on('routeChangeComplete', () => showArrow());
 
   useEffect(() => {
@@ -67,7 +72,9 @@ const Layout = ({ children }) => {
     } else if (path === '/') {
       setSiteType('website'), dispatchToggle();
     }
-  }, [path]);
+
+    // console.log('fire');
+  }, [route === 'start']);
 
   useLayoutEffect(() => {
     windowSize.width >= 2560
