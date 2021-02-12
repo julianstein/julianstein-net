@@ -55,7 +55,10 @@ const Layout = ({ children }) => {
     if (window.location.hostname == 'portfolio.julianstein.net' && path === '/') {
       setSiteType('portfolio'), dispatchToggle();
       router.push('/portfolio', '/');
-    } else if (window.location.hostname == 'portfolio.julianstein.net' && path !== '/') {
+    } else if (window.location.hostname == 'portfolio.julianstein.net' && path === '/portfolio') {
+      setSiteType('portfolio'), dispatchToggle();
+      router.push('/portfolio', '/');
+    } else if (window.location.hostname == 'portfolio.julianstein.net') {
       setSiteType('portfolio'), dispatchToggle();
     } else if (path === '/portfolio') {
       setSiteType('portfolio'), dispatchToggle();
