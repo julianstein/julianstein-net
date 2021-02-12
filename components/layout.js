@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
     } else if (path === '/') {
       setSiteType('website'), dispatchToggle();
     }
-  });
+  }, [path]);
 
   useLayoutEffect(() => {
     windowSize.width >= 2560
