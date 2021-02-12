@@ -53,7 +53,7 @@ const Layout = ({ children }) => {
     }, 500);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window.location.hostname == 'portfolio.julianstein.net' && path === '/') {
       setSiteType('portfolio'), dispatchToggle();
       router.push('/portfolio', '/');
