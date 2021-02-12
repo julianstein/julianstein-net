@@ -20,8 +20,10 @@ seoDescr: none
 
 ### _Visual Design, Software Development (Max/MSP)_
 
-### _MindTravel_ is an immersive musical experience that takes place in iconic theaters and beautiful outdoor spaces. Gorgeous and provocative avant-garde real-time piano compositions, spontaneously improvised, infused with wisdom traditions, theoretical physics and the power of communal elevation.
+### _MindTravel_ is an immersive musical experience that takes place in theaters and outdoor spaces. Murray Hidary performs avant-garde real-time piano compositions, with generative visual accompaniments that are responsively influenced by the musical improvisations.
 
 ## Murray Hidary (Concept / Artist)
+
+## Julian Stein (Visual Design, Software Development)
 
 ## Joshua Goldberg (Original Software Developer)

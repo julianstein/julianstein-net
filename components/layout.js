@@ -52,7 +52,12 @@ const Layout = ({ children }) => {
   };
 
   useLayoutEffect(() => {
-    if (path === '/portfolio') {
+    if (window.location.hostname == 'portfolio.julianstein.net' && path === '/') {
+      setSiteType('portfolio'), dispatchToggle();
+      router.push('/portfolio', '/');
+    } else if (window.location.hostname == 'portfolio.julianstein.net' && path !== '/') {
+      setSiteType('portfolio'), dispatchToggle();
+    } else if (path === '/portfolio') {
       setSiteType('portfolio'), dispatchToggle();
     } else if (path === '/') {
       setSiteType('website'), dispatchToggle();

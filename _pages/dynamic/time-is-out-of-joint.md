@@ -14,7 +14,7 @@ images:
     [tiooj_web7.png, 0.4625789],
     [tiooj_web8.png, 0.4625789]
   ]
-seoDescr: none
+seoDescr: 'Exhibition Website for "Time is Out of Joint," a three-part exhibition featuring the work of CalArts’ 2020 MFA cohort in Art, Photography & Media, and Art & Technology.'
 ---
 
 ### _React, Gatsby.js, Redux, graphQL, netlify_
