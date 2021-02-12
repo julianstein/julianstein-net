@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
   useLayoutEffect(() => {
     if (window.location.hostname == 'portfolio.julianstein.net' && path === '/') {
       setSiteType('portfolio'), dispatchToggle();
-      router.push('/portfolio', '/');
+      router.push('/portfolio');
     } else if (window.location.hostname == 'portfolio.julianstein.net' && path !== '/') {
       setSiteType('portfolio'), dispatchToggle();
     } else if (path === '/portfolio') {
