@@ -65,7 +65,7 @@ const Layout = ({ children }) => {
     } else if (path === '/') {
       setSiteType('website'), dispatchToggle();
     }
-  }, [Router.events]);
+  }, [path]);
 
   useLayoutEffect(() => {
     windowSize.width >= 2560
