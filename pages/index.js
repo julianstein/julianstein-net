@@ -76,7 +76,7 @@ const IndexPage = () => {
           images: [
             {
               url: 'https://julianstein.net/images/a-room-that-i-take-care-of/IBG_0006.png',
-              width: 800,
+              width: 900,
               height: 600,
               alt: 'julian stein'
             }

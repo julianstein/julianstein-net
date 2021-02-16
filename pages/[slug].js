@@ -33,7 +33,25 @@ const DynamicPage = ({ page, posts }) => {
 
   return (
     <>
-      <NextSeo title={`julian stein — ${title}`} description={seoDescr} noindex={index} />
+      <NextSeo
+        title={`julian stein — ${title}`}
+        description={seoDescr}
+        noindex={index}
+        openGraph={{
+          type: 'project',
+          url: `https://www.julianstein.net/${slug}`,
+          title: `julian stein — ${title}`,
+          description: { seoDescr },
+          images: [
+            {
+              url: `/images/${slug}/${featuredImage[0]}`,
+              width: 800,
+              height: 600,
+              alt: 'julian stein'
+            }
+          ]
+        }}
+      />
       <ArtistPage page={page} posts={posts} />
     </>
   );
