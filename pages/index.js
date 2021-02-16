@@ -66,7 +66,22 @@ const IndexPage = () => {
     <>
       <NextSeo
         title="julian stein — media artist"
-        description="Julian Stein is a media artist based in Los Angeles, CA. His work examine relationships between the analog and the digital, primarily through expressions of sound, and movement, and light"
+        description="Julian Stein is a media artist based in Los Angeles, CA. His work examines relationships between the analog and the digital, primarily through expressions of sound, and movement, and light."
+        openGraph={{
+          type: 'website',
+          url: 'https://www.julianstein.net',
+          title: 'julian stein — media artist',
+          description:
+            'Julian Stein is a media artist based in Los Angeles, CA. His work examines relationships between the analog and the digital, primarily through expressions of sound, and movement, and light.',
+          images: [
+            {
+              url: 'https://julianstein.net/images/a-room-that-i-take-care-of/IBG_0006.png',
+              width: 800,
+              height: 600,
+              alt: 'julian stein'
+            }
+          ]
+        }}
       />
       {showVid && (
         <FadeInSection>

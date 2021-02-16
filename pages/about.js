@@ -11,7 +11,7 @@ const AboutPage = () => {
     <>
       <NextSeo
         title="julian stein — about"
-        description="Julian Stein is a media artist based in Los Angeles, CA. His work examine relationships between the analog and the digital, primarily through expressions of sound, and movement, and light."
+        description="Julian Stein is a media artist based in Los Angeles, CA. His work examines relationships between the analog and the digital, primarily through expressions of sound, and movement, and light."
       />
       <div
         className={` flex flex-col text-base sm:text-lg md:text-xl ${
