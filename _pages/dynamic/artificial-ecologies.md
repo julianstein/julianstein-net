@@ -1,5 +1,5 @@
 ---
-title: 'artificial ecologies'
+title: 'Artificial Ecologies'
 subtitle: 'Virtual Gallery'
 author: 'Curated by Isabel Beavers and CultureHub LA'
 year: '2020'

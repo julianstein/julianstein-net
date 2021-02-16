@@ -73,22 +73,22 @@ const TheFooter = (props) => {
   return (
     <footer
       className={`${
-        path === '/recent-sketches-2020' ? '' : 'xl:pr-5 xl:flex-shrink-0'
-      } flex pb-8 md:pb-6 md:pt-2 mx-auto justify-center  flex-row`}>
+        path === '/recent-sketches-2020' ? '' : 'xl:pr-5 xl:flex-shrink-0  '
+      } flex pb-8 md:pb-6 md:pt-2 mx-auto justify-center flex-row `}>
       <Icon.ChevronsLeft
         onClick={() => router.push(slugs[mod(active - 1, 20)])}
-        className=" w-8 h-8 mr-12 md:mr-24 hover:text-gray-400 cursor-pointer"
+        className="   w-8 h-8 mr-12 md:mr-36 hover:text-gray-400 cursor-pointer"
       />
       <Icon.Grid
         onClick={() => router.push('/portfolio')}
-        className=" hover:text-gray-400 w-6 h-6 mx-12 mt-1 md:mx-24 cursor-pointer"
+        className=" hover:text-gray-400 w-6 h-6 mx-18 mt-1 md:mx-24 cursor-pointer"
       />
 
       <Icon.ChevronsRight
         onClick={() => router.push(slugs[mod(active + 1, 21)])}
-        className="w-8 h-8 ml-12 md:ml-24 hover:text-gray-400 cursor-pointer"
+        className="w-8 h-8 ml-12 md:ml-36 hover:text-gray-400  cursor-pointer"
       />
-      <div className={`w-0 ${path === '/recent-sketches-2020' ? '' : 'xl:w-96'}`} />
+      <div className={`w-0 ${path === '/recent-sketches-2020' ? '' : '  xl:w-96'}`} />
     </footer>
   );
 };

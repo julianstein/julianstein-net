@@ -1,5 +1,5 @@
 ---
-title: 'time is out of joint'
+title: 'Time is Out of Joint'
 subtitle: 'Exhibition Website'
 year: '2020'
 author: 'CalArts'
