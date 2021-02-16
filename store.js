@@ -5,7 +5,6 @@ import windowReducer from './lib/slices/windowSlice';
 import { loadState, saveState } from './lib/sessionStorage';
 
 const preloadedState = loadState();
-console.log('load:', preloadedState);
 
 const store = configureStore({
   reducer: {
