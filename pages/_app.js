@@ -9,6 +9,12 @@ import Layout from '../components/layout';
 import * as gtag from '../lib/gtag';
 import store from '../store';
 
+import { loadState, saveState } from '../lib/sessionStorage';
+
+store.subscribe(() => {
+  saveState(store.getState());
+});
+
 const App = ({ Component, pageProps, router }) => {
   useEffect(() => {
     const handleRouteChange = (url) => {

@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 const FadeInSection = (props, name) => {
   const [isVisible, setVisible] = useState(true);
   const domRef = useRef();
-  // console.log(props.name);
 
   let setClass = props.name === undefined ? 'fade-in-section' : props.name;
 
@@ -19,8 +18,6 @@ const FadeInSection = (props, name) => {
     const observer = new IntersectionObserver(([entry]) => {
       const currentY = entry.boundingClientRect.y;
       const currentRatio = entry.intersectionRatio;
-      const isIntersecting = entry.isIntersecting;
-      //console.log(entry);
 
       // Scrolling down/up
       if (currentY > previousY) {

@@ -6,25 +6,19 @@ const EmbedPlayer = (props) => {
 
   const { img, slug, src, videoPlayer, videoTime } = props;
   let output;
-  //  console.log(src);
-  // console.log('/images/' + slug + '/' + img);
 
   const handleEnded = () => {
-    //  console.log('onEnded');
     player.current.showPreview();
   };
 
   const handleSeekTime = () => {
-    //  console.log('onEnded');
     if (videoTime !== undefined) {
       player.current.seekTo(videoTime);
-      //  console.log(videoTime);
     }
   };
 
   const onLoad = () => {
     player.current.showPreview();
-    //console.log('loaded');
   };
 
   useEffect(() => {

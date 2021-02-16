@@ -19,17 +19,6 @@ const VideoPage = () => {
 
   const siteType = useSelector(selectNav);
 
-  /* let widthBox = windowSize.width <= 1280 ? 545 : 620;
-
-  //1280 - 545
-  console.log('window-size:', windowSize.width - widthBox);
-  console.log('width:' + (width * size * rowLen) / size);
-  console.log('rowLen:' + rowLen);
-  console.log('number of boxes:', (windowSize.width - widthBox) / ((width * size * rowLen) / size));
-  console.log('widthbox:', widthBox);
-
-  //width of nav is 320
-  //window-width - 320 is working width(not taking into consideration the margins) */
   const videos = [
     'steinj-video_01',
     'steinj-video_02',
@@ -48,7 +37,7 @@ const VideoPage = () => {
     'steinj-video_15',
     'steinj-video_16'
   ];
-  console.log(siteType);
+
   useEffect(() => {
     if (siteType === 'website') {
       windowWidth >= 1920

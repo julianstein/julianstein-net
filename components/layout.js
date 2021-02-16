@@ -11,6 +11,9 @@ import FadeInSection from './FadeInSection';
 import Nav from './nav';
 import useWindowSize from '../hooks/useWindowSize';
 
+import { useSelector } from 'react-redux';
+
+import { selectNav } from '../lib/slices/navSlice';
 //const name = 'Julian Stein';
 export const siteTitle = 'julian stein | media artist';
 
@@ -20,10 +23,10 @@ const Layout = ({ children }) => {
   const router = useRouter();
   let path = router.asPath;
 
-  //  console.log(router);
-
   const [isVisible, setVisible] = useState(false);
   const [route, setRoute] = useState(false);
+
+  const selectedNav = useSelector(selectNav);
 
   const [siteType, setSiteType] = useState('website');
   const [windowWidth, setWindowWidth] = useState(1280);
@@ -63,8 +66,9 @@ const Layout = ({ children }) => {
       setSiteType('portfolio'), dispatchToggle();
     } else if (path === '/') {
       setSiteType('website'), dispatchToggle();
+    } else {
+      setSiteType(selectedNav);
     }
-    // console.log('fire');
   }, [route === 'start']);
 
   useLayoutEffect(() => {
