@@ -39,9 +39,10 @@ const DynamicPage = ({ page, posts }) => {
         noindex={index}
         openGraph={{
           type: 'project',
+          author: 'julian stein',
           url: `https://www.julianstein.net/${slug}`,
           title: `julian stein — ${title}`,
-          description: { seoDescr },
+          description: seoDescr,
           images: [
             {
               url: `/images/${slug}/${featuredImage[0]}`,
