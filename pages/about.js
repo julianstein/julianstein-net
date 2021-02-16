@@ -19,13 +19,30 @@ const AboutPage = () => {
             ? 'md:pt-12 pl-1.5 md:pl-0 lg:pl-6 max-w-prose'
             : 'max-w-prose text-sm pt-6 pl-1.5 '
         }`}>
-        <p className="">
-          Julian Stein is a media artist based in Los Angeles, CA. He creates performances and
-          installations that examine relationships between the analog and the digital, primarily
-          through expressions of sound, and movement, and light. Through the use of technology, his
-          work aims to reimagine aspects of daily life, highlighting rhythmic and patterned
-          structures to seek out shared qualities between the natural and built world.
-        </p>
+        {siteType === 'website' && (
+          <p className="">
+            Julian Stein is a media artist based in Los Angeles, CA. He creates performances and
+            installations that examine relationships between the analog and the digital, primarily
+            through expressions of sound, and movement, and light. Through the use of technology,
+            his work aims to reimagine aspects of daily life, highlighting rhythmic and patterned
+            structures to seek out shared qualities between the natural and built world.
+          </p>
+        )}
+        {siteType === 'portfolio' && (
+          <p className="">
+            Julian Stein is a media artist and creative developer based in Los Angeles, CA. He
+            creates performances and installations that examine relationships between the analog and
+            the digital, primarily through expressions of sound, and movement, and light. His work
+            aims to reimagine aspects of daily life, highlighting rhythmic and patterned structures
+            to seek out shared qualities between the natural and built world.
+            <br />
+            <br />
+            As a creative developer, Julian constructs bespoke experiences for physical and
+            web-based environments, giving careful attention to design and interaction. He works
+            with artists, musicians, agencies, and institutions to realize creative ventures,
+            crafting each project through code, fabrication, and custom electronics.
+          </p>
+        )}
         <br />
         <p className="">
           MFA from the University of California Los Angeles in Design Media Arts, BFA from Concordia
