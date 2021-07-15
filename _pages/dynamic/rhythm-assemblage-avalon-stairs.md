@@ -7,10 +7,8 @@ featuredImage: [avalon-stairs-02.jpg, 1.5]
 images:
   [
     [avalon-stairs-03.jpg, 0.666666],
-    [avalon-stairs-04.jpg, 0.666666],
     [avalon-stairs-05.jpg, 1.5],
     [avalon-stairs-06.jpg, 0.666666],
-    [avalon-stairs-07.jpg, 0.666666],
     [avalon-stairs-09.jpg, 1],
     [avalon-stairs-10.jpg, 1],
     
