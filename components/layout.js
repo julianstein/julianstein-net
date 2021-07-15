@@ -1,19 +1,16 @@
 import { useRouter } from 'next/router';
 import Router from 'next/router';
-import { useEffect, useLayoutEffect, useState, useRef } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import * as Icon from 'react-feather';
 import { useDispatch } from 'react-redux';
-
-import { toggle } from '../lib/slices/navSlice';
-import { width } from '../lib/slices/windowSlice';
-
-import FadeInSection from './FadeInSection';
-import Nav from './nav';
-import useWindowSize from '../hooks/useWindowSize';
-
 import { useSelector } from 'react-redux';
 
+import useWindowSize from '../hooks/useWindowSize';
+import { toggle } from '../lib/slices/navSlice';
 import { selectNav } from '../lib/slices/navSlice';
+import { width } from '../lib/slices/windowSlice';
+import FadeInSection from './FadeInSection';
+import Nav from './nav';
 //const name = 'Julian Stein';
 export const siteTitle = 'julian stein | media artist';
 

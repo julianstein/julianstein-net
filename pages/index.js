@@ -32,12 +32,10 @@ const IndexPage = () => {
     'steinj-video_05',
     'steinj-video_06',
     'steinj-video_07',
-    'steinj-video_08',
     'steinj-video_09',
     'steinj-video_10',
     'steinj-video_11',
     'steinj-video_12',
-    'steinj-video_13',
     'steinj-video_14',
     'steinj-video_15',
     'steinj-video_16'
@@ -61,7 +59,6 @@ const IndexPage = () => {
     true: { opacity: 0, transition: { duration: 0.7, ease: 'easeInOut' } }
   };
 
-  const transitions = {};
   return (
     <>
       <NextSeo

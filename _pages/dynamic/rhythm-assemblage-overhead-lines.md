@@ -1,5 +1,5 @@
 ---
-title: 'rhythm assemblage'
+title: 'rhythm assemblage: overhead lines'
 subtitle: 'kinetic installation'
 year: '2018'
 featuredVideo: '344034029'

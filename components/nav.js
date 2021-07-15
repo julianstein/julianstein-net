@@ -6,10 +6,11 @@ import slugify from 'slugify';
 import Projects from './projects';
 
 const links = [
+  'rhythm assemblage: avalon stairs',
   'recent sketches, 2020',
   'a room that i take care of',
   'structure couples',
-  'rhythm assemblage',
+  'rhythm assemblage: overhead lines',
   'stridulating prototype',
   "don't fog yourself with rosy clouds, or yellow",
   'the wind repeats itself: blue grama',
