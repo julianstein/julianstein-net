@@ -3,7 +3,14 @@ import { NextSeo } from 'next-seo';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-const Project = ({ title, slug, featuredImage, seoDescr, ...props }) => {
+const Project = ({
+    projects,
+    title,
+    slug,
+    featuredImage,
+    seoDescr,
+    ...props
+}) => {
     const [index, setIndex] = useState(false);
 
     useEffect(() => {
@@ -37,6 +44,7 @@ const Project = ({ title, slug, featuredImage, seoDescr, ...props }) => {
                 title={title}
                 slug={slug}
                 featuredImage={featuredImage}
+                projects={projects}
             />
         </>
     );

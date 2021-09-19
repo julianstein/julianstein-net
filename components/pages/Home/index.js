@@ -7,7 +7,6 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const Home = ({ ...props }) => {
-    console.log(props);
     const [vidRand, setVidRand] = useState(null);
     const [showVid, setShowVid] = useState(true);
     const [triggerRand, setTriggerRand] = useState(false);

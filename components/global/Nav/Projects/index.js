@@ -4,23 +4,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import slugify from 'slugify';
-
-const links = [
-    'rhythm assemblage: avalon stairs',
-    'recent sketches, 2020',
-    'a room that i take care of',
-    'structure couples',
-    'rhythm assemblage: overhead lines',
-    'stridulating prototype',
-    "don't fog yourself with rosy clouds, or yellow",
-    'the wind repeats itself: blue grama',
-    'sounding out spaces: garden ecologies',
-    'time lenses: palimpsest',
-    'invisible lines',
-    'music for lamps',
-    'aurora urbem',
-    'montreal sound map',
-];
+import { links } from 'utils';
 
 const Projects = props => {
     const [open, setOpen] = useState(null);
@@ -61,7 +45,7 @@ const Projects = props => {
             >
                 projects
             </button>
-            <AnimatePresence key="bboop">
+            <AnimatePresence key="boop" exitBeforeEnter>
                 {open && (
                     <motion.ul
                         className=" leading-tight tracking-tight pb-3"

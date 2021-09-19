@@ -4,31 +4,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import * as Icon from 'react-feather';
 import slugify from 'slugify';
-
-const links = [
-    'rhythm assemblage: avalon stairs',
-    'recent sketches, 2020',
-    'time is out of joint',
-    'artificial ecologies',
-    'Whispering Wishes',
-    'a room that i take care of',
-    'structure couples',
-    'rhythm assemblage: overhead lines',
-    'stridulating prototype',
-    "don't fog yourself with rosy clouds, or yellow",
-    'the wind repeats itself: blue grama',
-    'MindTravel',
-    'Sounding Out Spaces: Garden Ecologies',
-    'Time Lenses: Palimpsest',
-    'SERRA',
-    'dans le bois',
-    'Turcot: la route devenue architecture',
-    "Einstein's Dreams",
-    'Invisible Lines',
-    'Music for Lamps',
-    'aurora urbem',
-    'Montreal Sound Map',
-];
+import { portfolioLinks } from 'utils';
 
 const TheFooter = props => {
     const { isZoomed } = props;
@@ -65,7 +41,7 @@ const TheFooter = props => {
     };
 
     let slugs = [];
-    slugs = links.map(
+    slugs = portfolioLinks.map(
         value => `/${slugify(value, { lower: true, strict: true })}`
     );
 

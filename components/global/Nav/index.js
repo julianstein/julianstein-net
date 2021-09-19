@@ -2,25 +2,8 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import * as Icon from 'react-feather';
 import slugify from 'slugify';
-
+import { links } from 'utils';
 import Projects from './Projects';
-
-const links = [
-    'rhythm assemblage: avalon stairs',
-    'recent sketches, 2020',
-    'a room that i take care of',
-    'structure couples',
-    'rhythm assemblage: overhead lines',
-    'stridulating prototype',
-    "don't fog yourself with rosy clouds, or yellow",
-    'the wind repeats itself: blue grama',
-    'sounding out spaces: garden ecologies',
-    'time lenses: palimpsest',
-    'invisible lines',
-    'music for lamps',
-    'aurora urbem',
-    'montreal sound map',
-];
 
 const Nav = props => {
     const { path, display } = props;
