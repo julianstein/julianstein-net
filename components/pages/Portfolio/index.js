@@ -1,9 +1,9 @@
+import React, { useEffect, useState } from 'react';
 import TheImage from 'components/ui/TheImage';
 import { selectWindow } from 'lib/slices/windowSlice';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const DynamicPage = ({ projects }) => {

@@ -1,17 +1,14 @@
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+import Router, { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
 import Nav from 'components/global/Nav';
 import FadeInSection from 'components/ui/FadeInSection';
 import useWindowSize from 'hooks/useWindowSize';
-import { toggle } from 'lib/slices/navSlice';
-import { selectNav } from 'lib/slices/navSlice';
+import { toggle, selectNav } from 'lib/slices/navSlice';
 import { width } from 'lib/slices/windowSlice';
-import { useRouter } from 'next/router';
-import Router from 'next/router';
-import PropTypes from 'prop-types';
-import { useEffect, useLayoutEffect, useState } from 'react';
 import * as Icon from 'react-feather';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-//const name = 'Julian Stein';
+import { useDispatch, useSelector } from 'react-redux';
+
 export const siteTitle = 'julian stein | media artist';
 
 const Layout = ({ children }) => {

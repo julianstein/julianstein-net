@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useImageZoom } from 'react-medium-image-zoom';
+
 import Img from './Img';
 
 const TheImage = props => {

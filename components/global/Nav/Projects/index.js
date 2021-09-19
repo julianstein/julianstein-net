@@ -1,10 +1,10 @@
-import useScrollPosition from '@react-hook/window-scroll';
+import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
 import slugify from 'slugify';
 import { links } from 'utils';
+import { useWindowScroll } from 'react-use';
 
 const Projects = props => {
     const [open, setOpen] = useState(null);
@@ -17,19 +17,19 @@ const Projects = props => {
             : setTimeout(() => setOpen(false), 600);
     }, [path]);
 
-    const scrollY = useScrollPosition(5);
+    const { y } = useWindowScroll();
 
     useEffect(() => {
-        if (scrollY > 200) {
+        if (y > 200) {
             setGate(true);
         }
-        if (gate && scrollY < 50) {
-            setTimeout(() => setOpen(true), 800);
+        if (gate && y < 50) {
+            setTimeout(() => setOpen(true), 0);
         }
         return () => {
             clearTimeout();
         };
-    }, [scrollY]);
+    }, [y]);
 
     useEffect(() => {
         if (!open) {

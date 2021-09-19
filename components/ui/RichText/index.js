@@ -1,7 +1,7 @@
+import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
 import PropTypes from 'prop-types';
-import React from 'react';
 import Link from 'components/ui/Link';
 
 import { BodyText, Bold, Italic, Underline } from './defaults';
@@ -13,13 +13,6 @@ const defaultOptions = {
         [MARKS.UNDERLINE]: text => <Underline>{text}</Underline>,
     },
     renderNode: {
-        [INLINES.ENTRY_HYPERLINK]: node => {
-            return (
-                <Link.Entry entry={cleanupContentfulData(node.data.target)}>
-                    <Underline>{node.content[0].value}</Underline>
-                </Link.Entry>
-            );
-        },
         [INLINES.HYPERLINK]: node => {
             return (
                 <Link target="_blank" rel="noreferrer" href={node.data.uri}>

@@ -1,7 +1,8 @@
-import ArtistPage from 'components/ArtistPage';
+import React, { useEffect, useState } from 'react';
 import { NextSeo } from 'next-seo';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+
+import ArtistPage from './ArtistPage';
 
 const Project = ({
     projects,
@@ -56,6 +57,7 @@ Project.propTypes = {
             url: PropTypes.any,
         }),
     }),
+    projects: PropTypes.any,
     seoDescr: PropTypes.any,
     slug: PropTypes.any,
     title: PropTypes.any,

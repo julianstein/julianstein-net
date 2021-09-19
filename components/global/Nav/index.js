@@ -1,8 +1,9 @@
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import * as Icon from 'react-feather';
 import slugify from 'slugify';
 import { links } from 'utils';
+
 import Projects from './Projects';
 
 const Nav = props => {

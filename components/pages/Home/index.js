@@ -1,12 +1,12 @@
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import FadeInSection from 'components/ui/FadeInSection';
 import TheVideo from 'components/ui/TheVideo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { selectWindow } from 'lib/slices/windowSlice';
 import { NextSeo } from 'next-seo';
-import { useEffect, useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-const Home = ({ ...props }) => {
+const Home = () => {
     const [vidRand, setVidRand] = useState(null);
     const [showVid, setShowVid] = useState(true);
     const [triggerRand, setTriggerRand] = useState(false);

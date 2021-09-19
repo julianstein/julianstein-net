@@ -1,6 +1,6 @@
+import React, { useRef } from 'react';
 import useDidMountEffect from 'hooks/useDidMountEffect';
 import PropTypes from 'prop-types';
-import { useRef } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 const TheVideo = props => {

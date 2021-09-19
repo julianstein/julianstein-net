@@ -1,11 +1,11 @@
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player/lazy';
 
 const EmbedPlayer = props => {
     const player = useRef(null);
 
-    const { img, slug, src, videoPlayer, videoTime } = props;
+    const { img, src, videoPlayer, videoTime } = props;
     let output;
 
     const handleEnded = () => {

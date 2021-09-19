@@ -1,3 +1,5 @@
+import React, { useLayoutEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import TheFooter from 'components/global/TheFooter';
 import EmbedPlayer from 'components/ui/EmbedPlayer';
 import FadeInSection from 'components/ui/FadeInSection';
@@ -5,12 +7,10 @@ import RichText from 'components/ui/RichText';
 import TheImage from 'components/ui/TheImage';
 import { selectNav } from 'lib/slices/navSlice';
 import { selectWindow } from 'lib/slices/windowSlice';
-import PropTypes from 'prop-types';
-import { useLayoutEffect, useState } from 'react';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useSelector } from 'react-redux';
 
-const ArtistPage = ({ page, title, slug, featuredImage }) => {
+const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
     const {
         subtitle,
         year,
@@ -201,7 +201,9 @@ const ArtistPage = ({ page, title, slug, featuredImage }) => {
                     </div>
                 </div>
             </div>
-            {siteType === 'portfolio' && <TheFooter isZoomed={isZoomed} />}
+            {siteType === 'portfolio' && (
+                <TheFooter projects={projects} isZoomed={isZoomed} />
+            )}
         </>
     );
 };
@@ -231,6 +233,7 @@ ArtistPage.propTypes = {
         videoId: PropTypes.any,
         year: PropTypes.any,
     }),
+    projects: PropTypes.any,
     slug: PropTypes.any,
     title: PropTypes.string,
 };

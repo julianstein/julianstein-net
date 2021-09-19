@@ -1,3 +1,4 @@
+import React from 'react';
 import RichText from 'components/ui/RichText';
 import { selectNav } from 'lib/slices/navSlice';
 import { NextSeo } from 'next-seo';

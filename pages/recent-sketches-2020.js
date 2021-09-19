@@ -1,10 +1,10 @@
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import TheFooter from 'components/global/TheFooter';
 import FadeInSection from 'components/ui/FadeInSection';
 import TheVideo from 'components/ui/TheVideo';
 import { selectNav } from 'lib/slices/navSlice';
 import { selectWindow } from 'lib/slices/windowSlice';
 import { NextSeo } from 'next-seo';
-import { useEffect, useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const VideoPage = () => {

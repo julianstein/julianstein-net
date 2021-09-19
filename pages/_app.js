@@ -1,14 +1,13 @@
-import '../styles/index.scss';
-
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Provider } from 'react-redux';
 
 import Layout from '../components/layout';
 import * as gtag from '../lib/gtag';
 import { saveState } from '../lib/sessionStorage';
 import store from '../store';
+import 'styles/index.scss';
 
 store.subscribe(() => {
     saveState(store.getState());

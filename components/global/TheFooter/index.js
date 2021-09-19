@@ -1,10 +1,10 @@
-import useKeyPress from 'hooks/useKeyPress';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
 import * as Icon from 'react-feather';
 import slugify from 'slugify';
 import { portfolioLinks } from 'utils';
+import useKeyPress from 'hooks/useKeyPress';
 
 const TheFooter = props => {
     const { isZoomed } = props;
