@@ -15,7 +15,7 @@ export const links = [
     'montreal sound map',
 ];
 
-const portfolioLinks = [
+export const portfolioLinks = [
     'rhythm assemblage: avalon stairs',
     'recent sketches, 2020',
     'time is out of joint',
