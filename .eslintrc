@@ -1,0 +1,46 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "parser": "babel-eslint",
+    "plugins": ["babel", "react", "react-hooks", "import"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:@next/next/recommended"
+    ],
+    "globals": {},
+    "rules": {
+        "no-empty": 0,
+        "no-unused-vars": "warn",
+        "react/display-name": 0,
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "import/no-unresolved": 0,
+        "import/order": [
+            "error",
+            {
+                "groups": ["builtin", "external", "parent", "sibling", "index"],
+                "pathGroups": [
+                    {
+                        "pattern": "**.scss",
+                        "group": "index",
+                        "position": "after"
+                    }
+                ],
+                "newlines-between": "always"
+            }
+        ],
+        "import/newline-after-import": ["error", { "count": 1 }]
+    },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    }
+}
