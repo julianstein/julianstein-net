@@ -33,8 +33,9 @@
     "vimeo": "^2.1.1"
   },
   "devDependencies": {
-    "autoprefixer": "10.3.4",
     "@madeinhaus/prettier-config": "^1.1.0",
+    "autoprefixer": "10.3.4",
+    "eslint-plugin-prettier": "^4.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",

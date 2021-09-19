@@ -1,7 +1,7 @@
-import Img from 'components/ui/Img';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useImageZoom } from 'react-medium-image-zoom';
+import Img from './Img';
 
 const TheImage = props => {
     const [screenWidth, setScreenWidth] = useState(0);
@@ -48,7 +48,14 @@ const TheImage = props => {
                           alt={alt}
                           layout="intrinsic"
                           objectFit="cover"
-                          fallbackImageWidth={1280}
+                          fallbackImageWidth={640}
+                          customSources={[
+                              {
+                                  breakpoint: 640,
+                                  src: src,
+                                  imageWidth: 1280,
+                              },
+                          ]}
                       />
                   </span>
               </i>
@@ -73,7 +80,14 @@ const TheImage = props => {
                           alt={alt}
                           layout="intrinsic"
                           objectFit="cover"
-                          fallbackImageWidth={1280}
+                          fallbackImageWidth={640}
+                          customSources={[
+                              {
+                                  breakpoint: 640,
+                                  src: src,
+                                  imageWidth: 1280,
+                              },
+                          ]}
                       />
                   </span>
 
@@ -99,7 +113,14 @@ const TheImage = props => {
                       alt={alt}
                       layout="intrinsic"
                       objectFit="cover"
-                      fallbackImageWidth={1280}
+                      fallbackImageWidth={640}
+                      customSources={[
+                          {
+                              breakpoint: 640,
+                              src: src,
+                              imageWidth: 1280,
+                          },
+                      ]}
                   />
               </span>
           ))
@@ -114,7 +135,14 @@ const TheImage = props => {
                       alt={alt}
                       layout="intrinsic"
                       objectFit="cover"
-                      fallbackImageWidth={1280}
+                      fallbackImageWidth={640}
+                      customSources={[
+                          {
+                              breakpoint: 640,
+                              src: src,
+                              imageWidth: 1280,
+                          },
+                      ]}
                   />
               </span>
           ));
