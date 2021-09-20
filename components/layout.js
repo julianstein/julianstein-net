@@ -3,7 +3,7 @@ import Router, { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Nav from 'components/global/Nav';
 import FadeInSection from 'components/ui/FadeInSection';
-import useWindowSize from 'hooks/useWindowSize';
+import { useWindowSize } from 'react-use';
 import { toggle, selectNav } from 'lib/slices/navSlice';
 import { width } from 'lib/slices/windowSlice';
 import * as Icon from 'react-feather';

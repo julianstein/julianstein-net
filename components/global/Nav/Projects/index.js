@@ -4,11 +4,9 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import slugify from 'slugify';
 import { links } from 'utils';
-import { useWindowScroll } from 'react-use';
 
 const Projects = props => {
     const [open, setOpen] = useState(null);
-    const [gate, setGate] = useState(false);
     const { path, active } = props;
 
     useEffect(() => {
@@ -16,26 +14,6 @@ const Projects = props => {
             ? setTimeout(() => setOpen(true), 600)
             : setTimeout(() => setOpen(false), 600);
     }, [path]);
-
-    const { y } = useWindowScroll();
-
-    useEffect(() => {
-        if (y > 200) {
-            setGate(true);
-        }
-        if (gate && y < 50) {
-            setTimeout(() => setOpen(true), 0);
-        }
-        return () => {
-            clearTimeout();
-        };
-    }, [y]);
-
-    useEffect(() => {
-        if (!open) {
-            setGate(false);
-        }
-    }, [open]);
 
     return (
         <nav className=" flex md:hidden flex-col text-left w-100 text-sm text-black">
