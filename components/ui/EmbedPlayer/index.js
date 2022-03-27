@@ -64,6 +64,7 @@ const EmbedPlayer = props => {
                       vimeo: {
                           playerOptions: {
                               playsinline: true,
+                              allowfullscreen: true,
                           },
                       },
                   }}

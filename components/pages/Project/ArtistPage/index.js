@@ -9,6 +9,7 @@ import { selectNav } from 'lib/slices/navSlice';
 import { selectWindow } from 'lib/slices/windowSlice';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useSelector } from 'react-redux';
+import EmbedBandcamp from 'components/ui/EmbedBandcamp';
 
 const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
     const {
@@ -19,6 +20,7 @@ const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
         author,
         projectDescription,
         exhibitions,
+        bandcampId,
     } = page;
 
     const featuredAspect =
@@ -36,7 +38,7 @@ const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
     const windowWidth = useSelector(selectWindow);
 
     useLayoutEffect(() => {
-        setImgRand(images.sort(() => Math.random() - 0.5));
+        setImgRand(images?.sort(() => Math.random() - 0.5));
         let rowArr = [100, 125, 150, 175, 200, 300, 200, 300];
         rowArr.sort(() => Math.random() - 0.5);
 
@@ -110,7 +112,7 @@ const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
                     </div>
                     <div className="flex flex-wrap" id="photo-grid">
                         {imgRand !== null &&
-                            imgRand.map((image, i) => {
+                            imgRand?.map((image, i) => {
                                 const aspect =
                                     image?.file?.details?.image?.width /
                                     image?.file?.details?.image?.height;
@@ -142,6 +144,7 @@ const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
                                     </div>
                                 );
                             })}
+                        {bandcampId && <EmbedBandcamp album={bandcampId} />}
                     </div>
                 </div>
                 <div
@@ -157,8 +160,6 @@ const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
                                 <EmbedPlayer
                                     src={videoId}
                                     img={featuredImage?.file?.url}
-                                    // videoPlayer={videoPlayer}
-                                    // videoTime={videoTime}
                                     slug={slug}
                                 />
                             </LazyLoadComponent>
@@ -222,6 +223,7 @@ ArtistPage.propTypes = {
     }),
     page: PropTypes.shape({
         author: PropTypes.any,
+        bandcampId: PropTypes.any,
         exhibitions: PropTypes.shape({
             map: PropTypes.func,
         }),
