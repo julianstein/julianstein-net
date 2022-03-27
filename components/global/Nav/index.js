@@ -91,7 +91,7 @@ const Nav = props => {
                           <li>
                               <a
                                   className="md:hover:text-gray-400 leading-normal"
-                                  href="https://soundcloud.com/julianstein"
+                                  href="https://julianstein.bandcamp.com/"
                                   rel="noreferrer"
                                   target="_blank"
                               >
