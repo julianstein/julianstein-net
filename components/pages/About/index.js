@@ -23,14 +23,14 @@ const AboutPage = ({ artistStatement, portfolioStatement }) => {
                 }`}
             >
                 {siteType === 'website' && (
-                    <p>
+                    <span>
                         <RichText richText={artistStatement} />
-                    </p>
+                    </span>
                 )}
                 {siteType === 'portfolio' && (
-                    <p className="">
+                    <span className="">
                         <RichText richText={portfolioStatement} />
-                    </p>
+                    </span>
                 )}
                 <br />
 

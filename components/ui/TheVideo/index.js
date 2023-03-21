@@ -3,9 +3,7 @@ import useDidMountEffect from 'hooks/useDidMountEffect';
 import PropTypes from 'prop-types';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
-const TheVideo = props => {
-    const { src, load } = props;
-
+const TheVideo = ({ src, load }) => {
     const videoRef = useRef();
     const srcRef = useRef();
 
@@ -20,7 +18,6 @@ const TheVideo = props => {
                 loop
                 autoPlay
                 playsInline
-                load={load}
                 muted
                 onContextMenu={e => {
                     e.preventDefault();

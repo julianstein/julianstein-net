@@ -28,9 +28,7 @@ const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
         featuredImage?.file?.details?.image?.height;
 
     const [imgRand, setImgRand] = useState(null);
-    //const [imgDim, setImgDim] = useState(null);
     const [rowLen, setRowLen] = useState(125);
-    const [isZoomed, setIsZoomed] = useState(false);
 
     const size = 1280;
 
@@ -96,8 +94,6 @@ const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
                                     src={videoId}
                                     img={featuredImage?.file?.url}
                                     slug={slug}
-                                    // videoPlayer={videoPlayer}
-                                    // videoTime={videoTime}
                                 />
                             </LazyLoadComponent>
                         )}
@@ -137,8 +133,6 @@ const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
                                                 height={size}
                                                 imgClass="absolute w-full align-bottom top-0"
                                                 alt={title + '-' + [i + 1]}
-                                                isZoomed={isZoomed}
-                                                setIsZoomed={setIsZoomed}
                                             />
                                         </FadeInSection>
                                     </div>
@@ -202,9 +196,7 @@ const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
                     </div>
                 </div>
             </div>
-            {siteType === 'portfolio' && (
-                <TheFooter projects={projects} isZoomed={isZoomed} />
-            )}
+            {siteType === 'portfolio' && <TheFooter projects={projects} />}
         </>
     );
 };

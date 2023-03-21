@@ -27,7 +27,7 @@ const App = ({ Component, pageProps, router }) => {
     return (
         <Provider store={store}>
             <Layout>
-                <AnimatePresence exitBeforeEnter>
+                <AnimatePresence mode="wait">
                     <motion.div
                         key={router.asPath}
                         initial="pageInitial"

@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import PropTypes from 'prop-types';
 import * as Icon from 'react-feather';
 import slugify from 'slugify';
 import { portfolioLinks } from 'utils';
 import useKeyPress from 'hooks/useKeyPress';
 
-const TheFooter = props => {
-    const { isZoomed } = props;
+const TheFooter = () => {
     const [active, setActive] = useState(null);
 
     const router = useRouter();
@@ -19,19 +17,19 @@ const TheFooter = props => {
     const keyEsc = useKeyPress('Escape');
 
     useEffect(() => {
-        if (keyArrowL && !isZoomed) {
+        if (keyArrowL) {
             router.push(slugs[mod(active - 1, 21)]);
         }
     }, [keyArrowL]);
 
     useEffect(() => {
-        if (keyArrowR && !isZoomed) {
+        if (keyArrowR) {
             router.push(slugs[mod(active + 1, 21)]);
         }
     }, [keyArrowR]);
 
     useEffect(() => {
-        if (keyEsc && !isZoomed) {
+        if (keyEsc) {
             router.push('/portfolio');
         }
     }, [keyEsc]);
@@ -79,8 +77,6 @@ const TheFooter = props => {
     );
 };
 
-TheFooter.propTypes = {
-    isZoomed: PropTypes.any,
-};
+TheFooter.propTypes = {};
 
 export default TheFooter;

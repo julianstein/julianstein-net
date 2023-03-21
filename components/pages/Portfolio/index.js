@@ -48,21 +48,19 @@ const DynamicPage = ({ projects }) => {
                         flexGrow: `${(1.5 * size * rowLen) / size}`,
                     }}
                 >
-                    <Link href={'/recent-sketches-2020'}>
-                        <a>
-                            <TheImage
-                                src={
-                                    '/images/recent-sketches-2020/2020-11-01-22-11-02-170.jpg'
-                                }
-                                width={1.5 * size}
-                                height={size}
-                                imgClass="absolute w-full align-bottom top-0"
-                                alt={'recent sketches - 1'}
-                                zoom={false}
-                                title={'recent sketches (2020)'}
-                                portfolio={true}
-                            />
-                        </a>
+                    <Link href={'/recent-sketches-2020'} passHref>
+                        <TheImage
+                            src={
+                                '/images/recent-sketches-2020/2020-11-01-22-11-02-170.jpg'
+                            }
+                            width={1.5 * size}
+                            height={size}
+                            imgClass="absolute w-full align-bottom top-0"
+                            alt={'recent sketches - 1'}
+                            zoom={false}
+                            title={'recent sketches (2020)'}
+                            portfolio={true}
+                        />
                     </Link>
                 </div>
                 {projects?.map(({ slug, featuredImage, title, year }, i) => {
@@ -79,19 +77,17 @@ const DynamicPage = ({ projects }) => {
                                 flexGrow: `${(aspect * size * rowLen) / size}`,
                             }}
                         >
-                            <Link href={'/' + slug}>
-                                <a>
-                                    <TheImage
-                                        src={featuredImage?.file?.url}
-                                        width={aspect * size}
-                                        height={size}
-                                        imgClass="absolute w-full align-bottom top-0"
-                                        alt={title + '-' + [i + 1]}
-                                        zoom={false}
-                                        title={`${title} (${year})`}
-                                        portfolio={true}
-                                    />
-                                </a>
+                            <Link href={'/' + slug} passHref>
+                                <TheImage
+                                    src={featuredImage?.file?.url}
+                                    width={aspect * size}
+                                    height={size}
+                                    imgClass="absolute w-full align-bottom top-0"
+                                    alt={title + '-' + [i + 1]}
+                                    zoom={false}
+                                    title={`${title} (${year})`}
+                                    portfolio={true}
+                                />
                             </Link>
                         </div>
                     );

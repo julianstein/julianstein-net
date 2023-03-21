@@ -23,7 +23,7 @@ const Projects = props => {
             >
                 projects
             </button>
-            <AnimatePresence key="boop" exitBeforeEnter>
+            <AnimatePresence key="boop" mode="wait">
                 {open && (
                     <motion.ul
                         className=" leading-tight tracking-tight pb-3"
@@ -68,16 +68,13 @@ const Projects = props => {
                                         lower: true,
                                         strict: true,
                                     })}
+                                    className={
+                                        active === index
+                                            ? 'font-bold '
+                                            : 'font-normal'
+                                    }
                                 >
-                                    <a
-                                        className={
-                                            active === index
-                                                ? 'font-bold '
-                                                : 'font-normal'
-                                        }
-                                    >
-                                        {value}
-                                    </a>
+                                    {value}
                                 </Link>
                             </motion.li>
                         ))}

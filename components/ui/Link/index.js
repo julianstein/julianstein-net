@@ -6,8 +6,8 @@ import EntryLink from './EntryLink';
 
 const Link = ({ children, href, scroll, locale, ...props }) => {
     return (
-        <NextLink href={href} scroll={scroll} locale={locale}>
-            <a {...props}>{children}</a>
+        <NextLink href={href} scroll={scroll} locale={locale} {...props}>
+            {children}
         </NextLink>
     );
 };
