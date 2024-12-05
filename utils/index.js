@@ -1,7 +1,7 @@
 export const links = [
     'pattern river',
     'rhythm assemblage: avalon stairs',
-    'recent sketches, 2020',
+    'sketches, 2020',
     'a room that i take care of',
     'structure couples',
     'rhythm assemblage: overhead lines',
@@ -19,7 +19,7 @@ export const links = [
 export const portfolioLinks = [
     'pattern river',
     'rhythm assemblage: avalon stairs',
-    'recent sketches, 2020',
+    'sketches, 2020',
     'time is out of joint',
     'artificial ecologies',
     'Whispering Wishes',

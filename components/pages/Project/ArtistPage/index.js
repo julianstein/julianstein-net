@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import TheFooter from 'components/global/TheFooter';
 import EmbedPlayer from 'components/ui/EmbedPlayer';
@@ -35,7 +35,7 @@ const ArtistPage = ({ page, title, slug, featuredImage, projects }) => {
     const siteType = useSelector(selectNav);
     const windowWidth = useSelector(selectWindow);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setImgRand(images?.sort(() => Math.random() - 0.5));
         let rowArr = [100, 125, 150, 175, 200, 300, 200, 300];
         rowArr.sort(() => Math.random() - 0.5);

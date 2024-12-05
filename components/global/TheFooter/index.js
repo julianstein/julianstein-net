@@ -50,7 +50,7 @@ const TheFooter = () => {
     return (
         <footer
             className={`${
-                path === '/recent-sketches-2020'
+                path === '/sketches-2020'
                     ? ''
                     : 'xl:pr-5 xl:flex-shrink-0  '
             } flex pb-8 md:pb-6 md:pt-2 mx-auto justify-center flex-row `}
@@ -70,7 +70,7 @@ const TheFooter = () => {
             />
             <div
                 className={`w-0 ${
-                    path === '/recent-sketches-2020' ? '' : '  xl:w-96'
+                    path === '/sketches-2020' ? '' : '  xl:w-96'
                 }`}
             />
         </footer>

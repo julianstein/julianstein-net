@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FadeInSection from 'components/ui/FadeInSection';
 import TheVideo from 'components/ui/TheVideo';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -38,7 +38,7 @@ const Home = () => {
         'steinj-video_15',
         'steinj-video_16',
     ];
-    useLayoutEffect(() => {
+    useEffect(() => {
         videos.sort(() => Math.random() - 0.5);
         setVidRand(videos[0]);
         setTriggerRand(false);
@@ -76,7 +76,7 @@ const Home = () => {
             />
             {showVid && (
                 <FadeInSection>
-                    <div className=" flex max-w-xl mt-14 ">
+                    <div className=" flex max-w-xl mt-14 cursor-pointer">
                         <div
                             className=" relative  "
                             style={{

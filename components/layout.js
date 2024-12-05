@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Router, { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Nav from 'components/global/Nav';
@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
         }, 500);
     };
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (path === '/portfolio') {
             setSiteType('portfolio'), dispatchToggle();
         } else if (path === '/') {
@@ -64,7 +64,7 @@ const Layout = ({ children }) => {
         }
     }, [route === 'start']);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         windowSize.width >= 2560
             ? (setWindowWidth(2560), dispatchWidth())
             : windowSize.width >= 1920

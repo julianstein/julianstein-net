@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TheFooter from 'components/global/TheFooter';
 import FadeInSection from 'components/ui/FadeInSection';
 import TheVideo from 'components/ui/TheVideo';
@@ -77,15 +77,15 @@ const VideoPage = () => {
         }
     }, [windowWidth]);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setVidRand(videos.sort(() => Math.random() - 0.5));
     }, []);
 
     return (
         <>
             <NextSeo
-                title="julian stein — recent sketches, 2020"
-                description="recent video synthesis compositions using MaxMSP/Jitter and vsynth"
+                title="julian stein — sketches, 2020"
+                description="video synthesis compositions using MaxMSP/Jitter and vsynth"
             />
             <div className=" flex">
                 <div className=" text-3xl w-full relative flex-initial text-left md:pt-4 pb-20   ">

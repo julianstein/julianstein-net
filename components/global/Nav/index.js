@@ -70,18 +70,6 @@ const Nav = ({ path, display }) => {
                               </Link>
                           </li>
                           <li>
-                              <Link
-                                  href={'/portfolio'}
-                                  className={
-                                      path === '/portfolio'
-                                          ? 'font-semibold md:hover:text-black'
-                                          : 'font-normal md:hover:text-gray-400 '
-                                  }
-                              >
-                                  portfolio
-                              </Link>
-                          </li>
-                          <li>
                               <a
                                   className="md:hover:text-gray-400 leading-normal"
                                   href="https://julianstein.bandcamp.com/"
@@ -131,18 +119,6 @@ const Nav = ({ path, display }) => {
                           </Link>
                       </div>
                       <div className="flex flex-row w-full justify-end xl:justify-start xl:text-left self-end">
-                          <div className="pr-2 md:pr-3">
-                              <Link
-                                  href="/portfolio"
-                                  className={
-                                      path === '/portfolio' || path !== '/about'
-                                          ? 'font-semibold md:hover:text-black'
-                                          : 'font-normal md:hover:text-gray-400'
-                                  }
-                              >
-                                  portfolio
-                              </Link>
-                          </div>
                           <div className="px-2 md:px-3">
                               <Link
                                   href="/about"

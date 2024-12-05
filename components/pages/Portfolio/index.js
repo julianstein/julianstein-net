@@ -48,17 +48,17 @@ const DynamicPage = ({ projects }) => {
                         flexGrow: `${(1.5 * size * rowLen) / size}`,
                     }}
                 >
-                    <Link href={'/recent-sketches-2020'} passHref>
+                    <Link href={'/sketches-2020'} passHref>
                         <TheImage
                             src={
-                                '/images/recent-sketches-2020/2020-11-01-22-11-02-170.jpg'
+                                '/images/sketches/2020-11-01-22-11-02-170.jpg'
                             }
                             width={1.5 * size}
                             height={size}
                             imgClass="absolute w-full align-bottom top-0"
                             alt={'recent sketches - 1'}
                             zoom={false}
-                            title={'recent sketches (2020)'}
+                            title={'sketches, 2020'}
                             portfolio={true}
                         />
                     </Link>
