@@ -46,7 +46,6 @@ const Img = ({
     });
 
     useEffect(() => {
-        // Ensure cached images are still considered "loaded"
         imageRef?.current?.complete && setLoaded(true);
     }, []);
 
