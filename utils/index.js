@@ -1,4 +1,7 @@
 export const links = [
+    'rhythm assemblage: los angeles stairways',
+    'rhythm assemblage: palm in wind (xy)',
+    'website: los angeles contemporary archive',
     'pattern river',
     'rhythm assemblage: avalon stairs',
     'sketches, 2020',
