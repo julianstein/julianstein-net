@@ -25,18 +25,14 @@ const Home = () => {
         'rhythm-assemblage_01',
         'rhythm-assemblage_02',
         'steinj-video_02',
-        'steinj-video_03',
         'steinj-video_04',
         'steinj-video_05',
-        'steinj-video_06',
-        'steinj-video_07',
         'steinj-video_09',
-        'steinj-video_10',
         'steinj-video_11',
-        'steinj-video_12',
-        'steinj-video_14',
         'steinj-video_15',
         'steinj-video_16',
+        'stairs-01',
+        'palms-01'
     ];
     useEffect(() => {
         videos.sort(() => Math.random() - 0.5);
