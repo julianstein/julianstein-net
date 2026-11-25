@@ -1,0 +1,160 @@
+@import 'tailwindcss';
+
+@theme {
+    @keyframes page-in {
+        from {
+            opacity: 0;
+        }
+    }
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        /* Lets height transition to/from `auto` (mobile projects menu). */
+        interpolate-size: allow-keywords;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        letter-spacing: -0.025em;
+    }
+    strong {
+        font-weight: 600;
+    }
+    hr {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@layer components {
+    /* Body copy rendered from MDX */
+    .rich-text p {
+        margin-bottom: 1rem;
+    }
+    .rich-text p:last-child {
+        margin-bottom: 0;
+    }
+    .rich-text a {
+        text-decoration: underline;
+    }
+    .rich-text a:hover {
+        color: var(--color-gray-500);
+    }
+
+    /* Justified image/video rows — see components/justified-grid.tsx */
+    .justified {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /* Opt-in (sketches page): a short last row keeps the normal size instead of stretching
+       to full width. A spacer that grows far more than any item takes the leftover space. */
+    .justified-keep-last::after {
+        content: '';
+        flex-grow: 1000000;
+    }
+    .justified-item {
+        position: relative;
+        margin: 0.375rem;
+        width: calc(var(--ar) * var(--row, 200px));
+        flex-grow: calc(var(--ar) * 100);
+        aspect-ratio: var(--ar);
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+            opacity 0.8s ease-in-out,
+            transform 1s ease-in-out;
+    }
+    .fade-in.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Mobile projects menu (components/nav.tsx): slide + fade open where supported. */
+    .mobile-projects::details-content {
+        block-size: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition:
+            block-size 0.7s ease-in-out,
+            opacity 0.7s ease-in-out,
+            content-visibility 0.7s allow-discrete;
+    }
+    .mobile-projects[open]::details-content {
+        block-size: auto;
+        opacity: 1;
+    }
+
+    .back-to-top {
+        animation: page-in 2s ease-in-out;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .mobile-projects::details-content {
+            transition: none;
+        }
+        .fade-in {
+            transform: none;
+            transition-duration: 0.01ms;
+        }
+    }
+}
+
+
+/* Page transition (components/page-transition.tsx): the old page fades out completely,
+   then the new one fades in. The new page's delay matches the old page's duration. */
+::view-transition-old(.page-fade) {
+    animation: 250ms ease-in both page-in reverse;
+}
+::view-transition-new(.page-fade) {
+    animation: 250ms ease-out 250ms both page-in;
+}
+/* Don't swallow clicks while a transition runs. */
+::view-transition {
+    pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(*),
+    ::view-transition-new(*),
+    ::view-transition-group(*) {
+        animation-duration: 0s !important;
+        animation-delay: 0s !important;
+    }
+}
+
+/* Lightbox (components/lightbox.tsx): image grows out of its grid cell over a fading backdrop. */
+::view-transition-group(.lightbox) {
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+/* Same image before and after, so skip the default crossfade inside the morph. */
+::view-transition-old(.lightbox) {
+    animation: none;
+    opacity: 0;
+}
+::view-transition-new(.lightbox) {
+    animation: none;
+}
+::view-transition-group(lightbox-backdrop) {
+    z-index: 1;
+}
+::view-transition-group(.lightbox) {
+    z-index: 2;
+}
+::view-transition-new(lightbox-backdrop) {
+    animation: 300ms ease-out both page-in;
+}
+::view-transition-old(lightbox-backdrop) {
+    animation: 250ms ease-in both page-in reverse;
+}
+
+/* The page itself never changes during these transitions; skip the full-page crossfade. */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+}
