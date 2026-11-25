@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { FadeImage } from '@/components/fade-image';
 import { startTransition, useLayoutEffect, useRef, useState, ViewTransition } from 'react';
 import { BandcampEmbed } from '@/components/embeds';
 import { FadeIn } from '@/components/fade-in';
@@ -45,16 +45,16 @@ export function ProjectGallery({
             <JustifiedGrid className="[--row:140px] md:[--row:80px] lg:[--row:130px] 2xl:[--row:210px] min-[1920px]:[--row:300px]">
                 {shuffled.map((image, i) => {
                     const thumb = (
-                        <Image
-                            src={image.src}
-                            width={image.width}
-                            height={image.height}
-                            alt={image.alt}
-                            placeholder="blur"
-                            blurDataURL={image.blurDataURL}
-                            sizes="(min-width: 768px) 40vw, 100vw"
-                            className={`h-full w-full object-cover ${open === i ? 'invisible' : ''}`}
-                        />
+                        <div className={`h-full w-full ${open === i ? 'invisible' : ''}`}>
+                            <FadeImage
+                                src={image.src}
+                                width={image.width}
+                                height={image.height}
+                                alt={image.alt}
+                                sizes="(min-width: 768px) 40vw, 100vw"
+                                className="h-full w-full object-cover"
+                            />
+                        </div>
                     );
                     return (
                         <JustifiedItem key={image.src} aspect={image.width / image.height}>

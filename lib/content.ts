@@ -9,8 +9,8 @@ export type ImageData = {
     width: number;
     height: number;
     alt: string;
-    /** Tiny inline version of the image, shown blurred while the real one loads. */
-    blurDataURL: string;
+    /** The image's main colour, shown behind hero images while they load. Undefined for images with transparency. */
+    color?: string;
 };
 
 /**
@@ -90,10 +90,8 @@ export async function getProjectFrontmatter(slug: string): Promise<ProjectFrontm
 async function measure(ref: ImageRef, fallbackAlt: string): Promise<ImageData> {
     const { src, alt } = typeof ref === 'string' ? { src: ref, alt: undefined } : ref;
     const file = sharp(path.join(process.cwd(), 'public', src));
-    const [meta, tiny] = await Promise.all([
-        file.metadata(),
-        file.clone().rotate().resize(16, 16, { fit: 'inside' }).jpeg({ quality: 60 }).toBuffer(),
-    ]);
+    const [meta, stats] = await Promise.all([file.metadata(), file.clone().stats()]);
+    const { r, g, b } = stats.dominant;
     // EXIF orientations 5–8 are rotated a quarter turn, so width and height swap on screen.
     const turned = (meta.orientation ?? 1) >= 5;
     return {
@@ -101,7 +99,7 @@ async function measure(ref: ImageRef, fallbackAlt: string): Promise<ImageData> {
         width: turned ? meta.height : meta.width,
         height: turned ? meta.width : meta.height,
         alt: alt ?? fallbackAlt,
-        blurDataURL: `data:image/jpeg;base64,${tiny.toString('base64')}`,
+        color: stats.isOpaque ? `rgb(${r} ${g} ${b})` : undefined,
     };
 }
 

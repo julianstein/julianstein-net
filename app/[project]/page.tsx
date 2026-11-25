@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import { FadeImage } from '@/components/fade-image';
 import { VideoEmbed } from '@/components/embeds';
 import { PageTransition } from '@/components/page-transition';
 import { ProjectGallery } from '@/components/project-gallery';
@@ -53,18 +53,18 @@ export default async function ProjectPage({ params }: PageProps<'/[project]'>) {
                             aspect={p.videoAspect}
                         />
                     ) : (
-                        <Image
-                            src={p.featuredImage.src}
-                            width={p.featuredImage.width}
-                            height={p.featuredImage.height}
-                            alt={p.featuredImage.alt}
-                            placeholder="blur"
-                            blurDataURL={p.featuredImage.blurDataURL}
-                            sizes="(min-width: 1280px) 70vw, 100vw"
-                            loading="eager"
-                            fetchPriority="high"
-                            className="h-auto w-full"
-                        />
+                        <div style={{ backgroundColor: p.featuredImage.color }}>
+                            <FadeImage
+                                src={p.featuredImage.src}
+                                width={p.featuredImage.width}
+                                height={p.featuredImage.height}
+                                alt={p.featuredImage.alt}
+                                sizes="(min-width: 1280px) 70vw, 100vw"
+                                loading="eager"
+                                fetchPriority="high"
+                                className="block h-auto w-full"
+                            />
+                        </div>
                     )}
                 </div>
 

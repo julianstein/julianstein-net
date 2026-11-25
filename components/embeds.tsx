@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { FadeImage } from '@/components/fade-image';
 import { Play } from 'lucide-react';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { ImageData } from '@/lib/content';
@@ -100,13 +100,11 @@ export function VideoEmbed({
                 className={`group absolute inset-0 transition-opacity ease-in motion-reduce:transition-none ${
                     started ? 'pointer-events-none opacity-0' : 'cursor-pointer opacity-100'
                 }`}
-                style={fade}
+                style={{ ...fade, backgroundColor: poster.color }}
             >
-                <Image
+                <FadeImage
                     src={poster.src}
                     alt={poster.alt}
-                    placeholder="blur"
-                    blurDataURL={poster.blurDataURL}
                     fill
                     sizes="(min-width: 1280px) 70vw, 100vw"
                     loading="eager"

@@ -71,9 +71,23 @@ function ProjectList({ pathname, className = '' }: { pathname: string; className
 /** Collapsible list on small screens; opens itself on the home page. Same spring as the original site. */
 function MobileProjects({ pathname }: { pathname: string }) {
     const [open, setOpen] = useState(false);
+    // Closing as part of a navigation skips the exit animation, so the new page doesn't slide up after it appears.
+    const [instant, setInstant] = useState(false);
+    const [prevPath, setPrevPath] = useState(pathname);
+    if (pathname !== prevPath) {
+        setPrevPath(pathname);
+        if (pathname !== '/' && open) {
+            setOpen(false);
+            setInstant(true);
+        }
+    }
 
     useEffect(() => {
-        const t = setTimeout(() => setOpen(pathname === '/'), 600);
+        if (pathname !== '/') return;
+        const t = setTimeout(() => {
+            setInstant(false);
+            setOpen(true);
+        }, 600);
         return () => clearTimeout(t);
     }, [pathname]);
 
@@ -83,14 +97,26 @@ function MobileProjects({ pathname }: { pathname: string }) {
                 type="button"
                 className="pb-1 text-left leading-normal text-gray-400"
                 aria-expanded={open}
-                onClick={() => setOpen(o => !o)}
+                onClick={() => {
+                    setInstant(false);
+                    setOpen(o => !o);
+                }}
             >
                 projects
             </button>
-            <AnimatePresence>
+            <AnimatePresence custom={instant}>
                 {open && (
                     <motion.div
                         className="overflow-hidden pb-3"
+                        custom={instant}
+                        variants={{
+                            exit: (instant: boolean) => ({
+                                height: 0,
+                                marginTop: '-.75rem',
+                                opacity: 0,
+                                transition: instant ? { duration: 0 } : { duration: 0.4, ease: 'easeInOut' },
+                            }),
+                        }}
                         initial={{ height: 0, marginTop: '-.75rem', opacity: 0 }}
                         animate={{
                             height: 'auto',
@@ -98,12 +124,7 @@ function MobileProjects({ pathname }: { pathname: string }) {
                             opacity: 1,
                             transition: { type: 'spring', duration: 1.5 },
                         }}
-                        exit={{
-                            height: 0,
-                            marginTop: '-.75rem',
-                            opacity: 0,
-                            transition: { duration: 0.4, ease: 'easeInOut' },
-                        }}
+                        exit="exit"
                     >
                         <ProjectList pathname={pathname} />
                     </motion.div>
