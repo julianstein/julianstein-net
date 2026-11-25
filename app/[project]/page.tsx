@@ -29,7 +29,6 @@ export async function generateMetadata({ params }: PageProps<'/[project]'>): Pro
     };
 }
 
-// The layout grid is shared by every project; only its contents depend on the slug.
 // mobile: featured → info → gallery; xl: [featured + gallery | info]
 const grid = 'grid grid-cols-1 pt-3 pb-8 xl:grid-cols-[minmax(0,1fr)_auto] xl:grid-rows-[auto_1fr]';
 const featuredCell = 'mx-1.5 mb-8 xl:mb-1.5 xl:pr-6 md:mx-3';
@@ -59,8 +58,9 @@ export default async function ProjectPage({ params }: PageProps<'/[project]'>) {
                             width={p.featuredImage.width}
                             height={p.featuredImage.height}
                             alt={p.featuredImage.alt}
+                            placeholder="blur"
+                            blurDataURL={p.featuredImage.blurDataURL}
                             sizes="(min-width: 1280px) 70vw, 100vw"
-                            // The page's main image (LCP): load it right away, ahead of other images.
                             loading="eager"
                             fetchPriority="high"
                             className="h-auto w-full"

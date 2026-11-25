@@ -50,6 +50,8 @@ export function ProjectGallery({
                             width={image.width}
                             height={image.height}
                             alt={image.alt}
+                            placeholder="blur"
+                            blurDataURL={image.blurDataURL}
                             sizes="(min-width: 768px) 40vw, 100vw"
                             className={`h-full w-full object-cover ${open === i ? 'invisible' : ''}`}
                         />

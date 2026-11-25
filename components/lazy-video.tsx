@@ -15,7 +15,6 @@ export function LazyVideo({
 }: {
     name: string;
     className?: string;
-    /** Called once the clip has a frame to show. */
     onReady?: () => void;
 }) {
     const [ref, inView] = useInViewOnce<HTMLDivElement>({ rootMargin: '200px' });

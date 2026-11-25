@@ -28,7 +28,6 @@
 }
 
 @layer components {
-    /* Body copy rendered from MDX */
     .rich-text p {
         margin-bottom: 1rem;
     }
@@ -42,7 +41,6 @@
         color: var(--color-gray-500);
     }
 
-    /* Justified image/video rows — see components/justified-grid.tsx */
     .justified {
         display: flex;
         flex-wrap: wrap;

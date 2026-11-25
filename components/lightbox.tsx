@@ -58,7 +58,6 @@ export function Lightbox({
         };
     });
 
-    // Load the full-resolution version of the opened image, plus its neighbours for ← / →.
     useEffect(() => {
         const first = preload(images[openedAt]);
         first.decode().then(

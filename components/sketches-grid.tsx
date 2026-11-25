@@ -6,7 +6,6 @@ import { useShuffled } from '@/lib/hooks';
 
 const VIDEOS = Array.from({ length: 16 }, (_, i) => `steinj-video_${String(i + 1).padStart(2, '0')}`);
 
-/** The 16 clips as an even grid: 2 columns, or 4 × 4 on wide screens. */
 export function SketchesGrid() {
     const videos = useShuffled(VIDEOS);
     return (

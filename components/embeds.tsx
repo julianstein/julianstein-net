@@ -13,7 +13,6 @@ const MuxPlayer = dynamic(() => import('@mux/mux-player-react'), {
 
 export type VideoSource = { mux: string } | { vimeo: string };
 
-/** How long the poster takes to fade out, and the video to fade in. */
 const FADE_MS = 300;
 
 /** Mux Player controls to hide (`--<control>-button: none`). Otherwise Mux's default look. */
@@ -77,7 +76,6 @@ export function VideoEmbed({
     const fade = { transitionDuration: `${FADE_MS}ms` };
 
     return (
-        // Full width of the section, at the video's own shape.
         <div className="relative w-full overflow-hidden bg-black" style={{ aspectRatio: `${w} / ${h}` }}>
             {started && (
                 <div
@@ -94,7 +92,6 @@ export function VideoEmbed({
                 </div>
             )}
 
-            {/* Poster fades out as soon as play is pressed. */}
             <button
                 type="button"
                 onClick={start}
@@ -108,9 +105,10 @@ export function VideoEmbed({
                 <Image
                     src={poster.src}
                     alt={poster.alt}
+                    placeholder="blur"
+                    blurDataURL={poster.blurDataURL}
                     fill
                     sizes="(min-width: 1280px) 70vw, 100vw"
-                    // The page's main image (LCP): load it right away, ahead of other images.
                     loading="eager"
                     fetchPriority="high"
                     className="object-cover"
@@ -127,7 +125,6 @@ export function VideoEmbed({
 
 type PlayerProps = { title: string; play: boolean; onReady: () => void };
 
-/** Mux player that loads paused, reports when it can play, and starts when `play` turns true. */
 function MuxVideo({ playbackId, title, play, onReady }: PlayerProps & { playbackId: string }) {
     const [el, setEl] = useState<HTMLMediaElement | null>(null);
 
