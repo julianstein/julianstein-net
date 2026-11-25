@@ -110,7 +110,9 @@ export function VideoEmbed({
                     alt={poster.alt}
                     fill
                     sizes="(min-width: 1280px) 70vw, 100vw"
-                    priority
+                    // The page's main image (LCP): load it right away, ahead of other images.
+                    loading="eager"
+                    fetchPriority="high"
                     className="object-cover"
                 />
                 <span className="absolute inset-0 grid place-items-center">

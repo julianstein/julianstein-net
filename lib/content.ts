@@ -52,12 +52,21 @@ export async function getProjectSlugs(): Promise<string[]> {
     return files.filter(f => f.endsWith('.mdx')).map(f => f.replace(/\.mdx$/, ''));
 }
 
-async function importProject(slug: string) {
+/**
+ * Shows the 404 page unless `slug` is a project. Call before the functions below, outside any
+ * cache: notFound() thrown from inside a 'use cache' function surfaces as an error in dev.
+ */
+export async function assertProject(slug: string) {
     if (!(await getProjectSlugs()).includes(slug)) notFound();
+}
+
+async function importProject(slug: string) {
+    if (!(await getProjectSlugs()).includes(slug)) throw new Error(`Unknown project: ${slug}`);
     return import(`@/content/projects/${slug}.mdx`);
 }
 
 export async function getProject(slug: string) {
+    await assertProject(slug);
     const [mod, frontmatter] = await Promise.all([importProject(slug), getProjectFrontmatter(slug)]);
     return { Content: mod.default, frontmatter };
 }

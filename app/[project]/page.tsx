@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { VideoEmbed } from '@/components/embeds';
 import { PageTransition } from '@/components/page-transition';
 import { ProjectGallery } from '@/components/project-gallery';
-import { getProject, getProjectFrontmatter, getProjectSlugs } from '@/lib/content';
+import { assertProject, getProject, getProjectFrontmatter, getProjectSlugs } from '@/lib/content';
 import { websiteNav } from '@/lib/site';
 
 export async function generateStaticParams() {
@@ -12,6 +12,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<'/[project]'>): Promise<Metadata> {
     const { project } = await params;
+    await assertProject(project);
     const p = await getProjectFrontmatter(project);
     return {
         title: p.title,
@@ -36,7 +37,7 @@ const infoCell = 'mb-5 px-1.5 text-sm md:px-4.5 xl:col-start-2 xl:row-span-2 xl:
 const galleryCell = 'md:px-1.5 xl:pr-6';
 
 // The slug is read before rendering (no loading placeholder), so an unknown project
-// gets a real 404 status. Sidebar links preload whole projects, so navigation is still instant.
+// gets a real 404 status. Links preload the whole (static) page, so navigation is still instant.
 export default async function ProjectPage({ params }: PageProps<'/[project]'>) {
     const { project } = await params;
     const { Content, frontmatter: p } = await getProject(project);
@@ -59,7 +60,9 @@ export default async function ProjectPage({ params }: PageProps<'/[project]'>) {
                             height={p.featuredImage.height}
                             alt={p.featuredImage.alt}
                             sizes="(min-width: 1280px) 70vw, 100vw"
-                            priority
+                            // The page's main image (LCP): load it right away, ahead of other images.
+                            loading="eager"
+                            fetchPriority="high"
                             className="h-auto w-full"
                         />
                     )}

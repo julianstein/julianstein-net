@@ -59,8 +59,7 @@ function ProjectList({ pathname, className = '' }: { pathname: string; className
         <ul className={`leading-tight tracking-tight ${className}`}>
             {websiteNav.map(({ slug, title }) => (
                 <li key={slug} className="pb-1">
-                    {/* Preload the whole project (not just its frame) so it's ready on click. */}
-                    <Link href={`/${slug}`} prefetch className={linkClass(pathname === `/${slug}`)}>
+                    <Link href={`/${slug}`} className={linkClass(pathname === `/${slug}`)}>
                         {title}
                     </Link>
                 </li>

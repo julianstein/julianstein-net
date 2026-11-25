@@ -1,6 +1,7 @@
 {
   "name": "julian-stein-site",
   "version": "2.0.0",
+  "packageManager": "pnpm@10.26.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

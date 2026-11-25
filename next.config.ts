@@ -3,8 +3,8 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
     cacheComponents: true,
-    // Off: sidebar links preload whole project pages, and project pages read their slug up front
-    // so unknown slugs return a real 404 (see app/[project]/page.tsx).
+    // Off: project pages are fully static, so links preload them whole anyway, and reading the
+    // slug up front lets unknown slugs return a real 404 (see app/[project]/page.tsx).
     partialPrefetching: false,
     pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
     // The portfolio view was removed; send old links home.

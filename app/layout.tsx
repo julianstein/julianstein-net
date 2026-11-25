@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
     return (
-        <html lang="en" className="antialiased">
+        <html lang="en" className="antialiased" data-scroll-behavior="smooth">
             <body className="text-black">
                 <Shell>{children}</Shell>
             </body>

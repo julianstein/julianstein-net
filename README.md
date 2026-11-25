@@ -3,8 +3,8 @@
 Next.js (App Router) + MDX. No CMS — content lives in the repo.
 
 ```sh
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Content
