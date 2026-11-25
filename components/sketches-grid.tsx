@@ -1,25 +1,23 @@
 'use client';
 
 import { FadeIn } from '@/components/fade-in';
-import { JustifiedGrid, JustifiedItem } from '@/components/justified-grid';
 import { LazyVideo } from '@/components/lazy-video';
 import { useShuffled } from '@/lib/hooks';
 
 const VIDEOS = Array.from({ length: 16 }, (_, i) => `steinj-video_${String(i + 1).padStart(2, '0')}`);
 
+/** The 16 clips as an even grid: 2 columns, or 4 × 4 on wide screens. */
 export function SketchesGrid() {
     const videos = useShuffled(VIDEOS);
     return (
-        <JustifiedGrid
-            className="justified-keep-last [--row:140px] sm:[--row:170px] md:[--row:150px] lg:[--row:170px] xl:[--row:125px] min-[1440px]:[--row:150px] min-[1680px]:[--row:160px]"
-        >
+        <div className="grid grid-cols-2 gap-3 p-1.5 xl:grid-cols-4">
             {videos.map(name => (
-                <JustifiedItem key={name} aspect={1.5}>
+                <div key={name} className="relative aspect-[3/2]">
                     <FadeIn className="absolute inset-0">
                         <LazyVideo name={name} />
                     </FadeIn>
-                </JustifiedItem>
+                </div>
             ))}
-        </JustifiedGrid>
+        </div>
     );
 }

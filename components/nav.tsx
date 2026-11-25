@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Mail } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { GithubIcon, InstagramIcon } from '@/components/icons';
 import { websiteNav } from '@/lib/site';
@@ -68,7 +69,7 @@ function ProjectList({ pathname, className = '' }: { pathname: string; className
     );
 }
 
-/** Collapsible list on small screens (native <details>); opens itself on the home page. */
+/** Collapsible list on small screens; opens itself on the home page. Same spring as the original site. */
 function MobileProjects({ pathname }: { pathname: string }) {
     const [open, setOpen] = useState(false);
 
@@ -78,15 +79,37 @@ function MobileProjects({ pathname }: { pathname: string }) {
     }, [pathname]);
 
     return (
-        <details
-            open={open}
-            onToggle={e => setOpen(e.currentTarget.open)}
-            className="mobile-projects md:hidden"
-        >
-            <summary className="cursor-pointer list-none pb-1 leading-normal text-gray-400 [&::-webkit-details-marker]:hidden">
+        <div className="flex flex-col md:hidden">
+            <button
+                type="button"
+                className="pb-1 text-left leading-normal text-gray-400"
+                aria-expanded={open}
+                onClick={() => setOpen(o => !o)}
+            >
                 projects
-            </summary>
-            <ProjectList pathname={pathname} className="pb-3" />
-        </details>
+            </button>
+            <AnimatePresence>
+                {open && (
+                    <motion.div
+                        className="overflow-hidden pb-3"
+                        initial={{ height: 0, marginTop: '-.75rem', opacity: 0 }}
+                        animate={{
+                            height: 'auto',
+                            marginTop: '0rem',
+                            opacity: 1,
+                            transition: { type: 'spring', duration: 1.5 },
+                        }}
+                        exit={{
+                            height: 0,
+                            marginTop: '-.75rem',
+                            opacity: 0,
+                            transition: { duration: 0.4, ease: 'easeInOut' },
+                        }}
+                    >
+                        <ProjectList pathname={pathname} />
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
     );
 }
