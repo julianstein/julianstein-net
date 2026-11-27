@@ -5,8 +5,21 @@ import type { CSSProperties, ReactNode } from 'react';
  * grows in proportion to its aspect ratio, so rows fill the width while
  * keeping heights roughly even. Set --row per breakpoint via `className`.
  */
-export function JustifiedGrid({ children, className = '' }: { children: ReactNode; className?: string }) {
-    return <div className={`justified ${className}`}>{children}</div>;
+export function JustifiedGrid({
+    children,
+    maxAspect = 1,
+    className = '',
+}: {
+    children: ReactNode;
+    /** Widest item's aspect ratio; caps the row height so every row holds at least two items. */
+    maxAspect?: number;
+    className?: string;
+}) {
+    return (
+        <div className={`justified ${className}`} style={{ '--max-ar': maxAspect } as CSSProperties}>
+            {children}
+        </div>
+    );
 }
 
 export function JustifiedItem({

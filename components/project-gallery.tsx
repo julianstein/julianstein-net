@@ -42,7 +42,9 @@ export function ProjectGallery({
 
     return (
         <>
-            <JustifiedGrid className="[--row:140px] md:[--row:80px] lg:[--row:130px] 2xl:[--row:210px] min-[1920px]:[--row:300px]">
+            <JustifiedGrid
+                maxAspect={Math.max(1, ...images.map(img => img.width / img.height))}
+                className="[--row:80px] lg:[--row:130px] 2xl:[--row:210px] min-[1920px]:[--row:300px]">
                 {shuffled.map((image, i) => {
                     const thumb = (
                         <div className={`h-full w-full ${open === i ? 'invisible' : ''}`}>

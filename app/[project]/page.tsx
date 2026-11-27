@@ -33,7 +33,8 @@ export async function generateMetadata({ params }: PageProps<'/[project]'>): Pro
 const grid = 'grid grid-cols-1 pt-3 pb-8 xl:grid-cols-[minmax(0,1fr)_auto] xl:grid-rows-[auto_1fr]';
 const featuredCell = 'mx-1.5 mb-8 xl:mb-1.5 xl:pr-6 md:mx-3';
 const infoCell = 'mb-5 px-1.5 text-sm md:px-4.5 xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:w-80';
-const galleryCell = 'md:px-1.5 xl:pr-6';
+// Gallery items carry their own 0.375rem margin, so its padding is that much less than the hero's.
+const galleryCell = 'md:px-1.5 xl:pr-[1.875rem]';
 
 // The slug is read before rendering (no loading placeholder), so an unknown project
 // gets a real 404 status. Links preload the whole (static) page, so navigation is still instant.
